@@ -17,9 +17,9 @@
     "test:unit": "jest --config test/unit/jest-unit.json --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config test/integration/jest-e2e.json",
-    "db:generate": "yarn run build && npm run typeorm migration:generate -- -n",
-    "db:create": "yarn run build && npm run typeorm migration:create -- -n",
-    "db:run": "yarn run build && npm run typeorm migration:run"
+    "db:generate": "yarn run build && yarn run typeorm migration:generate -n",
+    "db:create": "yarn run build && yarn run typeorm migration:create -n",
+    "db:run": "yarn run build && yarn run typeorm migration:run"
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
