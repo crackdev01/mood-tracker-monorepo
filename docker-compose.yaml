@@ -12,7 +12,7 @@ services:
   postgres:
     image: postgres:13-alpine
     environment:
-      - POSTGRES_USER=postgres
+      - POSTGRES_USER=mood-tracker
       - POSTGRES_PASSWORD=z6pv8rv2pmrgmzaixd
       - POSTGRES_DB=mood-tracker
     volumes:

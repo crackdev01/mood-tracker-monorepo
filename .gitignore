@@ -14,7 +14,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+/packages/**/*.env
 
+# log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
