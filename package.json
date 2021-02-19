@@ -1,0 +1,9 @@
+{
+  "name": "mood-tracker-webapp",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/backend/*",
+    "packages/frontend/*"
+  ]
+}
