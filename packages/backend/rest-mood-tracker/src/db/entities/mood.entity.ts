@@ -3,7 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   ManyToOne,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 import { UserEntity } from 'src/db/entities/user.entity';
@@ -13,7 +13,7 @@ export enum MoodStatus {
   Motivated = 'motivated',
   Energetic = 'energetic',
   Curious = 'curious',
-  Confident = 'confident'
+  Confident = 'confident',
 }
 
 export enum Intensity {
@@ -29,7 +29,7 @@ export class MoodEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @ManyToOne(() => UserEntity, user => user.uuid)
+  @ManyToOne(() => UserEntity, (user) => user.uuid)
   userId: string;
 
   @Column({
