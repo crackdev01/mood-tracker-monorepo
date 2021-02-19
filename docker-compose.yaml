@@ -1,0 +1,24 @@
+version: '3.7'
+
+networks:
+  development:
+    driver: bridge
+
+services:
+  #########################
+  ## Backend Persistence ##
+  #########################
+
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=z6pv8rv2pmrgmzaixd
+      - POSTGRES_DB=mood-tracker
+    volumes:
+      - ./database/scripts:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+    networks:
+      - development
+    container_name: mood-tracker_postgres

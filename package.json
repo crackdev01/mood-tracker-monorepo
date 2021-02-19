@@ -6,6 +6,11 @@
     "packages/backend/*",
     "packages/frontend/*"
   ],
+  "scripts": {
+    "exec:docker-compose": "docker-compose -f docker-compose.yaml",
+    "db:start": "yarn exec:docker-compose up -d --renew-anon-volumes --remove-orphans --force-recreate postgres",
+    "db:stop": "yarn exec:docker-compose down --volumes --remove-orphans"
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "husky": "^5.0.9",
