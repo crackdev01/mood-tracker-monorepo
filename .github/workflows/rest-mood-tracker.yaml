@@ -1,0 +1,25 @@
+name: rest-mood-tracker
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'packages/frontend/rest-mood-tracker/**'
+
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: yarn install
+      - name: Run linter
+        run: yarn workspace rest-mood-tracker lint
+      - name: Run unit tests with coverage
+        run: yarn workspace rest-mood-tracker test:unit:cov
+      - name: Build
+        run: yarn workspace rest-mood-tracker build
