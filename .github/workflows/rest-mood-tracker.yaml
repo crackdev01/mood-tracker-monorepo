@@ -20,6 +20,6 @@ jobs:
       - name: Run linter
         run: yarn workspace rest-mood-tracker lint
       - name: Run unit tests with coverage
-        run: yarn workspace rest-mood-tracker test:unit:cov
+        run: yarn workspace rest-mood-tracker test:unit
       - name: Build
         run: yarn workspace rest-mood-tracker build
