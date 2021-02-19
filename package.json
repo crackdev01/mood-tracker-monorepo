@@ -5,5 +5,18 @@
   "workspaces": [
     "packages/backend/*",
     "packages/frontend/*"
-  ]
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "husky": "^5.0.9",
+    "pretty-quick": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "pretty-quick --staged",
+      "post-merge": "yarn",
+      "post-rewrite": "yarn"
+    }
+  }
 }
