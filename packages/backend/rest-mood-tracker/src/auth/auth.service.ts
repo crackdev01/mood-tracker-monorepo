@@ -1,39 +1,41 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
-import { User } from '../db/entities/user.entity';
 import * as bcrypt from 'bcrypt';
 
-type UserResponse = Omit<User, 'password'>;
+import { UserEntity } from 'src/db/entities/user.entity';
+import { UserService } from 'src/user/user.service';
+
+type UserResponse = Omit<UserEntity, 'username' | 'password'>;
 
 @Injectable()
 export class AuthService {
   constructor(
-    private usersService: UsersService,
+    private userService: UserService,
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(email: string, pass: string): Promise<UserResponse> {
-    const user = await this.usersService.findUserForLogin(email);
+  async validateUser(username: string, pass: string): Promise<UserResponse> {
+    const user = await this.userService.findUserForLogin(username);
     if (user) {
-      if (await bcrypt.compare(pass, user.password)) {
-        const { password, ...result } = user;
+      // TODO: encode pwd and compare.
+      if (pass === user.password) {
+        const { username, password, ...result } = user;
         return result;
       } else {
         throw new HttpException('Wrong password.', HttpStatus.BAD_REQUEST);
       }
     } else {
       throw new HttpException(
-        'No user with username ' + email + ' found.',
+        'No user with username ' + username + ' found.',
         HttpStatus.BAD_REQUEST,
       );
     }
   }
 
-  async login(user: any) {
-    //const payload = { email: user.email, sub: user.id };
+  async login(user: UserEntity) {
+    const u = await this.validateUser(user.username, user.password);
     return {
-      access_token: this.jwtService.sign(user),
+      access_token: this.jwtService.sign(u),
     };
   }
 }

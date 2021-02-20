@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "exec:docker-compose": "docker-compose -f docker-compose.yaml",
-    "db:start": "yarn exec:docker-compose up -d --renew-anon-volumes --remove-orphans --force-recreate postgres",
+    "db:start": "yarn run db:stop && yarn exec:docker-compose up -d --renew-anon-volumes --remove-orphans --force-recreate postgres && yarn workspace rest-mood-tracker db:run",
     "db:stop": "yarn exec:docker-compose down --volumes --remove-orphans"
   },
   "devDependencies": {

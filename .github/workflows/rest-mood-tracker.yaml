@@ -4,10 +4,14 @@ on:
   push:
     branches: [ master ]
     paths:
+      - '.github/workflows/rest-mood-tracker.yaml'
       - 'packages/backend/rest-mood-tracker/**'
 
   pull_request:
     branches: [ master ]
+    paths:
+      - '.github/workflows/rest-mood-tracker.yaml'
+      - 'packages/backend/rest-mood-tracker/**'
 
 jobs:
   build:

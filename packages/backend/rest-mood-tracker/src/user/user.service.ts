@@ -1,17 +1,17 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserRepository } from '../db/repositories/user.repository';
-import { User } from 'src/db/entities/user.entity';
+import { UserEntity } from 'src/db/entities/user.entity';
 
 @Injectable()
-export class UsersService {
+export class UserService {
   constructor(
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
   ) {}
 
-  async findUserForLogin(username: string): Promise<User> {
-    let user: User;
+  async findUserForLogin(username: string): Promise<UserEntity> {
+    let user: UserEntity;
     try {
       user = await this.userRepository.findUser(username);
     } catch (error) {

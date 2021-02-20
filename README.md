@@ -2,7 +2,7 @@
 Web application to track mood based on React and NestJS.
 
 ## Pipeline status:
-TBD
+[![rest-mood-tracker](https://github.com/Akash-M/mood-tracker-monorepo/actions/workflows/rest-mood-tracker.yaml/badge.svg)](https://github.com/Akash-M/mood-tracker-monorepo/actions/workflows/rest-mood-tracker.yaml)
 
 ## Prerequisites
 
