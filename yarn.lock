@@ -1575,7 +1575,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.10.5, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.10.5, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.12.18
   resolution: "@babel/runtime@npm:7.12.18"
   dependencies:
@@ -9277,6 +9277,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"html-parse-stringify2@npm:2.0.1":
+  version: 2.0.1
+  resolution: "html-parse-stringify2@npm:2.0.1"
+  dependencies:
+    void-elements: ^2.0.1
+  checksum: 71159c76d54e7e8c1dad808b7ed3f3410e7846b496e3910f0c14f78ade875477b3f6b320ee1259ba5a7689a7ba61bee0b23f9f50ae1d33189de73bf436fb2a52
+  languageName: node
+  linkType: hard
+
 "html-webpack-plugin@npm:4.5.0":
   version: 4.5.0
   resolution: "html-webpack-plugin@npm:4.5.0"
@@ -9428,6 +9437,24 @@ fsevents@^1.2.7:
   bin:
     husky: lib/bin.js
   checksum: 135129469a7225bf34a8542e1575a3fbe32656f813234093f0ff43084c34e4384eb4c496923422d59aea7fb8187d26a2c8c7a43cd33647a5d02eb59c2161877a
+  languageName: node
+  linkType: hard
+
+"i18next-xhr-backend@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "i18next-xhr-backend@npm:3.2.2"
+  dependencies:
+    "@babel/runtime": ^7.5.5
+  checksum: 83dfcfe844b27760a76a0fd5f7900c386534d2f2119876e3aa660f28acd33ed6ba24f8b6499f238cd09214d90a375ffe20f8cec2ba792c20aaacb9527356f4b3
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^19.8.9":
+  version: 19.8.9
+  resolution: "i18next@npm:19.8.9"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: e9c0fa54f407622a2efc488a5848e84b442665c1317e6d25f5c31b6801cd6d5be17610ea141d17523e057be44af04ccae35ba529355dfb07eb295d149724749a
   languageName: node
   linkType: hard
 
@@ -14974,6 +15001,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-i18next@npm:^11.8.7":
+  version: 11.8.7
+  resolution: "react-i18next@npm:11.8.7"
+  dependencies:
+    "@babel/runtime": ^7.3.1
+    html-parse-stringify2: 2.0.1
+  peerDependencies:
+    i18next: ">= 19.0.0"
+    react: ">= 16.8.0"
+  checksum: 6e9c155aba8cf43be561cb23060c059a31e1a0ca0ff0d89afc7917b4193dbac777b10365155f47cc6467926aba7c852c6cd57e15c9be5c9cd75119dc891ddb6b
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1, react-is@npm:^16.6.0, react-is@npm:^16.6.3, react-is@npm:^16.7.0, react-is@npm:^16.8.1, react-is@npm:^16.8.6":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -18007,11 +18047,14 @@ resolve@1.18.1:
     eslint-config-prettier: ^7.2.0
     eslint-plugin-prettier: ^3.3.1
     eslint-plugin-react: ^7.22.0
+    i18next: ^19.8.9
+    i18next-xhr-backend: ^3.2.2
     identity-obj-proxy: ^3.0.0
     node-sass: ^5.0.0
     prettier: ^2.2.1
     react: ^17.0.1
     react-dom: ^17.0.1
+    react-i18next: ^11.8.7
     react-redux: ^7.2.2
     react-router-dom: ^5.2.0
     react-scripts: 4.0.2
@@ -18373,6 +18416,13 @@ resolve@1.18.1:
   version: 1.1.2
   resolution: "vm-browserify@npm:1.1.2"
   checksum: fc571a62d2cf797ae8773ebb3cb0d2bea50ed02059e128dd9087975929fce4c80a6485ce1aaf7d44ef69db99dfdcde50b6be5d5eb73b296660d761c32fb544fe
+  languageName: node
+  linkType: hard
+
+"void-elements@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "void-elements@npm:2.0.1"
+  checksum: 768d7e08534922455d0e87c66426123920f4d26d88e9c3dc430469e4ce1c11920ca8e2aea7794e52916524d55c3c7820efc20d3f5ce6b749036d989adef1cdd9
   languageName: node
   linkType: hard
 
