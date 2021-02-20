@@ -1,0 +1,21 @@
+{
+  "header": "Mood Entry",
+  "description": "Hello! How are you feeling today?",
+  "moodStatus": {
+    "placeholder": "Please select your mood",
+    "relaxed": "Relaxed",
+    "motivated": "Motivated",
+    "energetic": "Energetic",
+    "curious": "Curious",
+    "confident": "Confident"
+  },
+  "intensity": {
+    "placeholder": "Select intensity"
+  },
+  "entries": "Last 10 entries",
+  "buttons": {
+    "add": "Add Entry",
+    "edit": "Edit Entry",
+    "delete": "Delete Entry"
+  }
+}

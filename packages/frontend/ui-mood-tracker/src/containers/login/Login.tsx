@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Header, Input } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
+import { Button, Header, Input, Form } from 'semantic-ui-react';
 
 import './login.scss';
 
@@ -9,17 +9,23 @@ function Login() {
   const loading = false;
 
   return (
-    <article className="login">
+    <Form className="login">
       <Header as="h2" className="login__form-header">
         {t('header')}
       </Header>
 
-      <Input className="login__form-input" placeholder={t('username')} />
+      <Form.Field>
+        <label>{t('username')}</label>
+        <input placeholder={t('username')} />
+      </Form.Field>
 
-      <Input className="login__form-input" placeholder={t('password')} />
+      <Form.Field>
+        <label>{t('password')}</label>
+        <input placeholder={t('password')} />
+      </Form.Field>
 
       <Button loading={loading}>{t('submit')}</Button>
-    </article>
+    </Form>
   );
 }
 

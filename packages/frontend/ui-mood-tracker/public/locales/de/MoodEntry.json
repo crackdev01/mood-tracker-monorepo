@@ -1,0 +1,21 @@
+{
+  "header": "Stimmungseintrag",
+  "description": "Hallo! Wie geht es dir heute?",
+  "moodStatus": {
+    "placeholder": "Bitte wählen Sie Ihre Stimmung",
+    "relaxed": "Entspannt",
+    "motivated": "Motiviert",
+    "energetic": "Energisch",
+    "curious": "Neugierig",
+    "confident": "Zuversichtlich"
+  },
+  "intensity": {
+    "placeholder": "Intensität auswählen"
+  },
+  "entries": "Last 10 entries",
+  "buttons": {
+    "add": "Add Entry",
+    "edit": "Edit Entry",
+    "delete": "Delete Entry"
+  }
+}

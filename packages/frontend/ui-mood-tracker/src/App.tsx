@@ -15,17 +15,19 @@ function App() {
     <BrowserRouter>
       <SiteHeader />
 
-      <Switch>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/mood-entry">
-          <MoodEntry />
-        </Route>
-        <Route path="/statistics">
-          <Statistics />
-        </Route>
-      </Switch>
+      <article className="app-content">
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/mood-entry">
+            <MoodEntry />
+          </Route>
+          <Route path="/statistics">
+            <Statistics />
+          </Route>
+        </Switch>
+      </article>
     </BrowserRouter>
   );
 }
