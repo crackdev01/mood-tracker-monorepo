@@ -1,6 +1,6 @@
 module.exports = {
   moduleNameMapper: {
-    '\\.(css|scss)$': '../../src/__mocks__/styleMock.js'
+    "\\.(css|scss)$": 'identity-obj-proxy',
   },
   globals: {
     'ts-jest': {
