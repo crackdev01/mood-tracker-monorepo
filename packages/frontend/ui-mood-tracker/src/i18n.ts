@@ -7,8 +7,8 @@ i18n
   .use(initReactI18next)
   .init({
     debug: process.env.NODE_ENV === 'development',
-    lng: 'de',
-    fallbackLng: 'de',
+    lng: 'en',
+    fallbackLng: 'en',
     whitelist: ['en', 'de'],
     interpolation: {
       escapeValue: false,
