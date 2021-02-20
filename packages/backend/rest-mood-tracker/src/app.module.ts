@@ -7,6 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from 'src/user/user.module';
+import { MoodModule } from 'src/mood/mood.module';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 
 @Module({
@@ -15,6 +16,7 @@ import { JwtAuthGuard } from './auth/jwt-auth.guard';
     TypeOrmModule.forRoot(),
     AuthModule,
     UserModule,
+    MoodModule,
   ],
   controllers: [AppController],
   providers: [

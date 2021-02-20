@@ -1,4 +1,4 @@
-import { AbstractRepository, EntityManager, EntityRepository } from 'typeorm';
+import { AbstractRepository, EntityManager, EntityRepository, SelectQueryBuilder } from 'typeorm';
 import { Injectable } from '@nestjs/common';
 import { MoodEntity } from 'src/db/entities/mood.entity';
 
@@ -9,21 +9,38 @@ export class MoodRepository extends AbstractRepository<MoodEntity> {
     super();
   }
 
-  insertMood() {
-    // TODO: add code to insert mood into table.
+  private getMoodEntriesQuery(): SelectQueryBuilder<MoodEntity> {
+    return this.manager
+      .createQueryBuilder(MoodEntity, 'moodEntity')
+      .where("moodEntity.userUuid = '7c2f7be6-31e7-40e7-ab7c-0a5c280b2dae'");
   }
 
-  updateMood() {
-    // TODO: add code to update mood into table.
+  async insertMood(moodEntry: MoodEntity) {
+    return await this.getRepositoryFor(MoodEntity).save(moodEntry);
   }
 
-  deleteMood() {
-    // TODO: add code to delete mood from the table.
+  async updateMood(moodEntry: MoodEntity) {
+    const existingEntry = await this.findMoodEntry(moodEntry.id);
+    return await this.getRepositoryFor(MoodEntity)
+      .update(
+        moodEntry.id,
+        {
+          status: moodEntry.status,
+          intensity: moodEntry.intensity,
+          enteredAt: new Date(),
+        });
   }
 
-  findMoodEntries() {
-    // TODO: add code to fetch mood entries from the table.
+  async deleteMood(moodEntryId: number) {
+    const entry = await this.findMoodEntry(moodEntryId);
+    return await this.getRepositoryFor(MoodEntity).delete(entry);
   }
 
+  async findMoodEntry(moodEntryId: number): Promise<MoodEntity> {
+    return await this.getRepositoryFor(MoodEntity).findOne({ id: moodEntryId });
+  }
 
+  async findMoodEntries(): Promise<MoodEntity[]> {
+    return await this.getMoodEntriesQuery().execute();
+  }
 }

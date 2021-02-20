@@ -1,19 +1,15 @@
-import { Controller, Get, Request } from '@nestjs/common';
+import { Controller, Get, Request, UseGuards } from '@nestjs/common';
 import { UserService } from 'src/user/user.service';
+import { LocalAuthGuard } from 'src/auth/local.auth.guard';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  /**
-   * Get User Profile
-   *
-   * To access this the request need to have JwtToken in Request Authentication: Bearer Token.
-   * Otherwise it will return 401 unauthorized.
-   * @param req
-   */
   @Get('profile')
+  @UseGuards(LocalAuthGuard)
   getProfile(@Request() req) {
+    console.info(req.user);
     return req.user;
   }
 }

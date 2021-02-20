@@ -46,6 +46,6 @@ export class MoodEntity {
   })
   intensity: Intensity;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   enteredAt!: Date;
 }
