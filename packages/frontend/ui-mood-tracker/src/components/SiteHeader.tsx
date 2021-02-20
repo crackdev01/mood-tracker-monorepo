@@ -1,22 +1,25 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Header, Menu } from 'semantic-ui-react';
 
 import '../App.scss';
 
 function SiteHeader() {
   const { t } = useTranslation(['SiteHeader']);
+  const location = useLocation();
 
   return (
     <Menu pointing secondary>
       <Menu.Item header>
-        <Link to="login">{t('header')}</Link>
+        <Header as="h3">
+          <Link to="login">{t('header')}</Link>
+        </Header>
       </Menu.Item>
-      <Menu.Item>
+      <Menu.Item active={location.pathname === '/mood-entry'}>
         <Link to="/mood-entry">{t('moodEntry')}</Link>
       </Menu.Item>
-      <Menu.Item>
+      <Menu.Item active={location.pathname === '/statistics'}>
         <Link to="/statistics">{t('statistics')}</Link>
       </Menu.Item>
     </Menu>
