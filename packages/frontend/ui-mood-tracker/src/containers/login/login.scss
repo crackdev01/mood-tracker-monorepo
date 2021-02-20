@@ -1,12 +1,13 @@
 .login {
-	align-items: center;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	height: 100%;
+	flex: 0 0 50%;
 
-	&__form-header,
-	&__form-input {
-		margin-bottom: 2rem;
+	&__form {
+		&__header,
+		&__input {
+			margin-bottom: 1.5rem !important;
+		}
 	}
 }

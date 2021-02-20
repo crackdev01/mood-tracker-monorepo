@@ -9,23 +9,27 @@ function Login() {
   const loading = false;
 
   return (
-    <Form className="login">
-      <Header as="h2" className="login__form-header">
-        {t('header')}
-      </Header>
+    <article className="login">
+      <Form className="login__form">
+        <Header as="h2" className="login__form__header">
+          {t('header')}
+        </Header>
 
-      <Form.Field>
-        <label>{t('username')}</label>
-        <input placeholder={t('username')} />
-      </Form.Field>
+        <Form.Field className="login__form__input">
+          <label>{t('username')}</label>
+          <input placeholder={t('username')} />
+        </Form.Field>
 
-      <Form.Field>
-        <label>{t('password')}</label>
-        <input placeholder={t('password')} />
-      </Form.Field>
+        <Form.Field className="login__form__input">
+          <label>{t('password')}</label>
+          <input placeholder={t('password')} />
+        </Form.Field>
 
-      <Button loading={loading}>{t('submit')}</Button>
-    </Form>
+        <Button className="login__form__input" loading={loading}>
+          {t('submit')}
+        </Button>
+      </Form>
+    </article>
   );
 }
 
