@@ -30,7 +30,7 @@ export class MoodEntity {
   id!: number;
 
   @ManyToOne(() => UserEntity, (user) => user.uuid)
-  userId: string;
+  user: string;
 
   @Column({
     type: 'enum',
@@ -46,7 +46,6 @@ export class MoodEntity {
   })
   intensity: Intensity;
 
-  @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  @Column()
-  enteredAt: string;
+  @CreateDateColumn()
+  enteredAt!: Date;
 }

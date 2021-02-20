@@ -1,8 +1,12 @@
 import { Connection, InsertResult, ObjectType } from 'typeorm';
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
-import { userFixtures } from 'src/db/fixtures/user.fixture';
 import { Logger } from '@nestjs/common';
-import { UserEntity } from "src/db/entities/user.entity";
+
+import { UserEntity } from 'src/db/entities/user.entity';
+import { MoodEntity } from 'src/db/entities/mood.entity';
+
+import { userFixtures } from 'src/db/fixtures/user.fixture';
+import { moodFixtures } from 'src/db/fixtures/mood.fixture';
 
 type Entity = ObjectType<Record<string, unknown>>;
 interface Fixture {
@@ -20,6 +24,7 @@ async function seedHelper(
 
 const fixtures: Fixture[] = [
   { entity: UserEntity, values: userFixtures },
+  { entity: MoodEntity, values: moodFixtures },
 ];
 
 export async function seedDatabase(connection: Connection): Promise<void> {
