@@ -1,3 +1,5 @@
 {
-  "header": "Mood Tracker"
+  "header": "Mood Tracker",
+  "moodEntry": "Stimmungseintrag",
+  "statistics": "Statistiken"
 }

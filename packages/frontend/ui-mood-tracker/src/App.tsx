@@ -1,9 +1,11 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import SiteHeader from './components/SiteHeader';
 
 import Login from './containers/login/Login';
+import MoodEntry from './containers/mood-entry/MoodEntry';
+import Statistics from './containers/statistics/Statistics';
 
 import './App.scss';
 import 'semantic-ui-css/semantic.min.css';
@@ -13,7 +15,17 @@ function App() {
     <BrowserRouter>
       <SiteHeader />
 
-      <Login />
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/mood-entry">
+          <MoodEntry />
+        </Route>
+        <Route path="/statistics">
+          <Statistics />
+        </Route>
+      </Switch>
     </BrowserRouter>
   );
 }

@@ -1,3 +1,5 @@
 {
-  "header": "Mood Tracker"
+  "header": "Mood Tracker",
+  "moodEntry": "Mood Entry",
+  "statistics": "Statistics"
 }
