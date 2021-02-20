@@ -20,7 +20,6 @@ export class MoodRepository extends AbstractRepository<MoodEntity> {
   }
 
   async updateMood(moodEntry: MoodEntity) {
-    const existingEntry = await this.findMoodEntry(moodEntry.id);
     return await this.getRepositoryFor(MoodEntity)
       .update(
         moodEntry.id,

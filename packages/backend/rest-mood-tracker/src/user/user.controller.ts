@@ -7,9 +7,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get('profile')
-  @UseGuards(LocalAuthGuard)
   getProfile(@Request() req) {
-    console.info(req.user);
     return req.user;
   }
 }

@@ -5,7 +5,7 @@ import * as bcrypt from 'bcrypt';
 import { UserEntity } from 'src/db/entities/user.entity';
 import { UserService } from 'src/user/user.service';
 
-type UserResponse = Omit<UserEntity, 'password'>;
+type UserResponse = Omit<UserEntity, 'username' | 'password'>;
 
 @Injectable()
 export class AuthService {
@@ -19,7 +19,7 @@ export class AuthService {
     if (user) {
       // TODO: encode pwd and compare.
       if (pass === user.password) {
-        const { password, ...result } = user;
+        const { username, password, ...result } = user;
         return result;
       } else {
         throw new HttpException('Wrong password.', HttpStatus.BAD_REQUEST);
@@ -33,8 +33,9 @@ export class AuthService {
   }
 
   async login(user: UserEntity) {
+    const u = await this.validateUser(user.username, user.password);
     return {
-      access_token: this.jwtService.sign(user),
+      access_token: this.jwtService.sign(u),
     };
   }
 }
