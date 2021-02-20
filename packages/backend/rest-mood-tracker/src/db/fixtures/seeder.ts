@@ -19,7 +19,12 @@ async function seedHelper(
   entity: Entity | string,
   values: QueryDeepPartialEntity<Entity>[],
 ): Promise<InsertResult> {
-  return connection.createQueryBuilder().insert().into(entity).values(values).execute();
+  return connection
+    .createQueryBuilder()
+    .insert()
+    .into(entity)
+    .values(values)
+    .execute();
 }
 
 const fixtures: Fixture[] = [

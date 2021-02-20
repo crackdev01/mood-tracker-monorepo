@@ -1,4 +1,9 @@
-import { AbstractRepository, EntityManager, EntityRepository, SelectQueryBuilder } from 'typeorm';
+import {
+  AbstractRepository,
+  EntityManager,
+  EntityRepository,
+  SelectQueryBuilder,
+} from 'typeorm';
 import { Injectable } from '@nestjs/common';
 import { MoodEntity } from 'src/db/entities/mood.entity';
 
@@ -20,14 +25,11 @@ export class MoodRepository extends AbstractRepository<MoodEntity> {
   }
 
   async updateMood(moodEntry: MoodEntity) {
-    return await this.getRepositoryFor(MoodEntity)
-      .update(
-        moodEntry.id,
-        {
-          status: moodEntry.status,
-          intensity: moodEntry.intensity,
-          enteredAt: new Date(),
-        });
+    return await this.getRepositoryFor(MoodEntity).update(moodEntry.id, {
+      status: moodEntry.status,
+      intensity: moodEntry.intensity,
+      enteredAt: new Date(),
+    });
   }
 
   async deleteMood(moodEntryId: number) {

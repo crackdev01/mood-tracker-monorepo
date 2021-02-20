@@ -1,6 +1,6 @@
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 
-import {Intensity, MoodEntity, MoodStatus} from 'src/db/entities/mood.entity';
+import { Intensity, MoodEntity, MoodStatus } from 'src/db/entities/mood.entity';
 
 export const moodFixtures: QueryDeepPartialEntity<MoodEntity>[] = [
   {
