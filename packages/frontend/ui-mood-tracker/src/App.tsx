@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import SiteHeader from 'src/components/SiteHeader';
-
-import './App.scss';
+import SiteHeader from './components/SiteHeader';
 
 function App() {
   return (

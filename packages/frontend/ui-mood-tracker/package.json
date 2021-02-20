@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' -c .eslintrc.js",
     "test:unit:watch": "react-scripts test",
-    "test:unit:cov": "react-scripts test --coverage --watchAll=false",
+    "test:unit": "jest --config test/unit/jest-unit.js --coverage",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -23,6 +23,8 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.12.13",
+    "@testing-library/dom": "^7.29.6",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -36,6 +38,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
+    "babel-jest": "^26.6.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.20.0",
@@ -44,32 +47,6 @@
     "eslint-plugin-react": "^7.22.0",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.1"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!<rootDir>/node_modules/",
-      "!src/**/*.d.ts",
-      "!src/**/types.ts",
-      "!src/index.tsx",
-      "!src/i18n.ts",
-      "!src/**/reportWebVitals.ts"
-    ],
-    "testMatch": [
-      "**/**/__tests__/**/*.spec.ts?(x)"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 0,
-        "functions": 0,
-        "lines": 0,
-        "statements": 0
-      }
-    },
-    "coverageReporters": [
-      "lcov",
-      "text"
-    ]
   },
   "browserslist": {
     "production": [

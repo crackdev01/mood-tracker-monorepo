@@ -1529,7 +1529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-react@npm:^7.12.5":
+"@babel/preset-react@npm:^7.12.13, @babel/preset-react@npm:^7.12.5":
   version: 7.12.13
   resolution: "@babel/preset-react@npm:7.12.13"
   dependencies:
@@ -2584,7 +2584,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^7.28.1":
+"@testing-library/dom@npm:^7.28.1, @testing-library/dom@npm:^7.29.6":
   version: 7.29.6
   resolution: "@testing-library/dom@npm:7.29.6"
   dependencies:
@@ -2888,7 +2888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:*, @types/jest@npm:26.x, @types/jest@npm:^26.0.15":
+"@types/jest@npm:*, @types/jest@npm:26.x, @types/jest@npm:^26.0.15, @types/jest@npm:^26.0.20":
   version: 26.0.20
   resolution: "@types/jest@npm:26.0.20"
   dependencies:
@@ -12001,8 +12001,11 @@ fsevents@^1.2.7:
   resolution: "mood-tracker-webapp@workspace:."
   dependencies:
     "@commitlint/cli": ^11.0.0
+    "@types/jest": ^26.0.20
     husky: ^5.0.9
+    jest: ^26.6.0
     pretty-quick: ^3.1.0
+    ts-jest: ^26.5.1
   languageName: unknown
   linkType: soft
 
@@ -17841,6 +17844,8 @@ resolve@1.18.1:
   version: 0.0.0-use.local
   resolution: "ui-mood-tracker@workspace:packages/frontend/ui-mood-tracker"
   dependencies:
+    "@babel/preset-react": ^7.12.13
+    "@testing-library/dom": ^7.29.6
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
@@ -17855,6 +17860,7 @@ resolve@1.18.1:
     "@typescript-eslint/eslint-plugin": ^4.15.1
     "@typescript-eslint/parser": ^4.15.1
     axios: ^0.21.1
+    babel-jest: ^26.6.3
     enzyme: ^3.11.0
     enzyme-adapter-react-16: ^1.15.6
     eslint: ^7.20.0

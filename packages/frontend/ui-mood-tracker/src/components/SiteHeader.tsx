@@ -1,6 +1,6 @@
 import React from 'react';
 
-import 'src/App.scss';
+import '../App.scss';
 
 function SiteHeader() {
   return <h2>Mood Tracker</h2>;
