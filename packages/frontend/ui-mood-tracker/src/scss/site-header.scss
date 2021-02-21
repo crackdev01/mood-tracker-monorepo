@@ -1,0 +1,19 @@
+.site-header {
+	.locale {
+		:first-child {
+			margin-right: 2rem;
+		}
+
+		> span {
+			cursor: pointer;
+		}
+
+		&--active {
+			font-weight: bolder;
+		}
+
+		&--inactive {
+			font-weight: lighter;
+		}
+	}
+}
