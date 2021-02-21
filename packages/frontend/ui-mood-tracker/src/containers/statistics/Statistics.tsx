@@ -1,39 +1,134 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import Chart from 'react-apexcharts';
 import { Header } from 'semantic-ui-react';
 
 import './statistics.scss';
+import { MoodState } from '../../store/mood/types';
 
 const Statistics = () => {
   const { t } = useTranslation(['MoodEntry', 'Statistics']);
-  const chartData = {
-    options: {
-      chart: {
-        id: 'line',
+  const moods = useSelector((state: MoodState) => state.mood);
+  let relaxedMoodEntries: any = [];
+  let motivatedMoodEntries: any = [];
+  let energeticMoodEntries: any = [];
+  let curiousMoodEntries: any = [];
+  let confidentMoodEntries: any = [];
+
+  const lineChartConfig = () => {
+    return {
+      options: {
+        chart: {
+          id: 'line',
+        },
+        xaxis: {
+          categories: [],
+        },
+        yaxis: {
+          categories: [0, 1, 2, 3, 4],
+        },
       },
-      xaxis: {
-        categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      stroke: {
+        curve: 'smooth',
       },
-      yaxis: {
-        categories: [0, 1, 2, 3, 4],
-      },
-    },
-    stroke: {
-      curve: 'smooth',
-    },
-    series: [
-      {
-        name: t('moodStatus.relaxed'),
-        data: [0, 1, 1, 1, 4, 2, 3, 4, 0, 2, 3],
-      },
-      {
-        name: t('moodStatus.motivated'),
-        data: [3, 2, 1, 2, 4, 2, 3, 4, 1, 4, 1],
-      },
-    ],
-    width: '100%',
+      series: [
+        {
+          name: '',
+          data: [],
+        },
+      ],
+      width: '100%',
+    };
   };
+
+  const chartDataForRelaxedStatus = lineChartConfig();
+  const chartDataForMotivatedStatus = lineChartConfig();
+  const chartDataForEnergeticStatus = lineChartConfig();
+  const chartDataForCuriousStatus = lineChartConfig();
+  const chartDataForConfidentStatus = lineChartConfig();
+
+  const constructChartDataForRelaxedStatus = () => {
+    relaxedMoodEntries = moods.filter((m: any) => {
+      return m.moodEntity_status === 'relaxed';
+    });
+    chartDataForRelaxedStatus.options.chart.id = 'relaxed-id';
+    chartDataForRelaxedStatus.options.xaxis.categories = relaxedMoodEntries.map(
+      (e: any) => e.moodEntity_enteredAt
+    );
+    chartDataForRelaxedStatus.series[0].data = relaxedMoodEntries.map(
+      (e: any) => e.moodEntity_intensity
+    );
+    chartDataForRelaxedStatus.series[0].name = t('moodStatus.relaxed');
+  };
+
+  const constructChartDataForMotivatedStatus = () => {
+    motivatedMoodEntries = moods.filter((m: any) => {
+      return m.moodEntity_status === 'motivated';
+    });
+    chartDataForRelaxedStatus.options.chart.id = 'motivated-id';
+    chartDataForMotivatedStatus.options.xaxis.categories = motivatedMoodEntries.map(
+      (e: any) => e.moodEntity_enteredAt
+    );
+    chartDataForMotivatedStatus.series[0].data = motivatedMoodEntries.map(
+      (e: any) => e.moodEntity_intensity
+    );
+    chartDataForMotivatedStatus.series[0].name = t('moodStatus.motivated');
+  };
+
+  const constructChartDataForEnergeticStatus = () => {
+    energeticMoodEntries = moods.filter((m: any) => {
+      return m.moodEntity_status === 'energetic';
+    });
+    chartDataForEnergeticStatus.options.chart.id = 'motivated-id';
+    chartDataForEnergeticStatus.options.xaxis.categories = motivatedMoodEntries.map(
+      (e: any) => e.moodEntity_enteredAt
+    );
+    chartDataForEnergeticStatus.series[0].data = motivatedMoodEntries.map(
+      (e: any) => e.moodEntity_intensity
+    );
+    chartDataForEnergeticStatus.series[0].name = t('moodStatus.energetic');
+  };
+
+  const constructChartDataForCuriousStatus = () => {
+    curiousMoodEntries = moods.filter((m: any) => {
+      return m.moodEntity_status === 'curious';
+    });
+    chartDataForCuriousStatus.options.chart.id = 'motivated-id';
+    chartDataForCuriousStatus.options.xaxis.categories = motivatedMoodEntries.map(
+      (e: any) => e.moodEntity_enteredAt
+    );
+    chartDataForCuriousStatus.series[0].data = motivatedMoodEntries.map(
+      (e: any) => e.moodEntity_intensity
+    );
+    chartDataForCuriousStatus.series[0].name = t('moodStatus.curious');
+  };
+
+  const constructChartDataForConfidentStatus = () => {
+    confidentMoodEntries = moods.filter((m: any) => {
+      return m.moodEntity_status === 'confident';
+    });
+    chartDataForConfidentStatus.options.chart.id = 'confident-id';
+    chartDataForConfidentStatus.options.xaxis.categories = motivatedMoodEntries.map(
+      (e: any) => e.moodEntity_enteredAt
+    );
+    chartDataForConfidentStatus.series[0].data = motivatedMoodEntries.map(
+      (e: any) => e.moodEntity_intensity
+    );
+    chartDataForConfidentStatus.series[0].name = t('moodStatus.confident');
+  };
+
+  const constructChartData = () => {
+    constructChartDataForRelaxedStatus();
+    constructChartDataForMotivatedStatus();
+    constructChartDataForEnergeticStatus();
+    constructChartDataForCuriousStatus();
+    constructChartDataForConfidentStatus();
+  };
+
+  useEffect(() => {
+    constructChartData();
+  });
 
   return (
     <article className="statistics">
@@ -45,11 +140,43 @@ const Statistics = () => {
 
       <section className="statistics__graph">
         <Chart
-          options={chartData.options}
-          series={chartData.series}
+          options={chartDataForRelaxedStatus.options}
+          series={chartDataForRelaxedStatus.series}
           type="line"
           height="300"
-          width="100%"
+          width="50%"
+        />
+
+        <Chart
+          options={chartDataForMotivatedStatus.options}
+          series={chartDataForMotivatedStatus.series}
+          type="line"
+          height="300"
+          width="50%"
+        />
+
+        <Chart
+          options={chartDataForEnergeticStatus.options}
+          series={chartDataForEnergeticStatus.series}
+          type="line"
+          height="300"
+          width="50%"
+        />
+
+        <Chart
+          options={chartDataForCuriousStatus.options}
+          series={chartDataForCuriousStatus.series}
+          type="line"
+          height="300"
+          width="50%"
+        />
+
+        <Chart
+          options={chartDataForConfidentStatus.options}
+          series={chartDataForConfidentStatus.series}
+          type="line"
+          height="300"
+          width="50%"
         />
       </section>
     </article>

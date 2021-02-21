@@ -8,7 +8,6 @@ import { MoodState } from '../../../store/mood/types';
 const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);
   const moods = useSelector((state: MoodState) => state.mood);
-
   const [currentPage, setCurrentPage] = useState(1);
   const DEFAULT_PAGE_ENTRIES = 10;
   const pages = moods.length / DEFAULT_PAGE_ENTRIES;

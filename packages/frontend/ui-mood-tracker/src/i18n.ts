@@ -6,7 +6,7 @@ i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
-    debug: process.env.NODE_ENV === 'development',
+    debug: false,
     lng: 'en',
     fallbackLng: 'en',
     whitelist: ['en', 'de'],
