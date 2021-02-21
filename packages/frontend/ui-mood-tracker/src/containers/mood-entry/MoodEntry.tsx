@@ -1,14 +1,23 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Header } from 'semantic-ui-react';
+import { useDispatch } from 'react-redux';
+import { Button, Header } from 'semantic-ui-react';
 
 import AddEntry from '../../components/mood-entry/AddEntry';
 import MoodList from '../../components/mood-entry/MoodList';
+import { MoodActions } from '../../store/mood/types';
 
 import './mood-entry.scss';
 
 const MoodEntry = () => {
   const { t } = useTranslation(['MoodEntry']);
+  const dispatch = useDispatch();
+
+  const getMoodEntries = async () => {
+    await dispatch({
+      type: MoodActions.FETCH_MOODS,
+    });
+  };
 
   return (
     <article className="mood-entry">
@@ -21,6 +30,8 @@ const MoodEntry = () => {
       <AddEntry />
 
       <MoodList />
+
+      <Button onClick={getMoodEntries}>Get Entries</Button>
     </article>
   );
 };

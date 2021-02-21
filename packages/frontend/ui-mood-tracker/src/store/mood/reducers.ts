@@ -6,7 +6,11 @@ export const mood = (state = moodState, action: any) => {
     case MoodActions.FETCH_MOODS:
       return {
         ...state,
-        mood: action.mood,
+      };
+    case MoodActions.RENDER_MOODS:
+      return {
+        ...state,
+        mood: action.data,
       };
     default:
       return state;

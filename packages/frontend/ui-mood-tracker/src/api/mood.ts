@@ -1,5 +1,5 @@
 import { moodTrackerApi } from './core';
 
-export async function getMoodEntries(): Promise<any> {
-  return (await moodTrackerApi.get('/mood/entries')).data;
+export async function getMoodEntriesApi(): Promise<any> {
+  return await moodTrackerApi.get('/mood/entries');
 }
