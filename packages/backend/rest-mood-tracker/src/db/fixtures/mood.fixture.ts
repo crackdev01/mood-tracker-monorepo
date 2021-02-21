@@ -12,7 +12,7 @@ export const moodFixtures: QueryDeepPartialEntity<MoodEntity>[] = [
   {
     user: '7c2f7be6-31e7-40e7-ab7c-0a5c280b2dae',
     status: MoodStatus.Relaxed,
-    intensity: Intensity.Level1,
+    intensity: Intensity.Level4,
     enteredAt: new Date(),
   },
   {
@@ -30,7 +30,7 @@ export const moodFixtures: QueryDeepPartialEntity<MoodEntity>[] = [
   {
     user: '7c2f7be6-31e7-40e7-ab7c-0a5c280b2dae',
     status: MoodStatus.Relaxed,
-    intensity: Intensity.Level4,
+    intensity: Intensity.Level1,
     enteredAt: new Date(),
   },
   {

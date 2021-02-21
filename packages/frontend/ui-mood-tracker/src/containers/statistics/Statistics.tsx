@@ -8,7 +8,7 @@ import './statistics.scss';
 import { MoodState } from '../../store/mood/types';
 
 const Statistics = () => {
-  const { t } = useTranslation(['MoodEntry', 'Statistics']);
+  const { t } = useTranslation(['Statistics']);
   const moods = useSelector((state: MoodState) => state.mood);
   let relaxedMoodEntries: any = [];
   let motivatedMoodEntries: any = [];
@@ -144,7 +144,7 @@ const Statistics = () => {
           series={chartDataForRelaxedStatus.series}
           type="line"
           height="300"
-          width="50%"
+          width="100%"
         />
 
         <Chart
@@ -152,7 +152,7 @@ const Statistics = () => {
           series={chartDataForMotivatedStatus.series}
           type="line"
           height="300"
-          width="50%"
+          width="100%"
         />
 
         <Chart
@@ -160,7 +160,7 @@ const Statistics = () => {
           series={chartDataForEnergeticStatus.series}
           type="line"
           height="300"
-          width="50%"
+          width="100%"
         />
 
         <Chart
@@ -168,7 +168,7 @@ const Statistics = () => {
           series={chartDataForCuriousStatus.series}
           type="line"
           height="300"
-          width="50%"
+          width="100%"
         />
 
         <Chart
@@ -176,7 +176,7 @@ const Statistics = () => {
           series={chartDataForConfidentStatus.series}
           type="line"
           height="300"
-          width="50%"
+          width="100%"
         />
       </section>
     </article>

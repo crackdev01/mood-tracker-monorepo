@@ -1,4 +1,12 @@
 {
   "header": "Statistics",
-  "description": "Overview of statistical data of your mood entries"
+  "description": "Overview of statistical data of your mood entries",
+  "moodStatus": {
+    "placeholder": "Please select your mood",
+    "relaxed": "Relaxed",
+    "motivated": "Motivated",
+    "energetic": "Energetic",
+    "curious": "Curious",
+    "confident": "Confident"
+  }
 }

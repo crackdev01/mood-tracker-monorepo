@@ -8,6 +8,12 @@
 	}
 
 	&__graph {
-		width: 100%;
+		display: inline-flex;
+		flex-wrap: wrap;
+
+		> div {
+			margin: 0 1rem 1rem 0;
+			width: 500px !important; // override css from semantic-ui.
+		}
 	}
 }
