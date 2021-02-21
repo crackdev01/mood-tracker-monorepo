@@ -1,0 +1,13 @@
+@import '../../scss/variables';
+
+.statistics {
+	flex: 0 0 75%;
+
+	&__header {
+		margin-bottom: $custom-margin-bottom;
+	}
+
+	&__graph {
+		width: 100%;
+	}
+}

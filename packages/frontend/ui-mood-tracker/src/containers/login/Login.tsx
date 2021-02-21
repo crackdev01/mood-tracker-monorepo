@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Header, Input, Form } from 'semantic-ui-react';
+import { Button, Header, Form } from 'semantic-ui-react';
 
 import './login.scss';
 

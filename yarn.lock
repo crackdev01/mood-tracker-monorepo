@@ -4090,6 +4090,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"apexcharts@npm:^3.25.0":
+  version: 3.25.0
+  resolution: "apexcharts@npm:3.25.0"
+  dependencies:
+    svg.draggable.js: ^2.2.2
+    svg.easing.js: ^2.0.0
+    svg.filter.js: ^2.0.2
+    svg.pathmorphing.js: ^0.1.3
+    svg.resize.js: ^1.4.3
+    svg.select.js: ^3.0.1
+  checksum: c3f5831067447f5a88e7af576430c63ae2ab9ed623c7f08285dea17b6bf133571a9878de2c5bb1f9cc92b5cb08edd4b882e09289a071c19df6865fc22510abda
+  languageName: node
+  linkType: hard
+
 "app-root-path@npm:^3.0.0":
   version: 3.0.0
   resolution: "app-root-path@npm:3.0.0"
@@ -14662,7 +14676,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.5.7, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -14925,6 +14939,18 @@ fsevents@^1.2.7:
   bin:
     rc: ./cli.js
   checksum: ea2b7f7cee201a67923a2240de594a5d9b59bd312b814b06536d3d609a416dfd6fb9b85ea2abfd3b8a4eb5ed33eaff946ee75a8f2b7fb10941073c5cfee6b7a5
+  languageName: node
+  linkType: hard
+
+"react-apexcharts@npm:^1.3.7":
+  version: 1.3.7
+  resolution: "react-apexcharts@npm:1.3.7"
+  dependencies:
+    prop-types: ^15.5.7
+  peerDependencies:
+    apexcharts: ^3.18.0
+    react: ">=0.13"
+  checksum: 2ec8a31a0019630071234c0bbb59bf0ddc9150832eab94b1e7294bcfbeb66dbb1aa26c7da157d5a177e43f76650879a564388e80144e911287316f1b1a492dcb
   languageName: node
   linkType: hard
 
@@ -17259,6 +17285,77 @@ resolve@1.18.1:
   languageName: node
   linkType: hard
 
+"svg.draggable.js@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "svg.draggable.js@npm:2.2.2"
+  dependencies:
+    svg.js: ^2.0.1
+  checksum: 848aeb28690727b1e53ed25e03c750ff0f0421c47b4ee2c42ad66f5105794d4c8578653c8e7a3fa29688e9eacfef4859d22bd5ff8fff12439d5ee068133c3b41
+  languageName: node
+  linkType: hard
+
+"svg.easing.js@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "svg.easing.js@npm:2.0.0"
+  dependencies:
+    svg.js: ">=2.3.x"
+  checksum: 96fe897038251ea6f7b5547f4b9524537a3e938512637cbea7b76be3337850f793d413f1ecb81764267459c2c660ddde9ba7aba82493a63e49fb0b0b27daf020
+  languageName: node
+  linkType: hard
+
+"svg.filter.js@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "svg.filter.js@npm:2.0.2"
+  dependencies:
+    svg.js: ^2.2.5
+  checksum: 1da46610e67632f0f2c6fc851f901e8fb9c243a4c837b326225a9e84ffddb73e31c9bd522550d723733b000ca278afafc4ad6a6217940a1781f6aec2f9bf2e04
+  languageName: node
+  linkType: hard
+
+"svg.js@npm:>=2.3.x, svg.js@npm:^2.0.1, svg.js@npm:^2.2.5, svg.js@npm:^2.4.0, svg.js@npm:^2.6.5":
+  version: 2.7.1
+  resolution: "svg.js@npm:2.7.1"
+  checksum: 4a20d2b1bc1e1da78de75e52518030f2427d26fa91d753630fbde13b8cea1bc0fffd4770c558283fe813d6a928a8d65215c1eec8f36fda273e719818aba7f2ad
+  languageName: node
+  linkType: hard
+
+"svg.pathmorphing.js@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "svg.pathmorphing.js@npm:0.1.3"
+  dependencies:
+    svg.js: ^2.4.0
+  checksum: 80337759cf13467cc96ae585f7752476f6a9006f4f1fe6e837df50e1835961a330dc09312ed42405243d67d3b1224c8153960491d9bf4bd554cc8ff7bddedd9f
+  languageName: node
+  linkType: hard
+
+"svg.resize.js@npm:^1.4.3":
+  version: 1.4.3
+  resolution: "svg.resize.js@npm:1.4.3"
+  dependencies:
+    svg.js: ^2.6.5
+    svg.select.js: ^2.1.2
+  checksum: 90928fa180f44bb5db489adffcc922e79f02df5ec8da7e52bc0b8795f95f4aa86821b24636215e0ce35c8384bb94b36c6c19eca82c3684dddb1035bdc5e7a2ea
+  languageName: node
+  linkType: hard
+
+"svg.select.js@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "svg.select.js@npm:2.1.2"
+  dependencies:
+    svg.js: ^2.2.5
+  checksum: fb2cfe18dea869d85243aa8583665a0fa9ac8f5f526247c70ee9f63c3658f951426f000f1430291835375f14f4098b6f398df2fcbe560539fd0bfa547c28c9b1
+  languageName: node
+  linkType: hard
+
+"svg.select.js@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "svg.select.js@npm:3.0.1"
+  dependencies:
+    svg.js: ^2.6.5
+  checksum: f5b6db853ba083d9bbf2fb3e5a93b1368fa204ce2464f6712124bb8e5f691416eab0983ba7f69b2351269d40ed56feb2f4912ffa976f547d3fb729db2f260920
+  languageName: node
+  linkType: hard
+
 "svgo@npm:^1.0.0, svgo@npm:^1.2.2":
   version: 1.3.2
   resolution: "svgo@npm:1.3.2"
@@ -18039,6 +18136,7 @@ resolve@1.18.1:
     "@types/react-router-dom": ^5.1.7
     "@typescript-eslint/eslint-plugin": ^4.15.1
     "@typescript-eslint/parser": ^4.15.1
+    apexcharts: ^3.25.0
     axios: ^0.21.1
     babel-jest: ^26.6.3
     enzyme: ^3.11.0
@@ -18053,6 +18151,7 @@ resolve@1.18.1:
     node-sass: ^5.0.0
     prettier: ^2.2.1
     react: ^17.0.1
+    react-apexcharts: ^1.3.7
     react-dom: ^17.0.1
     react-i18next: ^11.8.7
     react-redux: ^7.2.2
