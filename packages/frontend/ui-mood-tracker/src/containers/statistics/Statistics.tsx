@@ -5,7 +5,7 @@ import { Header } from 'semantic-ui-react';
 
 import './statistics.scss';
 
-function Statistics() {
+const Statistics = () => {
   const { t } = useTranslation(['MoodEntry', 'Statistics']);
   const chartData = {
     options: {
@@ -54,6 +54,6 @@ function Statistics() {
       </section>
     </article>
   );
-}
+};
 
 export default Statistics;

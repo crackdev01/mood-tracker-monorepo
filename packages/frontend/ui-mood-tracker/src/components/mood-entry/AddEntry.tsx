@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Dropdown } from 'semantic-ui-react';
 
-function AddEntry() {
+const AddEntry = () => {
   const { t } = useTranslation(['MoodEntry']);
   const moodStatusOptions = [
     {
@@ -90,6 +90,6 @@ function AddEntry() {
       </section>
     </article>
   );
-}
+};
 
 export default AddEntry;

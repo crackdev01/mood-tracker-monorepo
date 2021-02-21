@@ -10,7 +10,7 @@ import Statistics from './containers/statistics/Statistics';
 import './App.scss';
 import 'semantic-ui-css/semantic.min.css';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <SiteHeader />
@@ -30,6 +30,6 @@ function App() {
       </article>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

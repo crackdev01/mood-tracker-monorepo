@@ -5,7 +5,7 @@ import { Header, Menu } from 'semantic-ui-react';
 
 import '../App.scss';
 
-function SiteHeader() {
+const SiteHeader = () => {
   const { t } = useTranslation(['SiteHeader']);
   const location = useLocation();
 
@@ -24,6 +24,6 @@ function SiteHeader() {
       </Menu.Item>
     </Menu>
   );
-}
+};
 
 export default SiteHeader;

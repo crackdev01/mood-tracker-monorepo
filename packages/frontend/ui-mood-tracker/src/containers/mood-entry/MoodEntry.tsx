@@ -7,7 +7,7 @@ import MoodList from '../../components/mood-entry/MoodList';
 
 import './mood-entry.scss';
 
-function MoodEntry() {
+const MoodEntry = () => {
   const { t } = useTranslation(['MoodEntry']);
 
   return (
@@ -23,6 +23,6 @@ function MoodEntry() {
       <MoodList />
     </article>
   );
-}
+};
 
 export default MoodEntry;

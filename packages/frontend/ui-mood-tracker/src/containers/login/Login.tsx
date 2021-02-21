@@ -4,7 +4,7 @@ import { Button, Header, Form } from 'semantic-ui-react';
 
 import './login.scss';
 
-function Login() {
+const Login = () => {
   const { t } = useTranslation(['Login']);
   const loading = false;
 
@@ -31,6 +31,6 @@ function Login() {
       </Form>
     </article>
   );
-}
+};
 
 export default Login;

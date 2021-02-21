@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Header, List } from 'semantic-ui-react';
 
-function MoodList() {
+const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);
 
   return (
@@ -54,6 +54,6 @@ function MoodList() {
       </List>
     </article>
   );
-}
+};
 
 export default MoodList;
