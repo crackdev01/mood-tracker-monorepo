@@ -7,7 +7,6 @@ import './statistics.scss';
 
 function Statistics() {
   const { t } = useTranslation(['MoodEntry', 'Statistics']);
-  console.log(t('moodStatus.relaxed'));
   const chartData = {
     options: {
       chart: {
