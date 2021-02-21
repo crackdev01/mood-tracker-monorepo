@@ -14,13 +14,25 @@ const MoodList = () => {
   const [visibleEntries, setVisibleEntries] = useState([]);
 
   const updatePage = (_: any, data: any) => {
-    setCurrentPage(data.activePage);
+    setCurrentPage(Math.ceil(data.activePage));
+  };
+
+  const updateVisibleEntries = () => {
+    let min;
+    let max;
+    if (currentPage === 1) {
+      min = 0;
+      max = DEFAULT_PAGE_ENTRIES;
+    } else {
+      max = currentPage * DEFAULT_PAGE_ENTRIES;
+      min = max - DEFAULT_PAGE_ENTRIES;
+    }
+    setVisibleEntries(moods.slice(min, max));
   };
 
   useEffect(() => {
-    // TODO: update page number and entries.
-    setVisibleEntries(moods);
-  });
+    updateVisibleEntries();
+  }, [currentPage]);
 
   return (
     <article className="mood-entry__list">
