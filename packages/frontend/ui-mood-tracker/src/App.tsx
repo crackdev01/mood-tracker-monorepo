@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import SiteHeader from './components/SiteHeader';
+import SiteHeader from './components/site-header/SiteHeader';
 
 import Login from './containers/login/Login';
 import MoodEntry from './containers/mood-entry/MoodEntry';

@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Header, Menu } from 'semantic-ui-react';
 
-import '../scss/site-header.scss';
+import './site-header.scss';
 
 enum LocaleEnum {
   English = 'EN',
-  Deutsche = 'DE'
+  Deutsche = 'DE',
 }
 
 const SiteHeader = () => {

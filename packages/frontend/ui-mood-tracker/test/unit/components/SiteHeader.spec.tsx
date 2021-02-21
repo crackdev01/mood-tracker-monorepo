@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import SiteHeader from '../../../src/components/SiteHeader';
+import SiteHeader from 'packages/frontend/ui-mood-tracker/src/components/site-header/SiteHeader';
 
 describe('SiteHeader', () => {
   test('renders', () => {

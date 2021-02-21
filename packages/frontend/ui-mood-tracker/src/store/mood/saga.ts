@@ -1,7 +1,7 @@
 import { all, call, put, takeEvery, fork } from 'redux-saga/effects';
 
 import { MoodActions } from './types';
-import { getMoodEntriesApi } from 'src/api/mood';
+import { getMoodEntriesApi } from '../../api/mood';
 
 // @ts-ignore
 export function* getMoodEntries() {
