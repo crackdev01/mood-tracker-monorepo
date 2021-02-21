@@ -5,11 +5,16 @@ import { Header, Menu } from 'semantic-ui-react';
 
 import '../scss/site-header.scss';
 
+enum LocaleEnum {
+  English = 'EN',
+  Deutsche = 'DE'
+}
+
 const SiteHeader = () => {
   const { t, i18n } = useTranslation(['SiteHeader']);
   const location = useLocation();
 
-  const updateLanguage = async (locale: 'en' | 'de') => {
+  const updateLanguage = async (locale: LocaleEnum) => {
     await i18n.changeLanguage(locale);
   };
 
@@ -28,14 +33,14 @@ const SiteHeader = () => {
       </Menu.Item>
       <Menu.Item position="right" className="locale">
         <span
-          className={i18n.language === 'en' ? 'locale--active' : 'locale--inactive'}
-          onClick={() => updateLanguage('en')}
+          className={i18n.language === LocaleEnum.English ? 'locale--active' : 'locale--inactive'}
+          onClick={() => updateLanguage(LocaleEnum.English)}
         >
           EN
         </span>
         <span
-          className={i18n.language === 'de' ? 'locale--active' : 'locale--inactive'}
-          onClick={() => updateLanguage('de')}
+          className={i18n.language === LocaleEnum.Deutsche ? 'locale--active' : 'locale--inactive'}
+          onClick={() => updateLanguage(LocaleEnum.Deutsche)}
         >
           DE
         </span>
