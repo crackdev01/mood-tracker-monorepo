@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { Button, Header, Pagination, Table } from 'semantic-ui-react';
-import { MoodState } from '../../store/mood/types';
+import { MoodState } from '../../../store/mood/types';
 
 const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);

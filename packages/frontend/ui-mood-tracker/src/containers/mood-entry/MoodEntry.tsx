@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { Header } from 'semantic-ui-react';
 
-import AddEntry from '../../components/mood-entry/AddEntry';
-import MoodList from '../../components/mood-entry/MoodList';
+import AddEntry from '../../components/mood-entry/add-entry/AddEntry';
+import MoodList from '../../components/mood-entry/mood-list/MoodList';
 import { MoodActions } from '../../store/mood/types';
 
 import './mood-entry.scss';
