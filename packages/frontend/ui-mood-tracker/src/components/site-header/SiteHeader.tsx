@@ -10,9 +10,10 @@ enum LocaleEnum {
   Deutsche = 'DE',
 }
 
-const SiteHeader = () => {
+const SiteHeader = (props: any) => {
   const { t, i18n } = useTranslation(['SiteHeader']);
   const location = useLocation();
+  const { lat, long } = props;
 
   const updateLanguage = async (locale: LocaleEnum) => {
     await i18n.changeLanguage(locale);
@@ -30,6 +31,9 @@ const SiteHeader = () => {
       </Menu.Item>
       <Menu.Item active={location.pathname === '/statistics'}>
         <Link to="/statistics">{t('statistics')}</Link>
+      </Menu.Item>
+      <Menu.Item position="right" className="coordinates">
+        {lat},{long}
       </Menu.Item>
       <Menu.Item position="right" className="locale">
         <span

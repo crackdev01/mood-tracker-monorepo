@@ -25,6 +25,6 @@ const lineChartConfig = () => {
 };
 
 export const generateLineChartConfig = (moodEntries: any) => {
-  let chartConfig = lineChartConfig();
+  const chartConfig = lineChartConfig();
   return chartConfig;
-}
+};
