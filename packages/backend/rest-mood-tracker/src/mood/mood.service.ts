@@ -11,7 +11,6 @@ export class MoodService {
   ) {}
 
   async findMoodEntriesByUser(user: any) {
-    console.info(user);
     return await this.moodRepository.findMoodEntries();
   }
 
@@ -20,6 +19,7 @@ export class MoodService {
   }
 
   async updateMoodEntry(mood: MoodEntity) {
+    console.info(mood);
     return await this.moodRepository.updateMood(mood);
   }
 

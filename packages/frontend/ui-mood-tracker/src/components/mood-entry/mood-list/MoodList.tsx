@@ -2,17 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import dayjs from 'dayjs';
-
 import { Button, Header, Pagination, Table } from 'semantic-ui-react';
+
+import EditEntryModal from '../../../components/mood-entry/edit-entry/EditEntryModal';
 import { ApplicationState } from '../../../store';
 
 const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);
   const moods = useSelector((state: ApplicationState) => state.moodReducer.mood);
   const [currentPage, setCurrentPage] = useState(1);
+  const [visibleEntries, setVisibleEntries] = useState([]);
+  const [showEditEntryModal, setShowEditEntryModal] = useState(false);
+  const [editableMood, setEditableMood] = useState({});
   const DEFAULT_PAGE_ENTRIES = 5;
   const pages = Math.ceil(moods.length / DEFAULT_PAGE_ENTRIES);
-  const [visibleEntries, setVisibleEntries] = useState([]);
 
   const updatePage = (_: any, data: any) => {
     setCurrentPage(Math.ceil(data.activePage));
@@ -31,9 +34,15 @@ const MoodList = () => {
     setVisibleEntries(moods.slice(min, max));
   };
 
+  // FIXME: update types for mood.
+  const editEntry = (mood: any) => {
+    setShowEditEntryModal(true);
+    setEditableMood(mood);
+  };
+
   useEffect(() => {
     updateVisibleEntries();
-  }, [currentPage, moods]);
+  }, [currentPage, moods, showEditEntryModal, editableMood]);
 
   return (
     <article className="mood-entry__list">
@@ -58,7 +67,7 @@ const MoodList = () => {
                 <Table.Cell>{t(`moodStatus.${mood.mood_status}`)}</Table.Cell>
                 <Table.Cell>{mood.mood_intensity}</Table.Cell>
                 <Table.Cell>
-                  <Button basic color="grey">
+                  <Button basic color="grey" onClick={() => editEntry(mood)}>
                     {t('buttons.edit')}
                   </Button>
                 </Table.Cell>
@@ -85,6 +94,8 @@ const MoodList = () => {
           </Table.Row>
         </Table.Footer>
       </Table>
+
+      <EditEntryModal displayModal={showEditEntryModal} mood={editableMood} />
     </article>
   );
 };

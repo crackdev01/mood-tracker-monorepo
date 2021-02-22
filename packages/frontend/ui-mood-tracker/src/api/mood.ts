@@ -10,6 +10,7 @@ export async function postMoodEntry(payload: any): Promise<void> {
 }
 
 export async function updateMoodEntry(payload: any): Promise<void> {
+  console.log(payload);
   return await moodTrackerApi.put('/mood/entry', payload);
 }
 

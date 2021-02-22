@@ -3,7 +3,8 @@ import {
   Controller,
   Delete,
   Get,
-  Patch,
+  Header,
+  Put,
   Post,
   Request,
 } from '@nestjs/common';
@@ -28,8 +29,10 @@ export class MoodController {
   }
 
   @Public()
-  @Patch('entry')
-  async patchMoodEntry(@Request() req, @Body() payload) {
+  @Header('Access-Control-Allow-Methods', 'PATCH')
+  @Put('entry')
+  async putMoodEntry(@Request() req, @Body() payload) {
+    console.log(payload);
     return await this.moodService.updateMoodEntry(payload);
   }
 
