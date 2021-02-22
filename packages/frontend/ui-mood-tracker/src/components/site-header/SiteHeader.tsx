@@ -6,8 +6,8 @@ import { Header, Menu } from 'semantic-ui-react';
 import './site-header.scss';
 
 enum LocaleEnum {
-  English = 'EN',
-  Deutsche = 'DE',
+  English = 'en',
+  Deutsche = 'de',
 }
 
 const SiteHeader = (props: any) => {
