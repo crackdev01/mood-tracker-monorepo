@@ -1,8 +1,8 @@
 @import '../../scss/variables';
 
 .site-header {
-	a {
-		color: $base-blue;
+	a, h3 {
+		color: $base-blue !important; // override css from semantic-ui.
 	}
 
 	.locale {

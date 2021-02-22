@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { Header, Menu } from 'semantic-ui-react';
+import { Dropdown, Header, Menu } from 'semantic-ui-react';
 
 import { ApplicationState } from '../../store';
 
@@ -22,8 +22,9 @@ const SiteHeader = (props: any) => {
 
   const isAuthenticated = !!user.uuid;
 
-  const updateLanguage = async (locale: LocaleEnum) => {
-    await i18n.changeLanguage(locale);
+  const updateLanguage = () => {
+    const { language } = i18n;
+    i18n.changeLanguage(language === 'en' ? 'de' : 'en');
   };
 
   useEffect(() => {
@@ -33,9 +34,7 @@ const SiteHeader = (props: any) => {
   return (
     <Menu pointing secondary className="site-header">
       <Menu.Item header>
-        <Header as="h3">
-          <Link to="login">{t('header')}</Link>
-        </Header>
+        <Header as="h3">{t('header')}</Header>
       </Menu.Item>
       {isAuthenticated && (
         <Menu.Item active={location.pathname === '/mood-entry' || location.pathname === '/'}>
@@ -47,26 +46,17 @@ const SiteHeader = (props: any) => {
           <Link to="/statistics">{t('statistics')}</Link>
         </Menu.Item>
       )}
-      <Menu.Item position="right" className="coordinates">
-        {lat} {long}
-      </Menu.Item>
-      <Menu.Item position="right" className="locale">
-        <span
-          className={i18n.language === LocaleEnum.English ? 'locale--active' : 'locale--inactive'}
-          onClick={() => updateLanguage(LocaleEnum.English)}
-        >
-          EN
-        </span>
-        <span
-          className={i18n.language === LocaleEnum.Deutsche ? 'locale--active' : 'locale--inactive'}
-          onClick={() => updateLanguage(LocaleEnum.Deutsche)}
-        >
-          DE
-        </span>
-      </Menu.Item>
-      <Menu.Item position="right" className="coordinates">
-        {currentUser}
-      </Menu.Item>
+      <Menu.Menu position="right">
+        <Dropdown item text={currentUser}>
+          <Dropdown.Menu>
+            <Dropdown.Item>{t('menu.actions.location')}</Dropdown.Item>
+            <Dropdown.Item onClick={updateLanguage}>
+              {t('menu.actions.changeLanguage')}
+            </Dropdown.Item>
+            <Dropdown.Item>{t('menu.actions.logout')}</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </Menu.Menu>
     </Menu>
   );
 };
