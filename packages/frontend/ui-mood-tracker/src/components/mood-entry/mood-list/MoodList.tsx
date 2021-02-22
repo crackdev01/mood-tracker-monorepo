@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import { Button, Header, Pagination, Table } from 'semantic-ui-react';
 
 import EditEntryModal from '../../../components/mood-entry/edit-entry/EditEntryModal';
+import DeleteEntryModal from '../../../components/mood-entry/delete-entry/DeleteEntryModal';
 import { ApplicationState } from '../../../store';
 
 const MoodList = () => {
@@ -13,7 +14,9 @@ const MoodList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [visibleEntries, setVisibleEntries] = useState([]);
   const [showEditEntryModal, setShowEditEntryModal] = useState(false);
+  const [showDeleteEntryModal, setShowDeleteEntryModal] = useState(false);
   const [editableMood, setEditableMood] = useState({});
+  const [deletableMood, setDeletableMood] = useState({});
   const DEFAULT_PAGE_ENTRIES = 5;
   const pages = Math.ceil(moods.length / DEFAULT_PAGE_ENTRIES);
 
@@ -40,9 +43,14 @@ const MoodList = () => {
     setEditableMood(mood);
   };
 
+  const deleteEntry = (mood: any) => {
+    setShowDeleteEntryModal(true);
+    setDeletableMood(mood);
+  };
+
   useEffect(() => {
     updateVisibleEntries();
-  }, [currentPage, moods, showEditEntryModal, editableMood]);
+  }, [currentPage, moods, showEditEntryModal, editableMood, deletableMood]);
 
   return (
     <article className="mood-entry__list">
@@ -72,7 +80,7 @@ const MoodList = () => {
                   </Button>
                 </Table.Cell>
                 <Table.Cell>
-                  <Button basic color="red">
+                  <Button basic color="red" onClick={() => deleteEntry(mood)}>
                     {t('buttons.delete')}
                   </Button>
                 </Table.Cell>
@@ -96,6 +104,8 @@ const MoodList = () => {
       </Table>
 
       <EditEntryModal displayModal={showEditEntryModal} mood={editableMood} />
+
+      <DeleteEntryModal displayModal={showDeleteEntryModal} mood={deletableMood} />
     </article>
   );
 };
