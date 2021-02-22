@@ -85,6 +85,7 @@ const AddEntry = () => {
               selection
               options={intensityOptions}
             />
+
             <div>
               <Button basic color="olive">
                 {t('buttons.add')}
