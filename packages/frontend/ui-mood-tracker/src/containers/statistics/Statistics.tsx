@@ -40,8 +40,8 @@ const Statistics = () => {
   };
 
   const sortMoodEntriesByDate = moods.sort((a: any, b: any) => {
-    const aDate = new Date(a.moodEntity_enteredAt + ' ' + a.moodEntity_enteredAt);
-    const bDate = new Date(b.moodEntity_enteredAt + ' ' + b.moodEntity_enteredAt);
+    const aDate = new Date(a.mood_enteredAt + ' ' + a.mood_enteredAt);
+    const bDate = new Date(b.mood_enteredAt + ' ' + b.mood_enteredAt);
 
     return bDate.getTime() - aDate.getTime();
   });
@@ -50,8 +50,8 @@ const Statistics = () => {
     const intensityEntries = sortMoodEntriesByDate
       .map((m: any) => {
         return {
-          x: dayjs(m.moodEntity_enteredAt).format('DD.MM.YY'),
-          y: m.moodEntity_intensity,
+          x: dayjs(m.mood_enteredAt).format('DD.MM.YY'),
+          y: m.mood_intensity,
         };
       })
       .slice(0, defaultLimit);

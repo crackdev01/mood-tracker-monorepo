@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import dayjs from 'dayjs';
 
 import { Button, Header, Pagination, Table } from 'semantic-ui-react';
 import { ApplicationState } from '../../../store';
@@ -52,10 +53,10 @@ const MoodList = () => {
         <Table.Body>
           {visibleEntries.map((mood: any) => {
             return (
-              <Table.Row key={mood.moodEntity_id}>
-                <Table.Cell>{mood.moodEntity_enteredAt}</Table.Cell>
-                <Table.Cell>{mood.moodEntity_status}</Table.Cell>
-                <Table.Cell>{mood.moodEntity_intensity}</Table.Cell>
+              <Table.Row key={mood.mood_id}>
+                <Table.Cell>{dayjs(mood.mood_enteredAt).format('MMM D, YYYY h:mm A')}</Table.Cell>
+                <Table.Cell>{t(`moodStatus.${mood.mood_status}`)}</Table.Cell>
+                <Table.Cell>{mood.mood_intensity}</Table.Cell>
                 <Table.Cell>
                   <Button basic color="grey">
                     {t('buttons.edit')}
