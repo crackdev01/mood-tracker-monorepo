@@ -58,8 +58,11 @@ const AddEntry = () => {
       value: 4,
     },
   ];
-  const [intensity, setIntensity] = useState(0);
-  const loading = false;
+  const [showAddEntry, setShowAddEntry] = useState(false);
+
+  const addEntry = () => {
+    setShowAddEntry(true);
+  };
 
   return (
     <article className="mood-entry__add">
@@ -70,23 +73,25 @@ const AddEntry = () => {
             fluid
             selection
             options={moodStatusOptions}
+            onChange={addEntry}
           />
         </div>
 
-        <div>
-          <Dropdown
-            placeholder={t('intensity.placeholder')}
-            fluid
-            selection
-            options={intensityOptions}
-          />
-        </div>
-
-        <div>
-          <Button loading={loading} basic color="olive">
-            {t('buttons.add')}
-          </Button>
-        </div>
+        {showAddEntry && (
+          <div>
+            <Dropdown
+              placeholder={t('intensity.placeholder')}
+              fluid
+              selection
+              options={intensityOptions}
+            />
+            <div>
+              <Button basic color="olive">
+                {t('buttons.add')}
+              </Button>
+            </div>
+          </div>
+        )}
       </section>
     </article>
   );
