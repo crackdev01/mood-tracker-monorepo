@@ -24,7 +24,7 @@ const SiteHeader = (props: any) => {
 
   const updateLanguage = () => {
     const { language } = i18n;
-    i18n.changeLanguage(language === 'en' ? 'de' : 'en');
+    i18n.changeLanguage(language === LocaleEnum.English ? LocaleEnum.Deutsche : LocaleEnum.English);
   };
 
   useEffect(() => {

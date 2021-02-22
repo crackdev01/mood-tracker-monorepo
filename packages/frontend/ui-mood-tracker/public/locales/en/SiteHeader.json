@@ -5,7 +5,7 @@
   "menu": {
     "actions": {
       "location": "Current position",
-      "changeLanguage": "Switch to German",
+      "changeLanguage": "Switch to Deutsche",
       "logout": "Logout"
     }
   }
