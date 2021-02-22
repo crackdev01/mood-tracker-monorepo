@@ -18261,7 +18261,7 @@ resolve@1.18.1:
     "@typescript-eslint/parser": ^4.15.1
     apexcharts: ^3.25.0
     axios: ^0.21.1
-    babel-jest: ^26.6.3
+    babel-jest: ^26.6.0
     dayjs: ^1.10.4
     enzyme: ^3.11.0
     enzyme-adapter-react-16: ^1.15.6
