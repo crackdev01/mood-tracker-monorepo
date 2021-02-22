@@ -86,11 +86,11 @@ const EditEntryModal = (props: any) => {
       status: moodStatus,
       intensity: moodIntensity,
     };
-    console.log(payload);
     dispatch({
       type: MoodActions.EDIT_MOOD,
       payload,
     });
+    setShowModal(false);
   };
 
   return (

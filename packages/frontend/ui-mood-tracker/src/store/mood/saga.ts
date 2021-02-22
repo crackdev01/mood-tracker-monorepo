@@ -27,7 +27,8 @@ export function* addMoodEntry() {
 
 // Update mood entry.
 export function* editMoodEntryCall(action: any) {
-  yield all([call(updateMoodEntry, action.payload), call(getMoodEntries)]);
+  yield call(updateMoodEntry, action.payload);
+  yield call(getMoodEntries);
 }
 
 export function* editMoodEntry() {
@@ -36,7 +37,8 @@ export function* editMoodEntry() {
 
 // Delete mood entry.
 export function* removeMoodEntryCall(action: any) {
-  yield all([call(deleteMoodEntry, action.payload), call(getMoodEntries)]);
+  yield call(deleteMoodEntry, action.payload);
+  yield call(getMoodEntries);
 }
 
 export function* removeMoodEntry() {
