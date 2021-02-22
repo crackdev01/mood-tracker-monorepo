@@ -32,6 +32,7 @@ const Statistics = () => {
 
   const showLimiter = (_: any, data: any) => {
     setShowCustomLimit(data.value);
+    if (!data.value) setDefaultLimit(DEFAULT_LIMIT);
   };
 
   const updateLimiter = (_: any, data: any) => {
