@@ -1,0 +1,12 @@
+{
+  "header": "Mood Tracker",
+  "moodEntry": "Mood Entry",
+  "statistics": "Statistics",
+  "menu": {
+    "actions": {
+      "location": "Current position",
+      "changeLanguage": "Switch to Deutsche",
+      "logout": "Logout"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": "Statistics",
+  "description": "Overview of statistical data of your mood entries",
+  "moodStatus": {
+    "placeholder": "Please select your mood",
+    "relaxed": "Relaxed",
+    "motivated": "Motivated",
+    "energetic": "Energetic",
+    "curious": "Curious",
+    "confident": "Confident"
+  },
+  "limit": {
+    "dropdown": {
+      "default": "Default Limit: Last 7 entries",
+      "custom": "Set custom entry"
+    },
+    "input": {
+      "placeholder": "Enter limit"
+    }
+  },
+  "chart": {
+    "xaxis": "Entry Dates",
+    "yaxis": "Intensity"
+  }
+}

@@ -1,0 +1,13 @@
+.login {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex: 0 0 50%;
+
+	&__form {
+		&__header,
+		&__input {
+			margin-bottom: 1.5rem !important;
+		}
+	}
+}

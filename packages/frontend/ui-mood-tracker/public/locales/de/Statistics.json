@@ -1,0 +1,25 @@
+{
+  "header": "Statistiken",
+  "description": "Übersicht der statistischen Daten Ihrer Stimmungseinträge\n",
+  "moodStatus": {
+    "placeholder": "Bitte wählen Sie Ihre Stimmung",
+    "relaxed": "Entspannt",
+    "motivated": "Motiviert",
+    "energetic": "Energisch",
+    "curious": "Neugierig",
+    "confident": "Zuversichtlich"
+  },
+  "limit": {
+    "dropdown": {
+      "default": "Default Limit: Last 7 entries",
+      "custom": "Set custom entry"
+    },
+    "input": {
+      "placeholder": "Enter limit"
+    }
+  },
+  "chart": {
+    "xaxis": "Entry Dates",
+    "yaxis": "Intensity"
+  }
+}

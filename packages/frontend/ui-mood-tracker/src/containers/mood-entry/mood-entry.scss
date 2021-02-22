@@ -1,0 +1,36 @@
+@import '../../scss/variables';
+
+.mood-entry {
+	flex: 0 0 75%;
+
+	&__header {
+		margin-bottom: $custom-margin-bottom;
+	}
+
+	&__add {
+		margin-bottom: $custom-margin-bottom;
+
+		&__options {
+			display: inline-flex;
+			flex-wrap: wrap;
+
+			> div {
+				display: inline-flex;
+				flex-wrap: wrap;
+
+				> div {
+					margin: 0 1rem 1rem 0;
+					width: 250px !important; // override css from semantic-ui.
+				}
+			}
+		}
+	}
+
+	&__list {
+		margin-bottom: $custom-margin-bottom;
+
+		> h3 {
+			margin-bottom: 1.5rem !important; // override css from semantic-ui.
+		}
+	}
+}

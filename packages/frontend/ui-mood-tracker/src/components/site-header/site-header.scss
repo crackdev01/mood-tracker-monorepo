@@ -1,0 +1,26 @@
+@import '../../scss/variables';
+
+.site-header {
+	a, h3 {
+		color: $base-blue !important; // override css from semantic-ui.
+	}
+
+	.locale {
+		:first-child {
+			margin-right: 2rem;
+		}
+
+		> span {
+			color: $base-blue;
+			cursor: pointer;
+		}
+
+		&--active {
+			font-weight: bolder;
+		}
+
+		&--inactive {
+			font-weight: lighter;
+		}
+	}
+}

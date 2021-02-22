@@ -1,0 +1,32 @@
+@import '../../scss/variables';
+
+.statistics {
+	display: flex;
+	flex: 0 0 75%;
+	flex-direction: column;;
+
+	&__header {
+		margin-bottom: $custom-margin-bottom;
+	}
+
+	&__limit-options {
+		display: inline-flex;
+		flex-wrap: wrap;
+		margin-bottom: $custom-margin-bottom + 2rem;
+
+		> * {
+			flex: 0 0 250px;
+			margin: 0 1rem 1rem 0;
+		}
+	}
+
+	&__graph {
+		display: inline-flex;
+		flex-wrap: wrap;
+
+		> div {
+			flex: 0 0 90%;
+			margin: 0 1rem 1rem 0;
+		}
+	}
+}
