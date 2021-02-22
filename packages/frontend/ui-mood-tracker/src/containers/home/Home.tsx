@@ -42,7 +42,7 @@ const Home = () => {
 
       <article className="app-content">
         <Switch>
-          <Route path="/login">
+          <Route path="/">
             <Login />
           </Route>
           <Route path="/mood-entry">

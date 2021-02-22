@@ -1,8 +1,9 @@
-import { UserActions } from './types';
+import { AuthReq, UserActions } from './types';
 
-export const fetchUser = () => {
+export const fetchUser = (payload: AuthReq) => {
   return {
     type: UserActions.FETCH_USER,
+    payload,
   };
 };
 

@@ -3,8 +3,8 @@ import { all, call, put, takeEvery, fork } from 'redux-saga/effects';
 import { UserActions } from './types';
 import { authenticateUser } from '../../api/user';
 
-export function* loginUser() {
-  const { data } = yield call(authenticateUser);
+export function* loginUser(action: any) {
+  const { data } = yield call(authenticateUser, action.payload);
   yield put({ type: UserActions.RENDER_USER, data });
 }
 

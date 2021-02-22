@@ -14,7 +14,6 @@ const Login = () => {
   const loading = false;
 
   const updateUsername = (_: any, data: any) => {
-    console.log(data);
     setUsername(data.value);
   };
 
@@ -23,11 +22,10 @@ const Login = () => {
   };
 
   const login = () => {
-    console.log('logging in');
-    console.log(username);
-    console.log(password);
+    const payload = { username, password };
     dispatch({
       type: UserActions.FETCH_USER,
+      payload,
     });
   };
 
