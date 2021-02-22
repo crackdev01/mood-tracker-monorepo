@@ -3,13 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { Button, Header, Pagination, Table } from 'semantic-ui-react';
-import { MoodState } from '../../../store/mood/types';
 
 const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);
-  const moods = useSelector((state: MoodState) => state.mood);
+  const moods = useSelector((state: any) => state.moodReducer.mood);
   const [currentPage, setCurrentPage] = useState(1);
-  const DEFAULT_PAGE_ENTRIES = 10;
+  const DEFAULT_PAGE_ENTRIES = 5;
   const pages = moods.length / DEFAULT_PAGE_ENTRIES;
   const [visibleEntries, setVisibleEntries] = useState([]);
 
