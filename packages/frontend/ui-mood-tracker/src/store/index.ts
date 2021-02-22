@@ -1,13 +1,22 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { logger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 import { mood as moodReducer } from './mood/reducers';
 import moodSaga from './mood/saga';
 
-import { user as userReducer } from './user/reducers';
+import { user } from './user/reducers';
 import userSaga from './user/saga';
 import { UserState } from './user/types';
 import { MoodState } from './mood/types';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['user'],
+};
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -17,11 +26,13 @@ export interface ApplicationState {
 }
 
 const configureStore = () => {
+  const userReducer = persistReducer(persistConfig, user);
   const reducers = combineReducers({ userReducer, moodReducer });
-  const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+  const store = createStore(reducers, applyMiddleware(sagaMiddleware, logger));
   sagaMiddleware.run(userSaga);
   sagaMiddleware.run(moodSaga);
-  return store;
+  const persistor = persistStore(store);
+  return { store, persistor };
 };
 
 export default configureStore;
