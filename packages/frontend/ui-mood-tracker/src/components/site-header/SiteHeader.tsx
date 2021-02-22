@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Header, Menu } from 'semantic-ui-react';
+
+import { ApplicationState } from '../../store';
 
 import './site-header.scss';
 
@@ -12,12 +15,18 @@ enum LocaleEnum {
 
 const SiteHeader = (props: any) => {
   const { t, i18n } = useTranslation(['SiteHeader']);
+  const user = useSelector((state: ApplicationState) => state.userReducer.user);
+  const [currentUser, setCurrentUser] = useState('');
   const location = useLocation();
   const { lat, long } = props;
 
   const updateLanguage = async (locale: LocaleEnum) => {
     await i18n.changeLanguage(locale);
   };
+
+  useEffect(() => {
+    setCurrentUser(user.uuid);
+  }, [user]);
 
   return (
     <Menu pointing secondary className="site-header">
@@ -33,7 +42,7 @@ const SiteHeader = (props: any) => {
         <Link to="/statistics">{t('statistics')}</Link>
       </Menu.Item>
       <Menu.Item position="right" className="coordinates">
-        {lat},{long}
+        {lat} {long}
       </Menu.Item>
       <Menu.Item position="right" className="locale">
         <span
@@ -48,6 +57,9 @@ const SiteHeader = (props: any) => {
         >
           DE
         </span>
+      </Menu.Item>
+      <Menu.Item position="right" className="coordinates">
+        {currentUser}
       </Menu.Item>
     </Menu>
   );

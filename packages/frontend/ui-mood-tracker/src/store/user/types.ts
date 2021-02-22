@@ -3,7 +3,7 @@ export interface UserState {
   user: any;
 }
 
-export interface AuthReq {
+export interface UserReq {
   username: string;
   password: string;
 }

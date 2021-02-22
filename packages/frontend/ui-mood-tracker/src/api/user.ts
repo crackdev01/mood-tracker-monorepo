@@ -1,6 +1,6 @@
 import { moodTrackerApi } from './core';
-import { AuthReq } from '../store/user/types';
+import { UserReq } from '../store/user/types';
 
-export async function authenticateUser(payload: AuthReq): Promise<any> {
+export async function authenticateUser(payload: UserReq): Promise<any> {
   return await moodTrackerApi.post('/auth/login', payload);
 }

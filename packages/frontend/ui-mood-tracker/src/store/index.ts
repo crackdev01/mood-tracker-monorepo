@@ -12,8 +12,8 @@ import { MoodState } from './mood/types';
 const sagaMiddleware = createSagaMiddleware();
 
 export interface ApplicationState {
-  userReducer: UserState,
-  moodReducer: MoodState,
+  userReducer: UserState;
+  moodReducer: MoodState;
 }
 
 const configureStore = () => {
