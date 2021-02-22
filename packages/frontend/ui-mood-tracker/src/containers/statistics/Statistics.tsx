@@ -1,60 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import Chart from 'react-apexcharts';
 import dayjs from 'dayjs';
 import { Header, Dropdown, Input } from 'semantic-ui-react';
 
-import './statistics.scss';
+import LineChart from '../../components/statistics/LineChart';
 import { MoodState } from '../../store/mood/types';
+
+import './statistics.scss';
 
 const Statistics = () => {
   const { t } = useTranslation(['Statistics']);
+  const DEFAULT_LIMIT = 7;
   const moods = useSelector((state: MoodState) => state.mood);
-  let intensityEntries: any = [];
-  let dateEntries: any = [];
-  const [chartSeries, setChartSeries] = useState([{ data: [] }]);
-  const lineChartConfig = () => {
-    return {
-      series: chartSeries,
-      chart: {
-        height: 350,
-        type: 'line',
-      },
-      dataLabels: {
-        enabled: true,
-      },
-      labels: [],
-      stroke: {
-        curve: 'smooth',
-      },
-      markers: {
-        size: 0,
-      },
-      yaxis: [
-        {
-          title: {
-            text: t('chart.yaxis'),
-          },
-        },
-      ],
-      tooltip: {
-        shared: true,
-        intersect: false,
-        y: {
-          formatter: function (y: any) {
-            if (typeof y !== 'undefined') {
-              return 'Intensity Value: ' + y.toFixed(0);
-            }
-            return y;
-          },
-        },
-      },
-    };
-  };
-  const [defaultLimit, setDefaultLimit] = useState(7);
+  const [chartData, setChartData] = useState([{ x: '', y: 0 }]);
+  const [defaultLimit, setDefaultLimit] = useState(DEFAULT_LIMIT);
   const [showCustomLimit, setShowCustomLimit] = useState(false);
-  const [chartConfig, setChartConfig] = useState(lineChartConfig());
 
   const limiterOptions = [
     {
@@ -74,7 +35,7 @@ const Statistics = () => {
   };
 
   const updateLimiter = (_: any, data: any) => {
-    setDefaultLimit(data.value);
+    setDefaultLimit(data.value < DEFAULT_LIMIT ? DEFAULT_LIMIT : data.value);
   };
 
   const sortMoodEntriesByDate = moods.sort((a: any, b: any) => {
@@ -84,11 +45,8 @@ const Statistics = () => {
     return bDate.getTime() - aDate.getTime();
   });
 
-  const constructChartData = () => {
-    console.log('inside construct chart data');
-    const sortedMoodEntries = sortMoodEntriesByDate;
-    dateEntries = sortedMoodEntries.map((m: any) => m.moodEntity_enteredAt);
-    intensityEntries = sortedMoodEntries
+  const constructData = () => {
+    const intensityEntries = sortMoodEntriesByDate
       .map((m: any) => {
         return {
           x: dayjs(m.moodEntity_enteredAt).format('DD.MM.YY'),
@@ -96,18 +54,12 @@ const Statistics = () => {
         };
       })
       .slice(0, defaultLimit);
-    console.log(intensityEntries.length);
-    chartConfig.labels = dateEntries;
-    chartConfig.series[0].data = intensityEntries;
-    setChartSeries(intensityEntries);
-    setChartConfig(chartConfig);
+    setChartData(intensityEntries);
   };
 
   useEffect(() => {
-    console.log('updating');
-    console.log(chartSeries);
-    constructChartData();
-  }, [chartConfig, defaultLimit]);
+    constructData();
+  }, [defaultLimit]);
 
   return (
     <article className="statistics">
@@ -132,13 +84,7 @@ const Statistics = () => {
       </section>
 
       <section className="statistics__graph">
-        <Chart
-          options={chartConfig}
-          series={chartConfig.series}
-          type="line"
-          height="300"
-          width="100%"
-        />
+        <LineChart data={chartData} title="Mood Entries" />
       </section>
     </article>
   );
