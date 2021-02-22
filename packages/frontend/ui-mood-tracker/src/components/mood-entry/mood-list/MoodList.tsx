@@ -11,7 +11,7 @@ const MoodList = () => {
   const moods = useSelector((state: ApplicationState) => state.moodReducer.mood);
   const [currentPage, setCurrentPage] = useState(1);
   const DEFAULT_PAGE_ENTRIES = 5;
-  const pages = moods.length / DEFAULT_PAGE_ENTRIES;
+  const pages = Math.ceil(moods.length / DEFAULT_PAGE_ENTRIES);
   const [visibleEntries, setVisibleEntries] = useState([]);
 
   const updatePage = (_: any, data: any) => {
