@@ -51,7 +51,7 @@ const LineChart = (props: any) => {
       y: {
         formatter: function (y: any) {
           if (typeof y !== 'undefined') {
-            return 'Intensity Value: ' + y.toFixed(0);
+            return y.toFixed(0);
           }
           return y;
         },
