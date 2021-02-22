@@ -3,7 +3,6 @@ import { all, call, put, takeEvery, fork } from 'redux-saga/effects';
 import { MoodActions } from './types';
 import { getMoodEntriesApi } from '../../api/mood';
 
-// @ts-ignore
 export function* getMoodEntries() {
   const { data } = yield call(getMoodEntriesApi);
   yield put({ type: MoodActions.RENDER_MOODS, data });

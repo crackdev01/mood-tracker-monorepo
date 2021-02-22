@@ -1,20 +1,19 @@
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { logger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 
 import { mood as moodReducer } from './mood/reducers';
-import { moodState } from './mood/state';
-import { MoodState } from './mood/types';
 import moodSaga from './mood/saga';
+
+import { user as userReducer } from './user/reducers';
+import userSaga from './user/saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
-export interface ApplicationState {
-  mood: MoodState;
-}
-
 const configureStore = () => {
-  const store = createStore(moodReducer, moodState, applyMiddleware(sagaMiddleware));
+  const reducers = combineReducers({ userReducer, moodReducer });
+  const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+  sagaMiddleware.run(userSaga);
   sagaMiddleware.run(moodSaga);
   return store;
 };

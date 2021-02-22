@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Header, Form } from 'semantic-ui-react';
+import { useDispatch } from 'react-redux';
+import { Button, Header, Form, Input } from 'semantic-ui-react';
 
 import './login.scss';
+import { UserActions } from '../../store/user/types';
 
 const Login = () => {
+  const dispatch = useDispatch();
   const { t } = useTranslation(['Login']);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const loading = false;
+
+  const updateUsername = (_: any, data: any) => {
+    console.log(data);
+    setUsername(data.value);
+  };
+
+  const updatePassword = (_: any, data: any) => {
+    setPassword(data.value);
+  };
+
+  const login = () => {
+    console.log('logging in');
+    console.log(username);
+    console.log(password);
+    dispatch({
+      type: UserActions.FETCH_USER,
+    });
+  };
 
   return (
     <article className="login">
@@ -17,15 +40,15 @@ const Login = () => {
 
         <Form.Field className="login__form__input">
           <label>{t('username')}</label>
-          <input placeholder={t('username')} />
+          <Input placeholder={t('username')} onChange={updateUsername} />
         </Form.Field>
 
         <Form.Field className="login__form__input">
           <label>{t('password')}</label>
-          <input placeholder={t('password')} />
+          <Input placeholder={t('password')} onChange={updatePassword} />
         </Form.Field>
 
-        <Button className="login__form__input" loading={loading}>
+        <Button className="login__form__input" loading={loading} onClick={login}>
           {t('submit')}
         </Button>
       </Form>

@@ -32,3 +32,7 @@ This application follows a monorepo approach. The following sections explains th
     
 ### Github Actions
 - Workflows are specified in the `.github/workflows/ui-mood-tracker.yaml` file in the root directory.
+
+### Issues:
+- Console warning `findDOMNode is deprecated in StrictMode` related to Semantic UI to be tracked here:
+  https://github.com/Semantic-Org/Semantic-UI-React/issues/3819
