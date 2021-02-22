@@ -20,6 +20,8 @@ const SiteHeader = (props: any) => {
   const location = useLocation();
   const { lat, long } = props;
 
+  const isAuthenticated = !!user.uuid;
+
   const updateLanguage = async (locale: LocaleEnum) => {
     await i18n.changeLanguage(locale);
   };
@@ -35,12 +37,16 @@ const SiteHeader = (props: any) => {
           <Link to="login">{t('header')}</Link>
         </Header>
       </Menu.Item>
-      <Menu.Item active={location.pathname === '/mood-entry'}>
-        <Link to="/mood-entry">{t('moodEntry')}</Link>
-      </Menu.Item>
-      <Menu.Item active={location.pathname === '/statistics'}>
-        <Link to="/statistics">{t('statistics')}</Link>
-      </Menu.Item>
+      {isAuthenticated && (
+        <Menu.Item active={location.pathname === '/mood-entry' || location.pathname === '/'}>
+          <Link to="/mood-entry">{t('moodEntry')}</Link>
+        </Menu.Item>
+      )}
+      {isAuthenticated && (
+        <Menu.Item active={location.pathname === '/statistics'}>
+          <Link to="/statistics">{t('statistics')}</Link>
+        </Menu.Item>
+      )}
       <Menu.Item position="right" className="coordinates">
         {lat} {long}
       </Menu.Item>

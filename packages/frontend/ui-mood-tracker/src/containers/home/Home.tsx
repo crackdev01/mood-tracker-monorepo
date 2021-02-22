@@ -48,8 +48,9 @@ const Home = () => {
 
       <article className="app-content">
         <Switch>
-          <Route path="/login">
-            <Login />
+          <Route path="/">
+            {isAuthenticated && <MoodEntry />}
+            {!isAuthenticated && <Login />}
           </Route>
           <ProtectedRoute
             path="/mood-entry"
