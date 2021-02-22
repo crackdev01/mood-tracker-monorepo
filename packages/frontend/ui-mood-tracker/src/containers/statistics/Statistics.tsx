@@ -5,14 +5,14 @@ import dayjs from 'dayjs';
 import { Header, Dropdown, Input } from 'semantic-ui-react';
 
 import LineChart from '../../components/statistics/LineChart';
-import { MoodState } from '../../store/mood/types';
+import { ApplicationState } from '../../store';
 
 import './statistics.scss';
 
 const Statistics = () => {
   const { t } = useTranslation(['Statistics']);
   const DEFAULT_LIMIT = 7;
-  const moods = useSelector((state: MoodState) => state.mood);
+  const moods = useSelector((state: ApplicationState) => state.moodReducer.mood);
   const [chartData, setChartData] = useState([{ x: '', y: 0 }]);
   const [defaultLimit, setDefaultLimit] = useState(DEFAULT_LIMIT);
   const [showCustomLimit, setShowCustomLimit] = useState(false);
