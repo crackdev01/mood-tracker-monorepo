@@ -33,7 +33,7 @@ const MoodList = () => {
 
   useEffect(() => {
     updateVisibleEntries();
-  }, [currentPage]);
+  }, [currentPage, moods]);
 
   return (
     <article className="mood-entry__list">

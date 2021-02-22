@@ -17,7 +17,8 @@ export function* getMoodEntries() {
 
 // Add mood entry.
 export function* addMoodEntryCall(action: any) {
-  yield all([call(postMoodEntry, action.payload), call(getMoodEntries)]);
+  yield call(postMoodEntry, action.payload);
+  yield call(getMoodEntriesCall);
 }
 
 export function* addMoodEntry() {
