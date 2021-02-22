@@ -28,7 +28,7 @@ export interface ApplicationState {
 const configureStore = () => {
   const userReducer = persistReducer(persistConfig, user);
   const reducers = combineReducers({ userReducer, moodReducer });
-  const store = createStore(reducers, applyMiddleware(sagaMiddleware, logger));
+  const store = createStore(reducers, applyMiddleware(sagaMiddleware));
   sagaMiddleware.run(userSaga);
   sagaMiddleware.run(moodSaga);
   const persistor = persistStore(store);
