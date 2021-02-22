@@ -1,19 +1,49 @@
 import { all, call, put, takeEvery, fork } from 'redux-saga/effects';
 
 import { MoodActions } from './types';
-import { getMoodEntriesApi } from '../../api/mood';
+import { getMoodEntriesApi, postMoodEntry, updateMoodEntry, deleteMoodEntry } from '../../api/mood';
 
-export function* getMoodEntries() {
+// FIXME: update types in file.
+
+// Fetch mood entries.
+export function* getMoodEntriesCall() {
   const { data } = yield call(getMoodEntriesApi);
   yield put({ type: MoodActions.RENDER_MOODS, data });
 }
 
-export function* loadMoodEntries() {
-  yield takeEvery(MoodActions.FETCH_MOODS, getMoodEntries);
+export function* getMoodEntries() {
+  yield takeEvery(MoodActions.FETCH_MOODS, getMoodEntriesCall);
+}
+
+// Add mood entry.
+export function* addMoodEntryCall(action: any) {
+  yield all([call(postMoodEntry, action.payload), call(getMoodEntries)]);
+}
+
+export function* addMoodEntry() {
+  yield takeEvery(MoodActions.ADD_MOOD, addMoodEntryCall);
+}
+
+// Update mood entry.
+export function* editMoodEntryCall(action: any) {
+  yield all([call(updateMoodEntry, action.payload), call(getMoodEntries)]);
+}
+
+export function* editMoodEntry() {
+  yield takeEvery(MoodActions.EDIT_MOOD, editMoodEntryCall);
+}
+
+// Delete mood entry.
+export function* removeMoodEntryCall(action: any) {
+  yield all([call(deleteMoodEntry, action.payload), call(getMoodEntries)]);
+}
+
+export function* removeMoodEntry() {
+  yield takeEvery(MoodActions.DELETE_MOOD, removeMoodEntryCall);
 }
 
 export function* moodSaga() {
-  yield all([fork(loadMoodEntries)]);
+  yield all([fork(getMoodEntries), fork(addMoodEntry), fork(editMoodEntry), fork(removeMoodEntry)]);
 }
 
 export default moodSaga;

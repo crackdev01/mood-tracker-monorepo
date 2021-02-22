@@ -7,6 +7,18 @@ export const mood = (state = moodState, action: any) => {
       return {
         ...state,
       };
+    case MoodActions.ADD_MOOD:
+      return {
+        ...state,
+      };
+    case MoodActions.EDIT_MOOD:
+      return {
+        ...state,
+      };
+    case MoodActions.DELETE_MOOD:
+      return {
+        ...state,
+      };
     case MoodActions.RENDER_MOODS:
       return {
         ...state,

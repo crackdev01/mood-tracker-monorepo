@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Button, Dropdown } from 'semantic-ui-react';
 
+import { MoodActions } from '../../../store/mood/types';
+import { ApplicationState } from '../../../store';
+
 const AddEntry = () => {
+  const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
+  const user = useSelector((state: ApplicationState) => state.userReducer.user);
   const moodStatusOptions = [
     {
       key: 'relaxed',
@@ -59,9 +66,28 @@ const AddEntry = () => {
     },
   ];
   const [showAddEntry, setShowAddEntry] = useState(false);
+  const [moodStatus, setMoodStatus] = useState('');
+  const [moodIntensity, setMoodIntensity] = useState('');
 
-  const addEntry = () => {
+  const addEntry = (_: any, data: any) => {
     setShowAddEntry(true);
+    setMoodStatus(data.value);
+  };
+
+  const addIntensity = (_: any, data: any) => {
+    setMoodIntensity(data.value);
+  };
+
+  const triggerDispatch = () => {
+    const payload = {
+      user: user.uuid,
+      status: moodStatus,
+      intensity: moodIntensity,
+    };
+    dispatch({
+      type: MoodActions.ADD_MOOD,
+      payload,
+    });
   };
 
   return (
@@ -84,10 +110,11 @@ const AddEntry = () => {
               fluid
               selection
               options={intensityOptions}
+              onChange={addIntensity}
             />
 
             <div>
-              <Button basic color="olive">
+              <Button basic color="olive" onClick={triggerDispatch}>
                 {t('buttons.add')}
               </Button>
             </div>
