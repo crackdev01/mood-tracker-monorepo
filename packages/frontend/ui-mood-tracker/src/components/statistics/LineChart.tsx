@@ -6,7 +6,7 @@ const LineChart = (props: any) => {
   const { t } = useTranslation(['Statistics']);
   const series = [
     {
-      name: 'Intensity',
+      name: t('chart.yaxis'),
       data: props.data,
     },
   ];
@@ -32,13 +32,13 @@ const LineChart = (props: any) => {
         },
       },
     ],
-    colors: ['#210124'],
+    colors: ['#094d84'],
     fill: {
       type: 'gradient',
       gradient: {
         shadeIntensity: 1,
         inverseColors: true,
-        gradientToColors: ['#1E3A63'],
+        gradientToColors: ['#210124'],
         opacityFrom: 1,
         opacityTo: 1,
         type: 'vertical',

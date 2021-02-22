@@ -1,10 +1,17 @@
+@import '../../scss/variables';
+
 .site-header {
+	a {
+		color: $base-blue;
+	}
+
 	.locale {
 		:first-child {
 			margin-right: 2rem;
 		}
 
 		> span {
+			color: $base-blue;
 			cursor: pointer;
 		}
 
