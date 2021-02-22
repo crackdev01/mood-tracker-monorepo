@@ -12,7 +12,7 @@
   "intensity": {
     "placeholder": "Select intensity"
   },
-  "entries": "Last 10 entries",
+  "entries": "Mood entries",
   "buttons": {
     "add": "Add Entry",
     "edit": "Edit Entry",

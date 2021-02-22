@@ -30,7 +30,7 @@ const Home = () => {
     }
   };
 
-  const isAuthenticated = !!user.uuid;
+  const isAuthenticated = !!user.accessToken;
 
   useEffect(() => {
     dispatch({

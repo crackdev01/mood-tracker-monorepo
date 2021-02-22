@@ -80,7 +80,7 @@ const AddEntry = () => {
 
   const triggerDispatch = () => {
     const payload = {
-      user: user.uuid,
+      user: user.decodedAccessToken!.username,
       status: moodStatus,
       intensity: moodIntensity,
     };

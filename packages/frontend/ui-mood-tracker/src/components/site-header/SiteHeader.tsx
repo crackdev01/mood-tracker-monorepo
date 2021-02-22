@@ -20,7 +20,7 @@ const SiteHeader = (props: any) => {
   const location = useLocation();
   const { lat, long } = props;
 
-  const isAuthenticated = !!user.uuid;
+  const isAuthenticated = !!user.accessToken;
 
   const updateLanguage = () => {
     const { language } = i18n;
@@ -28,7 +28,8 @@ const SiteHeader = (props: any) => {
   };
 
   useEffect(() => {
-    setCurrentUser(user.uuid);
+    const username = user.decodedAccessToken ? user.decodedAccessToken.username : '';
+    setCurrentUser(username);
   }, [user]);
 
   return (
@@ -46,17 +47,19 @@ const SiteHeader = (props: any) => {
           <Link to="/statistics">{t('statistics')}</Link>
         </Menu.Item>
       )}
-      <Menu.Menu position="right">
-        <Dropdown item text={currentUser}>
-          <Dropdown.Menu>
-            <Dropdown.Item>{t('menu.actions.location')}</Dropdown.Item>
-            <Dropdown.Item onClick={updateLanguage}>
-              {t('menu.actions.changeLanguage')}
-            </Dropdown.Item>
-            <Dropdown.Item>{t('menu.actions.logout')}</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </Menu.Menu>
+      {isAuthenticated && (
+        <Menu.Menu position="right">
+          <Dropdown item text={currentUser}>
+            <Dropdown.Menu>
+              <Dropdown.Item>{t('menu.actions.location')}</Dropdown.Item>
+              <Dropdown.Item onClick={updateLanguage}>
+                {t('menu.actions.changeLanguage')}
+              </Dropdown.Item>
+              <Dropdown.Item>{t('menu.actions.logout')}</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Menu.Menu>
+      )}
     </Menu>
   );
 };
