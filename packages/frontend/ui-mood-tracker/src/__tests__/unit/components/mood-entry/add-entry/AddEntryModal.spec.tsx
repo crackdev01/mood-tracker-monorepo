@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import AddEntry from '../../../../../components/mood-entry/add-entry/AddEntry';
+import AddEntryModal from '../../../../../components/mood-entry/add-entry/AddEntryModal';
 import { mockUser } from '../../../../fixtures';
 import { MoodActions } from '../../../../../store/mood/types';
 
@@ -21,7 +21,7 @@ describe('AddEntry', () => {
   test('renders', () => {
     useSelectorMock.mockImplementationOnce((s) => s({ userReducer: { user: mockUser } }));
     mockDispatch.mockReturnValueOnce({});
-    const w = shallow(<AddEntry />);
+    const w = shallow(<AddEntryModal />);
     expect(w.debug()).toMatchSnapshot();
   });
 
@@ -29,7 +29,7 @@ describe('AddEntry', () => {
   test.skip('triggers postMoodEntry', () => {
     useSelectorMock.mockImplementationOnce((s) => s({ userReducer: { user: mockUser } }));
     mockDispatch.mockReturnValueOnce({});
-    const w = shallow(<AddEntry />);
+    const w = shallow(<AddEntryModal />);
     w.update();
     w.find('Dropdown').at(0).simulate('change', undefined, { value: 'confident' });
     const intensityDropdown = w.find('Dropdown').at(1);

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Header } from 'semantic-ui-react';
 
-import AddEntry from '../../components/mood-entry/add-entry/AddEntry';
+import AddEntryModal from '../../components/mood-entry/add-entry/AddEntryModal';
 import MoodList from '../../components/mood-entry/mood-list/MoodList';
 
 import './mood-entry.scss';
@@ -18,7 +18,7 @@ const MoodEntry = () => {
         <Header as="h3">{t('description')}</Header>
       </section>
 
-      <AddEntry />
+      <AddEntryModal />
 
       <MoodList />
     </article>
