@@ -15,7 +15,7 @@ export const renderUser = (payload: any) => {
   };
 };
 
-const logoutUser = () => {
+export const logoutUser = () => {
   return {
     type: UserActions.LOGOUT_USER,
   };

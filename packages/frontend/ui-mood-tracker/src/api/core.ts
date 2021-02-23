@@ -8,8 +8,12 @@ const BASE_URL = 'http://localhost:3000';
 
 // Hack setting auth config for now.
 const getAuthorizedConfig = () => {
-  const { user } = JSON.parse(window.localStorage.getItem('persist:root') || '');
-  const accessToken = user ? JSON.parse(user).accessToken : '';
+  const userStore = window.localStorage.getItem('persist:root');
+  let accessToken = '';
+  if (userStore) {
+    const { user } = JSON.parse(userStore);
+    accessToken = JSON.parse(user).accessToken;
+  }
   return {
     baseURL: BASE_URL,
     headers: { Authorization: `Bearer ${accessToken}` },

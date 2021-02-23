@@ -26,7 +26,7 @@ exports[`SiteHeader renders displays header entries for authenticated user 1`] =
         <DropdownItem onClick={[Function: updateLanguage]}>
           menu.actions.changeLanguage
         </DropdownItem>
-        <DropdownItem>
+        <DropdownItem onClick={[Function: logout]}>
           menu.actions.logout
         </DropdownItem>
       </DropdownMenu>

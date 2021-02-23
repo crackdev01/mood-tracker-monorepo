@@ -19,6 +19,7 @@ export function* loginUser() {
 }
 
 export function* logoutUserCall() {
+  // Reset use store to default state to trigger logout.
   yield put({ type: UserActions.RENDER_USER, data: userState });
 }
 

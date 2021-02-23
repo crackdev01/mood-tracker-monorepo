@@ -1,4 +1,4 @@
-import { fetchUser, renderUser } from '../../../../store/user/actions';
+import {fetchUser, logoutUser, renderUser} from '../../../../store/user/actions';
 import { UserActions } from '../../../../store/user/types';
 
 describe('user store', () => {
@@ -21,6 +21,12 @@ describe('user store', () => {
     expect(renderUser(payload)).toEqual({
       type: UserActions.RENDER_USER,
       payload,
+    });
+  });
+
+  test('logoutUser', () => {
+    expect(logoutUser()).toEqual({
+      type: UserActions.LOGOUT_USER,
     });
   });
 });

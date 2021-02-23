@@ -21,6 +21,13 @@ describe('userReducer', () => {
     });
   });
 
+  test(UserActions.LOGOUT_USER, () => {
+    const action = {
+      type: UserActions.LOGOUT_USER,
+    };
+    expect(user(userState, action)).toEqual(userState);
+  });
+
   test('default', () => {
     const action = {
       type: 'UNDEFINED_USER_ACTION',
