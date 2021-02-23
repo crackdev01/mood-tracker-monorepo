@@ -2,9 +2,10 @@ import { all, call, put, takeEvery, fork } from 'redux-saga/effects';
 import jwt_decode from 'jwt-decode';
 
 import { User, UserActions } from './types';
+import { userState } from './state';
 import { authenticateUser } from '../../api/user';
 
-export function* loginUser(action: any) {
+export function* loginUserCall(action: any) {
   const { data } = yield call(authenticateUser, action.payload);
   const user: User = {
     accessToken: data.accessToken,
@@ -13,12 +14,20 @@ export function* loginUser(action: any) {
   yield put({ type: UserActions.RENDER_USER, data: user });
 }
 
-export function* loadUser() {
-  yield takeEvery(UserActions.FETCH_USER, loginUser);
+export function* loginUser() {
+  yield takeEvery(UserActions.FETCH_USER, loginUserCall);
+}
+
+export function* logoutUserCall() {
+  yield put({ type: UserActions.RENDER_USER, data: userState });
+}
+
+export function* logoutUser() {
+  yield takeEvery(UserActions.LOGOUT_USER, logoutUserCall);
 }
 
 export function* userSaga() {
-  yield all([fork(loadUser)]);
+  yield all([fork(loginUser), fork(logoutUser)]);
 }
 
 export default userSaga;

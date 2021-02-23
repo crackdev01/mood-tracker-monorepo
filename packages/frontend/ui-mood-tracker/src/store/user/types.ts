@@ -24,4 +24,5 @@ export interface UserState {
 export enum UserActions {
   FETCH_USER = 'FETCH_USER',
   RENDER_USER = 'RENDER_USER',
+  LOGOUT_USER = 'LOGOUT_USER',
 }

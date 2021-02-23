@@ -43,6 +43,6 @@ describe('AddEntry', () => {
         status: 'confident',
         intensity: 4,
       },
-    })
+    });
   });
 });

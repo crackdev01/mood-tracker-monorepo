@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Dropdown, Header, Menu } from 'semantic-ui-react';
 
+import { UserActions } from '../../store/user/types';
 import { ApplicationState } from '../../store';
 
 import './site-header.scss';
@@ -14,6 +15,7 @@ enum LocaleEnum {
 }
 
 const SiteHeader = () => {
+  const dispatch = useDispatch();
   const { t, i18n } = useTranslation(['SiteHeader']);
   const user = useSelector((state: ApplicationState) => state.userReducer.user);
   const [currentUser, setCurrentUser] = useState('');
@@ -24,6 +26,12 @@ const SiteHeader = () => {
   const updateLanguage = () => {
     const { language } = i18n;
     i18n.changeLanguage(language === LocaleEnum.English ? LocaleEnum.Deutsche : LocaleEnum.English);
+  };
+
+  const logout = () => {
+    dispatch({
+      type: UserActions.LOGOUT_USER,
+    });
   };
 
   useEffect(() => {
@@ -54,7 +62,7 @@ const SiteHeader = () => {
               <Dropdown.Item onClick={updateLanguage}>
                 {t('menu.actions.changeLanguage')}
               </Dropdown.Item>
-              <Dropdown.Item>{t('menu.actions.logout')}</Dropdown.Item>
+              <Dropdown.Item onClick={logout}>{t('menu.actions.logout')}</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Menu.Menu>

@@ -13,14 +13,13 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
 }));
 
-
 describe('MoodList', () => {
   let w: any;
   let useEffectMock;
   beforeEach(() => {
     useSelectorMock.mockReturnValueOnce(mockMoods);
     // FIXME: useEffect is not being triggered.
-    useEffectMock = jest.spyOn(React, 'useEffect').mockImplementationOnce(f => f());
+    useEffectMock = jest.spyOn(React, 'useEffect').mockImplementationOnce((f) => f());
     w = shallow(<MoodList />);
   });
 
