@@ -96,7 +96,7 @@ const MoodList = () => {
                 floated="right"
                 defaultActivePage={currentPage}
                 totalPages={pages}
-                onPageChange={updatePage}
+                onPageChange={() => updatePage}
               />
             </Table.HeaderCell>
           </Table.Row>
