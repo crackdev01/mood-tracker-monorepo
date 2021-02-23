@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' -c .eslintrc.js",
     "test:unit:watch": "react-scripts test",
-    "test:unit": "jest --config test/unit/jest-unit.js --coverage",
+    "test:unit": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -61,6 +61,32 @@
     "identity-obj-proxy": "^3.0.0",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/**/*.d.ts",
+      "!src/**/types.ts",
+      "!src/index.tsx",
+      "!src/i18n.ts",
+      "!src/**/reportWebVitals.ts"
+    ],
+    "testMatch": [
+      "**/**/__tests__/**/*.spec.ts?(x)"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
   },
   "browserslist": {
     "production": [
