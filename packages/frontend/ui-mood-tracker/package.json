@@ -72,7 +72,8 @@
       "!src/index.tsx",
       "!src/i18n.ts",
       "!src/**/reportWebVitals.ts",
-      "!src/__tests__/fixtures.ts"
+      "!src/__tests__/fixtures.ts",
+      "!src/__tests__/unit/api/core.mock.ts"
     ],
     "moduleNameMapper": {
       "react-i18next": "<rootDir>/src/__mocks__/i18nextMock.ts"
@@ -82,10 +83,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 31,
+        "statements": 39,
         "branches": 44,
-        "functions": 35,
-        "lines": 32
+        "functions": 40,
+        "lines": 40
       }
     },
     "coverageReporters": [
