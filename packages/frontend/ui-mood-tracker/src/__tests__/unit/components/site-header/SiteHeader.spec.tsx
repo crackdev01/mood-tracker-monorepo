@@ -4,9 +4,9 @@ import { useLocation } from 'react-router-dom';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import SiteHeader from '../../../components/site-header/SiteHeader';
+import SiteHeader from '../../../../components/site-header/SiteHeader';
 
-import { mockUser } from '../../fixtures';
+import { mockUser } from '../../../fixtures';
 
 Enzyme.configure({ adapter: new Adapter() });
 
