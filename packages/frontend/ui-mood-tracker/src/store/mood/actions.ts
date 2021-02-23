@@ -24,6 +24,7 @@ export const deleteMoodEntry = () => {
   };
 };
 
+// FIXME: fix type.
 export const renderMoodEntries = (mood: any) => {
   return {
     type: MoodActions.RENDER_MOODS,

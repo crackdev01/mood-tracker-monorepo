@@ -60,6 +60,7 @@
     "eslint-plugin-react": "^7.22.0",
     "identity-obj-proxy": "^3.0.0",
     "prettier": "^2.2.1",
+    "redux-saga-test-plan": "^4.0.1",
     "ts-jest": "^26.5.1"
   },
   "jest": {
@@ -81,10 +82,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 19,
-        "functions": 29,
-        "lines": 21,
-        "statements": 19
+        "statements": 31,
+        "branches": 44,
+        "functions": 35,
+        "lines": 32
       }
     },
     "coverageReporters": [

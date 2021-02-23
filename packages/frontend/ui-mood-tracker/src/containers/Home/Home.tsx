@@ -42,7 +42,7 @@ const Home = () => {
 
   return (
     <BrowserRouter>
-      <SiteHeader coordinates={coordinates} />
+      <SiteHeader />
 
       <LocationModal />
 

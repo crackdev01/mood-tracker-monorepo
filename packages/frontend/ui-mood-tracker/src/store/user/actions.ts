@@ -1,5 +1,6 @@
 import { UserRequest, UserActions } from './types';
 
+// FIXME: This should not require any payload.
 export const fetchUser = (payload: UserRequest) => {
   return {
     type: UserActions.FETCH_USER,
@@ -7,9 +8,9 @@ export const fetchUser = (payload: UserRequest) => {
   };
 };
 
-export const renderUser = (user: any) => {
+export const renderUser = (payload: any) => {
   return {
     type: UserActions.RENDER_USER,
-    user,
+    payload,
   };
 };

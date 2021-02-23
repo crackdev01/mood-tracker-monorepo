@@ -4309,6 +4309,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"array-map@npm:0.0.0":
+  version: 0.0.0
+  resolution: "array-map@npm:0.0.0"
+  checksum: c4ba78c025dd7cfd47bf6a7e2db6096276b383549161a2232bd43b17dcc856de986432db2f9c9e4d5a3977306a74384559453613c403c7b7262faa5f2424f5a3
+  languageName: node
+  linkType: hard
+
+"array-reduce@npm:0.0.0":
+  version: 0.0.0
+  resolution: "array-reduce@npm:0.0.0"
+  checksum: 61aed79431978a3c993bbea7e84d8ed4143eac9882ee8976e2618b0abc5e4daa5ed4e7f4f2171790eed8be3a38bc01df1fbd1ee9360cc5ae7cb33fd355f2795f
+  languageName: node
+  linkType: hard
+
 "array-union@npm:^1.0.1":
   version: 1.0.2
   resolution: "array-union@npm:1.0.2"
@@ -6097,7 +6111,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^2.4.0":
+"core-js@npm:^2.4.0, core-js@npm:^2.4.1":
   version: 2.6.12
   resolution: "core-js@npm:2.6.12"
   checksum: b865823ce9cb5bc63336856440f6525e4996bb91af30660081e82bf447d177f36104f0986906a34ea0c9c03cb8b3d960380848a478e2621dac30c9b8198d28da
@@ -8515,6 +8529,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"foreach@npm:2.0.4":
+  version: 2.0.4
+  resolution: "foreach@npm:2.0.4"
+  checksum: 460f42081d657bb3d5f99c6837e7b80c5c8163a3129257d13fb7fa0fb29996324aaa3e0db440a4e27ea2f440997c071a70b1ab6b7ba511f45c20cf1e075a0219
+  languageName: node
+  linkType: hard
+
 "forever-agent@npm:~0.6.1":
   version: 0.6.1
   resolution: "forever-agent@npm:0.6.1"
@@ -8714,6 +8735,13 @@ fsevents@^1.2.7:
   dependencies:
     node-gyp: latest
   checksum: 7b25d9251aefe433d508a0eb614217f0495ae05a9e8af15f7dbf9998e08c4e675acd1cf32361e0fcf71d917d9e8c4b76301fdc72a1ec1105a3ea0994f5e15a8d
+  languageName: node
+  linkType: hard
+
+"fsm-iterator@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "fsm-iterator@npm:1.1.0"
+  checksum: da9e8a3412239c683664ab0a0b8a96cf4040e31e58a94003781d21e9f915112b80d6afe1f2186cc89944fecdd3507d245f1639ad0404754dfe8c2095ecd42dcb
   languageName: node
   linkType: hard
 
@@ -9693,6 +9721,13 @@ fsevents@^1.2.7:
   version: 1.0.1
   resolution: "indexes-of@npm:1.0.1"
   checksum: e1c232a32631c709bb8a2188d0a53c02aae18904fff0165322a353dfd2985e0b3ea184b2b15b74acc363a0344dc6e8dc927b874935a738e8ce0e5253e4a9da98
+  languageName: node
+  linkType: hard
+
+"indexof@npm:0.0.1":
+  version: 0.0.1
+  resolution: "indexof@npm:0.0.1"
+  checksum: 23dd379c2dec86d0f2d06d96b085bc2d30776d4222b6bea188dc02a742fcb7cab103da94bd1386fdff4c223b3948e7b165e1f5a6f747becc1c306c1f73468f4e
   languageName: node
   linkType: hard
 
@@ -11078,6 +11113,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"json3@npm:3.3.0":
+  version: 3.3.0
+  resolution: "json3@npm:3.3.0"
+  checksum: 20d9e294ee84dfe18ad3040a0c48232c0b95ee419b373bbb91657181d7081a11495f5d65d53b9fd5d4b2128a1f13a50f38681216a32ba751513c87d2bbec2420
+  languageName: node
+  linkType: hard
+
 "json3@npm:^3.3.2":
   version: 3.3.3
   resolution: "json3@npm:3.3.3"
@@ -11497,6 +11539,13 @@ fsevents@^1.2.7:
   version: 4.0.4
   resolution: "lodash.isinteger@npm:4.0.4"
   checksum: a29551cc9aaaf24cc4fdd7ce1734c7a19c748c704f061ef079f6026dc9666ac10e8ae08e4f0cd3aeb6094e20be043a7402c72ce70cbae9ea6ecce67ad997332c
+  languageName: node
+  linkType: hard
+
+"lodash.ismatch@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.ismatch@npm:4.4.0"
+  checksum: f6e3ef9fd357b9bb8d3e496916fe4761be816721fbd6019e12cb13dc2c59780bf57f8c1b1a7aed98f2a0f57fe7fa12496b454a315f659bc4bad1100184ed589c
   languageName: node
   linkType: hard
 
@@ -12813,6 +12862,13 @@ fsevents@^1.2.7:
     call-bind: ^1.0.0
     define-properties: ^1.1.3
   checksum: 1bf64805ad38ca9c4cee8397c8a1cfc1fc032fff943cab6774dc1c750e04a8799ab21456c25d9064a6a1eb6ebec7b35903f4c1a4cd4620d5eb1b7360dd10c5ca
+  languageName: node
+  linkType: hard
+
+"object-keys@npm:0.5.0":
+  version: 0.5.0
+  resolution: "object-keys@npm:0.5.0"
+  checksum: 62abb927b73e6e64b56589d11148352efb08bd3d748a6acb0a6a469c3f0cc4e769b32c5de6081b85bcbe6a6d4bcd890cadd87b9db17b398fbe4db98c1e43b0f0
   languageName: node
   linkType: hard
 
@@ -15455,6 +15511,22 @@ fsevents@^1.2.7:
   peerDependencies:
     redux: ">4.0.0"
   checksum: 6b7c74526155c53ecdd49ec51d27fa07d265454440c734e8f1ef71dcbb78ae864a9965e152b9b1f35950ad933b66a79b8cf6be555f2dc89e1a61f01fc70a2965
+  languageName: node
+  linkType: hard
+
+"redux-saga-test-plan@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "redux-saga-test-plan@npm:4.0.1"
+  dependencies:
+    core-js: ^2.4.1
+    fsm-iterator: ^1.1.0
+    lodash.isequal: ^4.5.0
+    lodash.ismatch: ^4.4.0
+    object-assign: ^4.1.0
+    util-inspect: ^0.1.8
+  peerDependencies:
+    redux-saga: ^1.0.1
+  checksum: 2c167786bf2f5ba15ceb570bbedb02386fa8eeb052ea0363be639aae3b457b23ae5ae90bbc1a79e5de8ceed1721e9b19b240a6a4aaa80edec9d00721e054a1dc
   languageName: node
   linkType: hard
 
@@ -18227,6 +18299,7 @@ resolve@1.18.1:
     redux-logger: ^3.0.6
     redux-persist: ^6.0.0
     redux-saga: ^1.1.3
+    redux-saga-test-plan: ^4.0.1
     semantic-ui-css: ^2.4.1
     semantic-ui-react: ^2.0.3
     ts-jest: ^26.5.1
@@ -18428,6 +18501,21 @@ resolve@1.18.1:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 73c2b1cf0210ccac300645384d8443cabbd93194117b2dc1b3bae8d8279ad39aedac857e020c4ea505e96a1045059c7359db3df6a9df0be6b8584166c9d61dc9
+  languageName: node
+  linkType: hard
+
+"util-inspect@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "util-inspect@npm:0.1.8"
+  dependencies:
+    array-map: 0.0.0
+    array-reduce: 0.0.0
+    foreach: 2.0.4
+    indexof: 0.0.1
+    isarray: 0.0.1
+    json3: 3.3.0
+    object-keys: 0.5.0
+  checksum: 2e001f2b962cbac5c0c828f09364feb54757420a5f5957e0faa8bccaab6049beaa6f3f252fc17271dd878414dce512e6eda6c8f4f9adfd665cf38dab86bef78e
   languageName: node
   linkType: hard
 

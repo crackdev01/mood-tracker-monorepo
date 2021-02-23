@@ -6,7 +6,6 @@ export interface UserRequest {
 export interface Jwt {
   exp: number;
   iat: number;
-  iss: string;
   username: string;
   uuid: string;
 }
