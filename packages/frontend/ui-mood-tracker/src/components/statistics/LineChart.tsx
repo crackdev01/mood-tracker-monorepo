@@ -32,7 +32,7 @@ const LineChart = (props: any) => {
         },
       },
     ],
-    colors: ['#094d84'],
+    colors: ['#094D84'],
     fill: {
       type: 'gradient',
       gradient: {
