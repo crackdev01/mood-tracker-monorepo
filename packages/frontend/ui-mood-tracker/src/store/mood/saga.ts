@@ -1,17 +1,17 @@
 import { all, call, put, takeEvery, fork } from 'redux-saga/effects';
 
 import { MoodActions } from './types';
-import { getMoodEntriesApi, postMoodEntry, updateMoodEntry, deleteMoodEntry } from '../../api/mood';
+import { getMoodEntries, postMoodEntry, updateMoodEntry, deleteMoodEntry } from '../../api/mood';
 
 // FIXME: update types in file.
 
 // Fetch mood entries.
 export function* getMoodEntriesCall() {
-  const { data } = yield call(getMoodEntriesApi);
+  const { data } = yield call(getMoodEntries);
   yield put({ type: MoodActions.RENDER_MOODS, data });
 }
 
-export function* getMoodEntries() {
+export function* getMoods() {
   yield takeEvery(MoodActions.FETCH_MOODS, getMoodEntriesCall);
 }
 
@@ -46,7 +46,7 @@ export function* removeMoodEntry() {
 }
 
 export function* moodSaga() {
-  yield all([fork(getMoodEntries), fork(addMoodEntry), fork(editMoodEntry), fork(removeMoodEntry)]);
+  yield all([fork(getMoods), fork(addMoodEntry), fork(editMoodEntry), fork(removeMoodEntry)]);
 }
 
 export default moodSaga;

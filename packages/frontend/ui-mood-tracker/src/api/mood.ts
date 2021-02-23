@@ -1,7 +1,7 @@
 import { moodTrackerApi } from './core';
 
 // FIXME: update types.
-export async function getMoodEntriesApi(): Promise<any> {
+export async function getMoodEntries(): Promise<any> {
   return await moodTrackerApi.get('/mood/entries');
 }
 
