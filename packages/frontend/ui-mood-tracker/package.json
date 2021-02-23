@@ -51,6 +51,7 @@
     "@types/redux-logger": "^3.0.8",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
+    "dom-testing-library": "^5.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.20.0",
@@ -69,9 +70,14 @@
       "!src/**/types.ts",
       "!src/index.tsx",
       "!src/i18n.ts",
-      "!src/**/reportWebVitals.ts"
+      "!src/**/reportWebVitals.ts",
+      "!src/__tests__/fixtures.ts"
     ],
+    "_moduleAliases": {
+      "src": "<rootDir>/src/*"
+    },
     "moduleNameMapper": {
+      "src": "<rootDir>/src",
       "react-i18next": "<rootDir>/src/__mocks__/i18nextMock.ts"
     },
     "testMatch": [

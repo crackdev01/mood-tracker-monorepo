@@ -19,7 +19,7 @@ const SiteHeader = () => {
   const [currentUser, setCurrentUser] = useState('');
   const location = useLocation();
 
-  const isAuthenticated = !!user.accessToken;
+  const isAuthenticated = user ? !!user.accessToken : false;
 
   const updateLanguage = () => {
     const { language } = i18n;
@@ -36,6 +36,7 @@ const SiteHeader = () => {
       <Menu.Item header>
         <Header as="h3">{t('header')}</Header>
       </Menu.Item>
+      <span>{location.pathname}</span>
       {isAuthenticated && (
         <Menu.Item active={location.pathname === '/mood-entry' || location.pathname === '/'}>
           <Link to="/mood-entry">{t('moodEntry')}</Link>

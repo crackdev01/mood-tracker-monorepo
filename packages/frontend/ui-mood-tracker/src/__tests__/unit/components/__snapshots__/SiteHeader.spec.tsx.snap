@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SiteHeader renders 1`] = `
+exports[`SiteHeader renders displays header entries for authenticated user 1`] = `
 "<Menu pointing={true} secondary={true} className=\\"site-header\\">
   <MenuItem header={true}>
     <Header as=\\"h3\\">
       header
     </Header>
   </MenuItem>
+  <span />
   <MenuItem active={false}>
     <mockConstructor to=\\"/mood-entry\\">
       moodEntry
@@ -32,5 +33,16 @@ exports[`SiteHeader renders 1`] = `
       </DropdownMenu>
     </Dropdown>
   </MenuMenu>
+</Menu>"
+`;
+
+exports[`SiteHeader renders only displays header for unauthenticated user 1`] = `
+"<Menu pointing={true} secondary={true} className=\\"site-header\\">
+  <MenuItem header={true}>
+    <Header as=\\"h3\\">
+      header
+    </Header>
+  </MenuItem>
+  <span />
 </Menu>"
 `;

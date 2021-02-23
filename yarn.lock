@@ -7061,6 +7061,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dom-testing-library@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "dom-testing-library@npm:5.0.0"
+  checksum: d922221275d894435c4d6845601fb88e78a1802c541ed816c8e40626a95fe35ea8890dc32be8d37a2ede3919a1131bcc33f35169bc481b6d60ea185d7ef816e5
+  languageName: node
+  linkType: hard
+
 "domain-browser@npm:^1.1.1":
   version: 1.2.0
   resolution: "domain-browser@npm:1.2.0"
@@ -18197,6 +18204,7 @@ resolve@1.18.1:
     apexcharts: ^3.25.0
     axios: ^0.21.1
     dayjs: ^1.10.4
+    dom-testing-library: ^5.0.0
     enzyme: ^3.11.0
     enzyme-adapter-react-16: ^1.15.6
     eslint: ^7.20.0
