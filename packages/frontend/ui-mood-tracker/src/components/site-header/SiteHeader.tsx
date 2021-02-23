@@ -13,12 +13,11 @@ enum LocaleEnum {
   Deutsche = 'de',
 }
 
-const SiteHeader = (props: any) => {
+const SiteHeader = () => {
   const { t, i18n } = useTranslation(['SiteHeader']);
   const user = useSelector((state: ApplicationState) => state.userReducer.user);
   const [currentUser, setCurrentUser] = useState('');
   const location = useLocation();
-  const { lat, long } = props;
 
   const isAuthenticated = !!user.accessToken;
 

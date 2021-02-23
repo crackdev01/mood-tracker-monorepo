@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -9,7 +8,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 jest.mock('../../containers/Home/Home', () => () => 'Home');
 
-describe('App.vue', () => {
+describe('App', () => {
   test('renders', () => {
     const w = shallow(<App />);
     expect(w.debug()).toMatchSnapshot();

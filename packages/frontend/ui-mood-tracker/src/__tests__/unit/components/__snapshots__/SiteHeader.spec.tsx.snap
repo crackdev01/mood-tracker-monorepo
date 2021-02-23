@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SiteHeader renders 1`] = `
+"<Menu pointing={true} secondary={true} className=\\"site-header\\">
+  <MenuItem header={true}>
+    <Header as=\\"h3\\">
+      header
+    </Header>
+  </MenuItem>
+  <MenuItem active={false}>
+    <mockConstructor to=\\"/mood-entry\\">
+      moodEntry
+    </mockConstructor>
+  </MenuItem>
+  <MenuItem active={false}>
+    <mockConstructor to=\\"/statistics\\">
+      statistics
+    </mockConstructor>
+  </MenuItem>
+  <MenuMenu position=\\"right\\">
+    <Dropdown item={true} text=\\"\\" additionLabel=\\"Add \\" additionPosition=\\"top\\" closeOnBlur={true} closeOnEscape={true} deburr={false} icon=\\"dropdown\\" minCharacters={1} noResultsMessage=\\"No results found.\\" openOnFocus={true} renderLabel={[Function: renderItemContent]} searchInput=\\"text\\" selectOnBlur={true} selectOnNavigation={true} wrapSelection={true}>
+      <DropdownMenu>
+        <DropdownItem>
+          menu.actions.location
+        </DropdownItem>
+        <DropdownItem onClick={[Function: updateLanguage]}>
+          menu.actions.changeLanguage
+        </DropdownItem>
+        <DropdownItem>
+          menu.actions.logout
+        </DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
+  </MenuMenu>
+</Menu>"
+`;
