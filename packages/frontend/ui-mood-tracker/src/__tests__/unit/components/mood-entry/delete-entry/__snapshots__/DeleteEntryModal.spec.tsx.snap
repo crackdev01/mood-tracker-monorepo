@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteEntryModal renders 1`] = `
+"<Modal closeIcon={true} open={false} onClose={[Function: onClose]} centered={true} dimmer={true} closeOnDimmerClick={true} closeOnDocumentClick={false} eventPool=\\"Modal\\">
+  <Header icon=\\"archive\\" content=\\"header\\" />
+  <ModalContent>
+    <div>
+      confident
+    </div>
+    <div>
+      1
+    </div>
+  </ModalContent>
+  <ModalActions>
+    <Button color=\\"red\\" onClick={[Function: onClick]} as=\\"button\\">
+      <Icon name=\\"remove\\" as=\\"i\\" />
+       No
+    </Button>
+    <Button color=\\"green\\" onClick={[Function: deleteMoodEntry]} as=\\"button\\">
+      <Icon name=\\"checkmark\\" as=\\"i\\" />
+       Yes
+    </Button>
+  </ModalActions>
+</Modal>"
+`;

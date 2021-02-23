@@ -9,12 +9,7 @@ const DeleteEntryModal = (props: any) => {
   const { t } = useTranslation(['MoodEntry']);
   const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    const { displayModal } = props;
-    setShowModal(displayModal);
-  }, [props]);
-
-  const triggerDispatch = () => {
+  const deleteMoodEntry = () => {
     const payload = {
       id: props.mood.mood_id,
     };
@@ -24,6 +19,11 @@ const DeleteEntryModal = (props: any) => {
     });
     setShowModal(false);
   };
+
+  useEffect(() => {
+    const { displayModal } = props;
+    setShowModal(displayModal);
+  }, [props]);
 
   return (
     <Modal closeIcon open={showModal} onClose={() => setShowModal(false)}>
@@ -36,7 +36,7 @@ const DeleteEntryModal = (props: any) => {
         <Button color="red" onClick={() => setShowModal(false)}>
           <Icon name="remove" /> No
         </Button>
-        <Button color="green" onClick={triggerDispatch}>
+        <Button color="green" onClick={deleteMoodEntry}>
           <Icon name="checkmark" /> Yes
         </Button>
       </Modal.Actions>
