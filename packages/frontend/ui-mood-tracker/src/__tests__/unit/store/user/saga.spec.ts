@@ -7,11 +7,7 @@ import { UserActions } from '../../../../store/user/types';
 
 describe('userSaga', () => {
   test('loadUser', () => {
-    testSaga(loadUser)
-      .next()
-      .takeEvery(UserActions.FETCH_USER, loginUser)
-      .finish()
-      .isDone();
+    testSaga(loadUser).next().takeEvery(UserActions.FETCH_USER, loginUser).finish().isDone();
   });
 
   test('loginUser', () => {

@@ -24,8 +24,9 @@ jest.mock('react-router-dom', () => ({
 describe('SiteHeader', () => {
   describe('renders', () => {
     test('only displays header for unauthenticated user', () => {
-      useSelectorMock.mockImplementationOnce(
-        (s) => s({ userReducer: { user: { accessToken: null } } }));
+      useSelectorMock.mockImplementationOnce((s) =>
+        s({ userReducer: { user: { accessToken: null } } })
+      );
       useLocationMock.mockReturnValueOnce(() => ({
         location: {
           pathname: '/mood-entry',

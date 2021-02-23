@@ -39,4 +39,4 @@ describe('mood store', () => {
       mood: mockMoods,
     });
   });
-})
+});

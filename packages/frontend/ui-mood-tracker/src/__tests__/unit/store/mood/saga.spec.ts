@@ -1,17 +1,15 @@
 import { expectSaga, testSaga } from 'redux-saga-test-plan';
 
-import
-  moodSaga,
-  {
-    getMoods,
-    getMoodEntriesCall,
-    addMoodEntry,
-    addMoodEntryCall,
-    editMoodEntry,
-    editMoodEntryCall,
-    removeMoodEntry,
-    removeMoodEntryCall,
-  } from '../../../../store/mood/saga';
+import moodSaga, {
+  getMoods,
+  getMoodEntriesCall,
+  addMoodEntry,
+  addMoodEntryCall,
+  editMoodEntry,
+  editMoodEntryCall,
+  removeMoodEntry,
+  removeMoodEntryCall,
+} from '../../../../store/mood/saga';
 import {
   getMoodEntries,
   postMoodEntry,
@@ -76,7 +74,7 @@ describe('moodSaga', () => {
         .provide({
           call(effect) {
             if (effect.fn === postMoodEntry) {
-              return { };
+              return {};
             } else if (effect.fn === getMoodEntries) {
               return { data: mockMoods };
             }
@@ -92,7 +90,7 @@ describe('moodSaga', () => {
         .provide({
           call(effect) {
             if (effect.fn === updateMoodEntry) {
-              return { };
+              return {};
             } else if (effect.fn === getMoodEntries) {
               return { data: mockMoods };
             }
@@ -108,7 +106,7 @@ describe('moodSaga', () => {
         .provide({
           call(effect) {
             if (effect.fn === deleteMoodEntry) {
-              return { };
+              return {};
             } else if (effect.fn === getMoodEntries) {
               return { data: mockMoods };
             }

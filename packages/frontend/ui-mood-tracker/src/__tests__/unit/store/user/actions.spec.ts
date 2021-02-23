@@ -23,4 +23,4 @@ describe('user store', () => {
       payload,
     });
   });
-})
+});

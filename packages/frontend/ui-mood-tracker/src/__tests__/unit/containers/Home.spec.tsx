@@ -21,18 +21,18 @@ jest.mock('react-redux', () => ({
  * https://github.com/enzymejs/enzyme/issues/2086
  */
 jest.mock('react', () => ({
-  ...jest.requireActual('react') as any,
+  ...(jest.requireActual('react') as any),
   useEffect: (f: any) => f(),
 }));
 
 describe('Home', () => {
   test('renders', () => {
-    mockDispatch.mockReturnValueOnce({})
+    mockDispatch.mockReturnValueOnce({});
     useSelectorMock.mockImplementationOnce((s) => s({ userReducer: { user: mockUser } }));
     const w = shallow(<Home />);
     expect(w.debug()).toMatchSnapshot();
     expect(mockDispatch).toHaveBeenCalledWith({
       type: MoodActions.FETCH_MOODS,
-    })
+    });
   });
 });

@@ -7,7 +7,6 @@ exports[`SiteHeader renders displays header entries for authenticated user 1`] =
       header
     </Header>
   </MenuItem>
-  <span />
   <MenuItem active={false}>
     <mockConstructor to=\\"/mood-entry\\">
       moodEntry
@@ -43,6 +42,5 @@ exports[`SiteHeader renders only displays header for unauthenticated user 1`] = 
       header
     </Header>
   </MenuItem>
-  <span />
 </Menu>"
 `;

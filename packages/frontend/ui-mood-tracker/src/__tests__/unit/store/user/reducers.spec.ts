@@ -17,7 +17,7 @@ describe('userReducer', () => {
       data: mockUser,
     };
     expect(user(userState, action)).toEqual({
-      user : mockUser,
+      user: mockUser,
     });
   });
 

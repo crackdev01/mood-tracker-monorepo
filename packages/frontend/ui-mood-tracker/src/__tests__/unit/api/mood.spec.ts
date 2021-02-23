@@ -1,10 +1,5 @@
 import { moodTrackerApi } from '../../../api/core';
-import {
-  getMoodEntries,
-  postMoodEntry,
-  updateMoodEntry,
-  deleteMoodEntry,
-} from '../../../api/mood';
+import { getMoodEntries, postMoodEntry, updateMoodEntry, deleteMoodEntry } from '../../../api/mood';
 
 jest.mock('../../../api/core', () => require('./core.mock'));
 
