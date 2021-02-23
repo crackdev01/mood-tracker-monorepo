@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders 1`] = `
+"<BrowserRouter>
+  <SiteHeader />
+  <LocationModal />
+  <article className=\\"app-content\\">
+    <Switch>
+      <Route exact={true} path=\\"/\\">
+        <MoodEntry />
+      </Route>
+      <ProtectedRoute path=\\"/mood-entry\\" isAuthenticated={true} component={[Function: MoodEntry]} />
+      <ProtectedRoute path=\\"/statistics\\" isAuthenticated={true} component={[Function: Statistics]} />
+    </Switch>
+  </article>
+</BrowserRouter>"
+`;

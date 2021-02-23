@@ -1,8 +1,8 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import SiteHeader from '../../../components/site-header/SiteHeader';
 
@@ -24,7 +24,8 @@ jest.mock('react-router-dom', () => ({
 describe('SiteHeader', () => {
   describe('renders', () => {
     test('only displays header for unauthenticated user', () => {
-      useSelectorMock.mockReturnValueOnce({ accessToken: null });
+      useSelectorMock.mockImplementationOnce(
+        (s) => s({ userReducer: { user: { accessToken: null } } }));
       useLocationMock.mockReturnValueOnce(() => ({
         location: {
           pathname: '/mood-entry',

@@ -14,9 +14,8 @@ jest.mock('react-redux', () => ({
 }));
 
 describe('Statistics', () => {
-  beforeEach(() => {
-    useSelectorMock.mockImplementationOnce((s) => s({ moodReducer: { mood: mockMoods } }));
-  });
+  beforeEach(useSelectorMock.mockImplementationOnce(
+    (s) => s({ moodReducer: { mood: mockMoods } })));
 
   test('renders default', () => {
     const w = shallow(<Statistics />);
