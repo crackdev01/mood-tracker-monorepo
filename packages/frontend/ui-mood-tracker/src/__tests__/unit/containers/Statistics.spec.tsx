@@ -14,15 +14,16 @@ jest.mock('react-redux', () => ({
 }));
 
 describe('Statistics', () => {
-  beforeEach(useSelectorMock.mockImplementationOnce(
-    (s) => s({ moodReducer: { mood: mockMoods } })));
+  beforeEach(
+    useSelectorMock.mockImplementationOnce((s) => s({ moodReducer: { mood: mockMoods } }))
+  );
 
   test('renders default', () => {
     const w = shallow(<Statistics />);
     expect(w.debug()).toMatchSnapshot();
   });
 
-  test('renders default', () => {
+  test('renders input field on changing to custom limiter value', () => {
     const w = shallow(<Statistics />);
     w.find('Dropdown').at(0).simulate('change', undefined, { value: 1 });
     const inputField = w.find('Input').at(0);
