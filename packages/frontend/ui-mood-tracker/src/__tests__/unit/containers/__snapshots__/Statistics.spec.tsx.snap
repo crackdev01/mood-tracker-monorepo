@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Statistics renders default 1`] = `
+"<article className=\\"statistics\\">
+  <section className=\\"statistics__header\\">
+    <Header as=\\"h2\\">
+      header
+    </Header>
+    <Header as=\\"h3\\">
+      description
+    </Header>
+  </section>
+  <section className=\\"statistics__limit-options\\">
+    <Dropdown placeholder=\\"limit.dropdown.default\\" fluid={true} selection={true} onChange={[Function: showLimiter]} options={{...}} additionLabel=\\"Add \\" additionPosition=\\"top\\" closeOnBlur={true} closeOnEscape={true} deburr={false} icon=\\"dropdown\\" minCharacters={1} noResultsMessage=\\"No results found.\\" openOnFocus={true} renderLabel={[Function: renderItemContent]} searchInput=\\"text\\" selectOnBlur={true} selectOnNavigation={true} wrapSelection={true} />
+  </section>
+  <section className=\\"statistics__graph\\">
+    <LineChart data={{...}} title=\\"Mood Entries\\" />
+  </section>
+</article>"
+`;
+
+exports[`Statistics renders default 2`] = `
+"<article className=\\"statistics\\">
+  <section className=\\"statistics__header\\">
+    <Header as=\\"h2\\">
+      header
+    </Header>
+    <Header as=\\"h3\\">
+      description
+    </Header>
+  </section>
+  <section className=\\"statistics__limit-options\\">
+    <Dropdown placeholder=\\"limit.dropdown.default\\" fluid={true} selection={true} onChange={[Function: showLimiter]} options={{...}} additionLabel=\\"Add \\" additionPosition=\\"top\\" closeOnBlur={true} closeOnEscape={true} deburr={false} icon=\\"dropdown\\" minCharacters={1} noResultsMessage=\\"No results found.\\" openOnFocus={true} renderLabel={[Function: renderItemContent]} searchInput=\\"text\\" selectOnBlur={true} selectOnNavigation={true} wrapSelection={true} />
+    <Input placeholder=\\"limit.input.placeholder\\" onChange={[Function: updateLimiter]} type=\\"text\\" />
+  </section>
+  <section className=\\"statistics__graph\\">
+    <LineChart data={{...}} title=\\"Mood Entries\\" />
+  </section>
+</article>"
+`;
