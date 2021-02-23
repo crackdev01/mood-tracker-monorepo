@@ -13,7 +13,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const loading = false;
 
-  const updateUsername = (_: any, data: any) => {
+  const updateUsername = (event: any, data: any) => {
     setUsername(data.value);
   };
 

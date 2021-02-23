@@ -10,6 +10,11 @@ export const mockUser: User = {
   },
 };
 
+export const mockUserPayload = {
+  username: 'testuser',
+  password: 'password',
+};
+
 export const mockMoods: any = [{
   id: 1,
   status: 'confident',
