@@ -19,7 +19,7 @@ exports[`Statistics renders default 1`] = `
 </article>"
 `;
 
-exports[`Statistics renders default 2`] = `
+exports[`Statistics renders input field on changing to custom limiter value 1`] = `
 "<article className=\\"statistics\\">
   <section className=\\"statistics__header\\">
     <Header as=\\"h2\\">
