@@ -79,7 +79,6 @@ const AddEntryModal = () => {
   };
 
   const postMoodEntry = () => {
-    console.info(user);
     const payload = {
       user: user.decodedAccessToken!.uuid,
       status: moodStatus,
