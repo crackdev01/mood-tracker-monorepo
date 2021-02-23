@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddEntry renders 1`] = `
+"<article className=\\"mood-entry__add\\">
+  <section className=\\"mood-entry__add__options\\">
+    <div>
+      <Dropdown placeholder=\\"moodStatus.placeholder\\" fluid={true} selection={true} options={{...}} onChange={[Function: addEntry]} additionLabel=\\"Add \\" additionPosition=\\"top\\" closeOnBlur={true} closeOnEscape={true} deburr={false} icon=\\"dropdown\\" minCharacters={1} noResultsMessage=\\"No results found.\\" openOnFocus={true} renderLabel={[Function: renderItemContent]} searchInput=\\"text\\" selectOnBlur={true} selectOnNavigation={true} wrapSelection={true} />
+    </div>
+  </section>
+</article>"
+`;

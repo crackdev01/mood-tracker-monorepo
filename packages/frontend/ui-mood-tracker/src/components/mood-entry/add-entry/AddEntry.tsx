@@ -78,7 +78,8 @@ const AddEntry = () => {
     setMoodIntensity(data.value);
   };
 
-  const triggerDispatch = () => {
+  const postMoodEntry = () => {
+    console.info(user);
     const payload = {
       user: user.decodedAccessToken!.uuid,
       status: moodStatus,
@@ -114,7 +115,7 @@ const AddEntry = () => {
             />
 
             <div>
-              <Button basic color="olive" onClick={triggerDispatch}>
+              <Button basic color="olive" onClick={postMoodEntry}>
                 {t('buttons.add')}
               </Button>
             </div>

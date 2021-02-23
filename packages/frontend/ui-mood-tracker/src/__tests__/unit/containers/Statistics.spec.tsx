@@ -9,6 +9,7 @@ import { mockMoods } from '../../fixtures';
 Enzyme.configure({ adapter: new Adapter() });
 
 const useSelectorMock = useSelector as jest.Mock<any>;
+
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
 }));
