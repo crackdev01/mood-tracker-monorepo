@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoodEntry renders 1`] = `
+"<article className=\\"mood-entry\\">
+  <section className=\\"mood-entry__header\\">
+    <Header as=\\"h2\\">
+      header
+    </Header>
+    <Header as=\\"h3\\">
+      description
+    </Header>
+  </section>
+  <AddEntry />
+  <MoodList />
+</article>"
+`;
