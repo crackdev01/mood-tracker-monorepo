@@ -22,7 +22,7 @@ const DeleteEntryModal = (props: any) => {
       type: MoodActions.DELETE_MOOD,
       payload,
     });
-    // setShowModal(false);
+    setShowModal(false);
   };
 
   return (

@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Header,
+  Param,
   Put,
   Post,
   Request,
@@ -32,13 +33,12 @@ export class MoodController {
   @Header('Access-Control-Allow-Methods', 'PATCH')
   @Put('entry')
   async putMoodEntry(@Request() req, @Body() payload) {
-    console.log(payload);
     return await this.moodService.updateMoodEntry(payload);
   }
 
   @Public()
-  @Delete('entry')
-  async deleteMoodEntry(@Request() req, @Body() payload) {
-    return await this.moodService.deleteMoodEntry(payload);
+  @Delete('entry/:id')
+  async deleteMoodEntry(@Param('id') id) {
+    return await this.moodService.deleteMoodEntry(id);
   }
 }

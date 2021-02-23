@@ -14,5 +14,5 @@ export async function updateMoodEntry(payload: any): Promise<void> {
 }
 
 export async function deleteMoodEntry(payload: any): Promise<void> {
-  return await moodTrackerApi.delete('/mood/entry', payload);
+  return await moodTrackerApi.delete(`/mood/entry/${payload.id}`);
 }

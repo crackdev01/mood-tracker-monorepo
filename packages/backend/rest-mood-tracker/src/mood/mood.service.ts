@@ -19,11 +19,10 @@ export class MoodService {
   }
 
   async updateMoodEntry(mood: MoodEntity) {
-    console.info(mood);
     return await this.moodRepository.updateMood(mood);
   }
 
-  async deleteMoodEntry(moodEntry: { id: number }) {
-    return await this.moodRepository.deleteMood(moodEntry.id);
+  async deleteMoodEntry(moodEntryId: number) {
+    return await this.moodRepository.deleteMood(moodEntryId);
   }
 }

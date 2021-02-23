@@ -34,8 +34,7 @@ export class MoodRepository extends AbstractRepository<MoodEntity> {
   }
 
   async deleteMood(moodEntryId: number) {
-    const entry = await this.findMoodEntry(moodEntryId);
-    return await this.getRepositoryFor(MoodEntity).delete(entry);
+    return await this.getRepositoryFor(MoodEntity).delete({ id: moodEntryId });
   }
 
   async findMoodEntry(moodEntryId: number): Promise<MoodEntity> {
