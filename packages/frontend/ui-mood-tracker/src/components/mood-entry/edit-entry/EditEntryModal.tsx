@@ -8,6 +8,7 @@ const EditEntryModal = (props: any) => {
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
   const [showModal, setShowModal] = useState(false);
+  // TODO: Repeated code. Extract it to common file.
   const moodStatusOptions = [
     {
       key: 'relaxed',
@@ -65,13 +66,6 @@ const EditEntryModal = (props: any) => {
   const [moodStatus, setMoodStatus] = useState('');
   const [moodIntensity, setMoodIntensity] = useState('');
 
-  useEffect(() => {
-    const { displayModal, mood } = props;
-    setShowModal(displayModal);
-    setMoodStatus(mood.mood_status);
-    setMoodIntensity(mood.mood_intensity);
-  }, [props]);
-
   const addEntry = (_: any, data: any) => {
     setMoodStatus(data.value);
   };
@@ -80,7 +74,7 @@ const EditEntryModal = (props: any) => {
     setMoodIntensity(data.value);
   };
 
-  const triggerDispatch = () => {
+  const editMoodEntry = () => {
     const payload = {
       id: props.mood.mood_id,
       status: moodStatus,
@@ -92,6 +86,13 @@ const EditEntryModal = (props: any) => {
     });
     setShowModal(false);
   };
+
+  useEffect(() => {
+    const { displayModal, mood } = props;
+    setShowModal(displayModal);
+    setMoodStatus(mood.mood_status);
+    setMoodIntensity(mood.mood_intensity);
+  }, [props]);
 
   return (
     <Modal closeIcon open={showModal} onClose={() => setShowModal(false)}>
@@ -118,7 +119,7 @@ const EditEntryModal = (props: any) => {
         <Button color="red" onClick={() => setShowModal(false)}>
           <Icon name="remove" /> No
         </Button>
-        <Button color="green" onClick={triggerDispatch}>
+        <Button color="green" onClick={editMoodEntry}>
           <Icon name="checkmark" /> Yes
         </Button>
       </Modal.Actions>
