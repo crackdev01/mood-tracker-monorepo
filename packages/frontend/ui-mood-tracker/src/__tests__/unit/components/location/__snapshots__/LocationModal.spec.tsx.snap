@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationModal renders 1`] = `
+"<Modal closeIcon={true} open={false} onClose={[Function: onClose]} onOpen={[Function: onOpen]} centered={true} dimmer={true} closeOnDimmerClick={true} closeOnDocumentClick={false} eventPool=\\"Modal\\">
+  <Header icon=\\"archive\\" content=\\"header\\" />
+  <ModalActions>
+    <Button color=\\"red\\" onClick={[Function: onClick]} as=\\"button\\">
+      <Icon name=\\"remove\\" as=\\"i\\" />
+       No
+    </Button>
+    <Button color=\\"green\\" onClick={[Function: loadLocation]} as=\\"button\\">
+      <Icon name=\\"checkmark\\" as=\\"i\\" />
+       Yes
+    </Button>
+  </ModalActions>
+</Modal>"
+`;
