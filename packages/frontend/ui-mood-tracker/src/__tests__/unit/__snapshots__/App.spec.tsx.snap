@@ -3,7 +3,7 @@
 exports[`App renders 1`] = `
 "<Provider store={{...}}>
   <PersistGate loading={{...}} persistor={{...}}>
-    <Component />
+    <Home />
   </PersistGate>
 </Provider>"
 `;
