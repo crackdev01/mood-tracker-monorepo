@@ -115,10 +115,10 @@ const EditEntryModal = (props: any) => {
       </Modal.Content>
       <Modal.Actions className="edit-entry__actions">
         <Button className="edit-entry__actions__yes" onClick={editMoodEntry}>
-          <Icon name="checkmark" /> Yes
+          <Icon name="checkmark" /> {t('buttons.yes')}
         </Button>
         <Button className="edit-entry__actions__no" onClick={closeModal}>
-          <Icon name="remove" /> No
+          <Icon name="remove" /> {t('buttons.no')}
         </Button>
       </Modal.Actions>
     </Modal>

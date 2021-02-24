@@ -28,26 +28,26 @@ const DeleteEntryModal = (props: any) => {
     <Modal className="delete-entry" closeIcon open={displayModal} onClose={closeModal} size="tiny">
       <Header icon="delete" content={t('header')} />
       <Modal.Content className="delete-entry__content">
-        <h4>Are you sure you want to delete the following entry?</h4>
+        <h4>{t('deleteEntry.header')}</h4>
         <div>
-          <b>Status: </b>
+          <b>{t('table.headers.status')}: </b>
           {mood.mood_status}
         </div>
         <div>
-          <b>Intensity: </b>
+          <b>{t('table.headers.intensity')}: </b>
           {mood.mood_intensity}
         </div>
         <div>
-          <b>Entry Date: </b>
+          <b>{t('table.headers.enteredAt')}: </b>
           {dayjs(mood.mood_enteredAt).format('MMM D, YYYY h:mm A')}
         </div>
       </Modal.Content>
       <Modal.Actions className="delete-entry__actions">
         <Button className="delete-entry__actions__yes" color="green" onClick={deleteMoodEntry}>
-          <Icon name="checkmark" /> Yes
+          <Icon name="checkmark" /> {t('buttons.yes')}
         </Button>
         <Button className="delete-entry__actions__no" onClick={closeModal}>
-          <Icon name="remove" /> No
+          <Icon name="remove" /> {t('buttons.no')}
         </Button>
       </Modal.Actions>
     </Modal>

@@ -13,9 +13,21 @@
     "placeholder": "Select intensity"
   },
   "entries": "Mood entries",
+  "table": {
+    "headers": {
+      "enteredAt": "Entered At",
+      "status": "Status",
+      "intensity": "Intensity"
+    }
+  },
+  "deleteEntry": {
+    "header": "Are you sure you want to delete the following entry?"
+  },
   "buttons": {
     "add": "Add Entry",
     "edit": "Edit Entry",
-    "delete": "Delete Entry"
+    "delete": "Delete Entry",
+    "yes": "Yes",
+    "no": "No"
   }
 }

@@ -12,10 +12,22 @@
   "intensity": {
     "placeholder": "Intensität auswählen"
   },
-  "entries": "Mood entries",
+  "table": {
+    "headers": {
+      "enteredAt": "Eingetragen bei",
+      "status": "Status",
+      "intensity": "Intensität"
+    }
+  },
+  "deleteEntry": {
+    "header": "Möchten Sie den folgenden Eintrag wirklich löschen?"
+  },
+  "entries": "Stimmungseinträge",
   "buttons": {
-    "add": "Add Entry",
-    "edit": "Edit Entry",
-    "delete": "Delete Entry"
+    "add": "Eintrag hinzufügen",
+    "edit": "Eintrag bearbeiten",
+    "delete": "Eintrag löschen",
+    "yes": "Ja",
+    "no": "Nein"
   }
 }

@@ -63,9 +63,9 @@ const MoodList = () => {
       <Table singleLine className="mood-entry__list__table">
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Entered At</Table.HeaderCell>
-            <Table.HeaderCell>Status</Table.HeaderCell>
-            <Table.HeaderCell>Intensity</Table.HeaderCell>
+            <Table.HeaderCell>{t('table.headers.enteredAt')}</Table.HeaderCell>
+            <Table.HeaderCell>{t('table.headers.status')}</Table.HeaderCell>
+            <Table.HeaderCell>{t('table.headers.intensity')}</Table.HeaderCell>
             <Table.HeaderCell />
             <Table.HeaderCell />
           </Table.Row>
