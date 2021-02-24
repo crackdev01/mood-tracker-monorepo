@@ -25,10 +25,13 @@ Installing all the dependencies
 yarn
 ```
 
+Note:
+
 **Create `.env` file based on `.env.example` in `packages/backend/rest-mood-tracker`.**
+
 **Create `.env` file based on `.env.example` in `packages/frontend/ui-mood-tracker`**
 
-Note: **Ensure docker is up and running otherwise the backend will fail.**
+**Ensure docker is up and running otherwise the backend will fail.**
 
 Start the backend
 ```sh
