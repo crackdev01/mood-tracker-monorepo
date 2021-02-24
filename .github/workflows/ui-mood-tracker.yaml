@@ -23,7 +23,9 @@ jobs:
         run: yarn install
       - name: Run linter
         run: yarn workspace ui-mood-tracker lint
-      - name: Run test
+      - name: Run unit test
         run: yarn workspace ui-mood-tracker test:unit
+     - name: Run e2e test
+      run: yarn workspace ui-mood-tracker test:e2e
       - name: Build
         run: yarn workspace ui-mood-tracker build
