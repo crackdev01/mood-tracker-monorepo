@@ -1,18 +1,18 @@
-import { moodTrackerApi } from './core';
+import { authMoodTrackerApi } from './core';
 
 // FIXME: update types.
-export async function getMoodEntriesApi(): Promise<any> {
-  return await moodTrackerApi.get('/mood/entries');
+export async function getMoodEntries(): Promise<any> {
+  return await authMoodTrackerApi.get('/mood/entries');
 }
 
 export async function postMoodEntry(payload: any): Promise<void> {
-  return await moodTrackerApi.post('/mood/entry', payload);
+  return await authMoodTrackerApi.post('/mood/entry', payload);
 }
 
 export async function updateMoodEntry(payload: any): Promise<void> {
-  return await moodTrackerApi.put('/mood/entry', payload);
+  return await authMoodTrackerApi.put('/mood/entry', payload);
 }
 
 export async function deleteMoodEntry(payload: any): Promise<void> {
-  return await moodTrackerApi.delete('/mood/entry', payload);
+  return await authMoodTrackerApi.delete(`/mood/entry/${payload.id}`);
 }

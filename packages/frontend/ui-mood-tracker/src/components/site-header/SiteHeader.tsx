@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Dropdown, Header, Menu } from 'semantic-ui-react';
 
+import { UserActions } from '../../store/user/types';
 import { ApplicationState } from '../../store';
 
 import './site-header.scss';
@@ -13,22 +14,29 @@ enum LocaleEnum {
   Deutsche = 'de',
 }
 
-const SiteHeader = (props: any) => {
+const SiteHeader = () => {
+  const dispatch = useDispatch();
   const { t, i18n } = useTranslation(['SiteHeader']);
   const user = useSelector((state: ApplicationState) => state.userReducer.user);
   const [currentUser, setCurrentUser] = useState('');
   const location = useLocation();
-  const { lat, long } = props;
 
-  const isAuthenticated = !!user.uuid;
+  const isAuthenticated = user ? !!user.accessToken : false;
 
   const updateLanguage = () => {
     const { language } = i18n;
     i18n.changeLanguage(language === LocaleEnum.English ? LocaleEnum.Deutsche : LocaleEnum.English);
   };
 
+  const logout = () => {
+    dispatch({
+      type: UserActions.LOGOUT_USER,
+    });
+  };
+
   useEffect(() => {
-    setCurrentUser(user.uuid);
+    const username = user.decodedAccessToken ? user.decodedAccessToken.username : '';
+    setCurrentUser(username);
   }, [user]);
 
   return (
@@ -43,20 +51,26 @@ const SiteHeader = (props: any) => {
       )}
       {isAuthenticated && (
         <Menu.Item active={location.pathname === '/statistics'}>
-          <Link to="/statistics">{t('statistics')}</Link>
+          <Link id="statistics" to="/statistics">
+            {t('statistics')}
+          </Link>
         </Menu.Item>
       )}
-      <Menu.Menu position="right">
-        <Dropdown item text={currentUser}>
-          <Dropdown.Menu>
-            <Dropdown.Item>{t('menu.actions.location')}</Dropdown.Item>
-            <Dropdown.Item onClick={updateLanguage}>
-              {t('menu.actions.changeLanguage')}
-            </Dropdown.Item>
-            <Dropdown.Item>{t('menu.actions.logout')}</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </Menu.Menu>
+      {isAuthenticated && (
+        <Menu.Menu position="right">
+          <Dropdown id="toggle-menu" item text={currentUser}>
+            <Dropdown.Menu>
+              <Dropdown.Item>{t('menu.actions.location')}</Dropdown.Item>
+              <Dropdown.Item id="change-language" onClick={updateLanguage}>
+                {t('menu.actions.changeLanguage')}
+              </Dropdown.Item>
+              <Dropdown.Item id="logout" onClick={logout}>
+                {t('menu.actions.logout')}
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Menu.Menu>
+      )}
     </Menu>
   );
 };

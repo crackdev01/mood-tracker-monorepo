@@ -16,8 +16,9 @@ export class MoodRepository extends AbstractRepository<MoodEntity> {
 
   private getMoodEntriesQuery(): SelectQueryBuilder<MoodEntity> {
     return this.manager
-      .createQueryBuilder(MoodEntity, 'moodEntity')
-      .where("moodEntity.userUuid = '7c2f7be6-31e7-40e7-ab7c-0a5c280b2dae'");
+      .createQueryBuilder(MoodEntity, 'mood')
+      .where("mood.userUuid = '7c2f7be6-31e7-40e7-ab7c-0a5c280b2dae'")
+      .orderBy('mood.enteredAt', 'DESC');
   }
 
   async insertMood(moodEntry: MoodEntity) {
@@ -33,8 +34,7 @@ export class MoodRepository extends AbstractRepository<MoodEntity> {
   }
 
   async deleteMood(moodEntryId: number) {
-    const entry = await this.findMoodEntry(moodEntryId);
-    return await this.getRepositoryFor(MoodEntity).delete(entry);
+    return await this.getRepositoryFor(MoodEntity).delete({ id: moodEntryId });
   }
 
   async findMoodEntry(moodEntryId: number): Promise<MoodEntity> {

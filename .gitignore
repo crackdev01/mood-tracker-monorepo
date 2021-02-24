@@ -28,3 +28,7 @@ yarn-error.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# E2E tests:
+packages/frontend/ui-mood-tracker/cypress/screenshots
+packages/frontend/ui-mood-tracker/cypress/videos

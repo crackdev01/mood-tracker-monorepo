@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-
+import dayjs from 'dayjs';
 import { Button, Header, Pagination, Table } from 'semantic-ui-react';
+
+import EditEntryModal from '../../../components/mood-entry/edit-entry/EditEntryModal';
+import DeleteEntryModal from '../../../components/mood-entry/delete-entry/DeleteEntryModal';
 import { ApplicationState } from '../../../store';
 
 const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);
   const moods = useSelector((state: ApplicationState) => state.moodReducer.mood);
   const [currentPage, setCurrentPage] = useState(1);
-  const DEFAULT_PAGE_ENTRIES = 5;
-  const pages = moods.length / DEFAULT_PAGE_ENTRIES;
   const [visibleEntries, setVisibleEntries] = useState([]);
+  const [showEditEntryModal, setShowEditEntryModal] = useState(false);
+  const [showDeleteEntryModal, setShowDeleteEntryModal] = useState(false);
+  const [editableMood, setEditableMood] = useState({});
+  const [deletableMood, setDeletableMood] = useState({});
+  const DEFAULT_PAGE_ENTRIES = 5;
+  const pages = Math.ceil(moods.length / DEFAULT_PAGE_ENTRIES);
 
   const updatePage = (_: any, data: any) => {
     setCurrentPage(Math.ceil(data.activePage));
@@ -30,9 +37,24 @@ const MoodList = () => {
     setVisibleEntries(moods.slice(min, max));
   };
 
+  // FIXME: update types for mood.
+  const editEntry = (mood: any) => {
+    setEditableMood(mood);
+    setShowEditEntryModal(true);
+  };
+
+  const closeEditModal = () => setShowEditEntryModal(false);
+
+  const deleteEntry = (mood: any) => {
+    setDeletableMood(mood);
+    setShowDeleteEntryModal(true);
+  };
+
+  const closeDeleteModal = () => setShowDeleteEntryModal(false);
+
   useEffect(() => {
     updateVisibleEntries();
-  }, [currentPage]);
+  }, [currentPage, moods]);
 
   return (
     <article className="mood-entry__list">
@@ -52,17 +74,17 @@ const MoodList = () => {
         <Table.Body>
           {visibleEntries.map((mood: any) => {
             return (
-              <Table.Row key={mood.moodEntity_id}>
-                <Table.Cell>{mood.moodEntity_enteredAt}</Table.Cell>
-                <Table.Cell>{mood.moodEntity_status}</Table.Cell>
-                <Table.Cell>{mood.moodEntity_intensity}</Table.Cell>
+              <Table.Row key={mood.mood_id}>
+                <Table.Cell>{dayjs(mood.mood_enteredAt).format('MMM D, YYYY h:mm A')}</Table.Cell>
+                <Table.Cell>{t(`moodStatus.${mood.mood_status}`)}</Table.Cell>
+                <Table.Cell>{mood.mood_intensity}</Table.Cell>
                 <Table.Cell>
-                  <Button basic color="grey">
+                  <Button basic color="grey" onClick={() => editEntry(mood)}>
                     {t('buttons.edit')}
                   </Button>
                 </Table.Cell>
                 <Table.Cell>
-                  <Button basic color="red">
+                  <Button basic color="red" onClick={() => deleteEntry(mood)}>
                     {t('buttons.delete')}
                   </Button>
                 </Table.Cell>
@@ -78,12 +100,24 @@ const MoodList = () => {
                 floated="right"
                 defaultActivePage={currentPage}
                 totalPages={pages}
-                onPageChange={updatePage}
+                onPageChange={() => updatePage}
               />
             </Table.HeaderCell>
           </Table.Row>
         </Table.Footer>
       </Table>
+
+      <EditEntryModal
+        displayModal={showEditEntryModal}
+        closeModal={closeEditModal}
+        mood={editableMood}
+      />
+
+      <DeleteEntryModal
+        displayModal={showDeleteEntryModal}
+        closeModal={closeDeleteModal}
+        mood={deletableMood}
+      />
     </article>
   );
 };

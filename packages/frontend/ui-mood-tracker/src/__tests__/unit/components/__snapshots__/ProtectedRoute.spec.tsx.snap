@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProtectedRoute renders for authenticated Route 1`] = `"<Route render={[Function: routeComponent]} />"`;
+
+exports[`ProtectedRoute renders for unauthenticated Route 1`] = `"<Route render={[Function: routeComponent]} />"`;

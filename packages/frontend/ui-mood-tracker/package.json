@@ -6,8 +6,9 @@
     "start:dev": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' -c .eslintrc.js",
+    "test:unit": "react-scripts test --coverage --watchAll=false",
     "test:unit:watch": "react-scripts test",
-    "test:unit": "jest --config test/unit/jest-unit.js --coverage",
+    "test:e2e": "cypress run",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -51,7 +52,8 @@
     "@types/redux-logger": "^3.0.8",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
-    "babel-jest": "^26.6.0",
+    "cypress": "^6.5.0",
+    "dom-testing-library": "^5.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.20.0",
@@ -60,7 +62,39 @@
     "eslint-plugin-react": "^7.22.0",
     "identity-obj-proxy": "^3.0.0",
     "prettier": "^2.2.1",
+    "redux-saga-test-plan": "^4.0.1",
     "ts-jest": "^26.5.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/**/*.d.ts",
+      "!src/**/types.ts",
+      "!src/index.tsx",
+      "!src/i18n.ts",
+      "!src/**/reportWebVitals.ts",
+      "!src/__tests__/fixtures.ts",
+      "!src/__tests__/unit/api/core.mock.ts"
+    ],
+    "moduleNameMapper": {
+      "react-i18next": "<rootDir>/src/__mocks__/i18nextMock.ts"
+    },
+    "testMatch": [
+      "**/**/__tests__/**/*.spec.ts?(x)"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 78,
+        "branches": 64,
+        "functions": 60,
+        "lines": 79
+      }
+    },
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
   },
   "browserslist": {
     "production": [

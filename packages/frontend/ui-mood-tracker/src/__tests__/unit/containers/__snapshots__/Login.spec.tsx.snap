@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders 1`] = `
+"<article className=\\"login\\">
+  <Form className=\\"login__form\\" as=\\"form\\">
+    <Header as=\\"h2\\" className=\\"login__form__header\\">
+      header
+    </Header>
+    <FormField className=\\"login__form__input\\">
+      <label>
+        username
+      </label>
+      <Input id=\\"username\\" placeholder=\\"username\\" onChange={[Function: updateUsername]} type=\\"text\\" />
+    </FormField>
+    <FormField className=\\"login__form__input\\">
+      <label>
+        password
+      </label>
+      <Input id=\\"password\\" placeholder=\\"password\\" onChange={[Function: updatePassword]} type=\\"text\\" />
+    </FormField>
+    <Button className=\\"login__form__input\\" loading={false} onClick={[Function: login]} as=\\"button\\">
+      submit
+    </Button>
+  </Form>
+</article>"
+`;

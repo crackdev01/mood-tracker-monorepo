@@ -32,7 +32,7 @@ const LineChart = (props: any) => {
         },
       },
     ],
-    colors: ['#094d84'],
+    colors: ['#094D84'],
     fill: {
       type: 'gradient',
       gradient: {
@@ -49,11 +49,9 @@ const LineChart = (props: any) => {
       shared: true,
       intersect: false,
       y: {
-        formatter: function (y: any) {
-          if (typeof y !== 'undefined') {
-            return y.toFixed(0);
-          }
-          return y;
+        formatter: (y: any) => {
+          /* istanbul ignore next */
+          return typeof y !== 'undefined' ? y.toFixed(0) : y;
         },
       },
     },

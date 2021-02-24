@@ -11,8 +11,8 @@ import './statistics.scss';
 
 const Statistics = () => {
   const { t } = useTranslation(['Statistics']);
-  const DEFAULT_LIMIT = 7;
   const moods = useSelector((state: ApplicationState) => state.moodReducer.mood);
+  const DEFAULT_LIMIT = 7;
   const [chartData, setChartData] = useState([{ x: '', y: 0 }]);
   const [defaultLimit, setDefaultLimit] = useState(DEFAULT_LIMIT);
   const [showCustomLimit, setShowCustomLimit] = useState(false);
@@ -39,19 +39,12 @@ const Statistics = () => {
     setDefaultLimit(data.value < DEFAULT_LIMIT ? DEFAULT_LIMIT : data.value);
   };
 
-  const sortMoodEntriesByDate = moods.sort((a: any, b: any) => {
-    const aDate = new Date(a.moodEntity_enteredAt + ' ' + a.moodEntity_enteredAt);
-    const bDate = new Date(b.moodEntity_enteredAt + ' ' + b.moodEntity_enteredAt);
-
-    return bDate.getTime() - aDate.getTime();
-  });
-
   const constructData = () => {
-    const intensityEntries = sortMoodEntriesByDate
+    const intensityEntries = moods
       .map((m: any) => {
         return {
-          x: dayjs(m.moodEntity_enteredAt).format('DD.MM.YY'),
-          y: m.moodEntity_intensity,
+          x: dayjs(m.mood_enteredAt).format('DD.MM.YY'),
+          y: m.mood_intensity,
         };
       })
       .slice(0, defaultLimit);

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoodList renders 1`] = `
+"<article className=\\"mood-entry__list\\">
+  <Header as=\\"h3\\">
+    entries
+  </Header>
+  <Table singleLine={true} as=\\"table\\">
+    <TableHeader as=\\"thead\\">
+      <TableRow as=\\"tr\\" cellAs=\\"td\\">
+        <TableHeaderCell as=\\"th\\">
+          Entered At
+        </TableHeaderCell>
+        <TableHeaderCell as=\\"th\\">
+          Status
+        </TableHeaderCell>
+        <TableHeaderCell as=\\"th\\">
+          Intensity
+        </TableHeaderCell>
+        <TableHeaderCell as=\\"th\\" />
+        <TableHeaderCell as=\\"th\\" />
+      </TableRow>
+    </TableHeader>
+    <TableBody as=\\"tbody\\" />
+    <TableFooter as=\\"tfoot\\">
+      <TableRow as=\\"tr\\" cellAs=\\"td\\">
+        <TableHeaderCell colSpan=\\"5\\" as=\\"th\\">
+          <Pagination floated=\\"right\\" defaultActivePage={1} totalPages={2} onPageChange={[Function: onPageChange]} aria-label=\\"Pagination Navigation\\" boundaryRange={1} ellipsisItem=\\"...\\" firstItem={{...}} lastItem={{...}} nextItem={{...}} pageItem={{...}} prevItem={{...}} siblingRange={1} />
+        </TableHeaderCell>
+      </TableRow>
+    </TableFooter>
+  </Table>
+  <EditEntryModal displayModal={false} closeModal={[Function: closeEditModal]} mood={{...}} />
+  <DeleteEntryModal displayModal={false} closeModal={[Function: closeDeleteModal]} mood={{...}} />
+</article>"
+`;
