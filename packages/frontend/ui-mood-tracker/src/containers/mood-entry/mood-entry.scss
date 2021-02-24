@@ -1,55 +1,55 @@
 @import '../../scss/variables';
 
 .mood-entry {
-	flex: 0 0 75%;
+  flex: 0 0 75%;
 
-	&__header {
-		margin-bottom: $custom-margin-bottom;
-	}
+  &__header {
+    margin-bottom: $custom-margin-bottom;
+  }
 
-	&__add {
-		margin-bottom: $custom-margin-bottom;
+  &__add {
+    margin-bottom: $custom-margin-bottom;
 
-		&__options {
-			display: inline-flex;
-			flex-wrap: wrap;
+    &__options {
+      display: inline-flex;
+      flex-wrap: wrap;
 
-			> div {
-				display: inline-flex;
-				flex-wrap: wrap;
+      > div {
+        display: inline-flex;
+        flex-wrap: wrap;
 
-				> div {
-					margin: 0 1rem 1rem 0;
-					// override css from semantic-ui.
-					width: 250px !important;
+        > div {
+          margin: 0 1rem 1rem 0;
+          // override css from semantic-ui.
+          width: 250px !important;
 
-					button {
-						// override css from semantic-ui.
-						background: $base-blue !important;
-					}
-				}
-			}
-		}
-	}
+          button {
+            // override css from semantic-ui.
+            background: $base-blue !important;
+          }
+        }
+      }
+    }
+  }
 
-	&__list {
-		margin-bottom: $custom-margin-bottom;
+  &__list {
+    margin-bottom: $custom-margin-bottom;
 
-		> h3 {
-			// override css from semantic-ui.
-			margin-bottom: $custom-margin-bottom !important;
-		}
+    > h3 {
+      // override css from semantic-ui.
+      margin-bottom: $custom-margin-bottom !important;
+    }
 
-		&__table {
-			i {
-				cursor: pointer;
+    &__table {
+      i {
+        cursor: pointer;
 
-				// Set custom color for edit icon.
-				&:first-child {
-					// override css from semantic-ui.
-					color: $base-blue !important;
-				}
-			}
-		}
-	}
+        // Set custom color for edit icon.
+        &:first-child {
+          // override css from semantic-ui.
+          color: $base-blue !important;
+        }
+      }
+    }
+  }
 }

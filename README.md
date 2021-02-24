@@ -17,11 +17,23 @@ You can test if yarn is installed correctly by using:
 yarn --version
 ```
 
-### Scripts
-- Installing the dependencies
+Install docker to run postgres db container from [here](https://docs.docker.com/get-docker/)
+
+## Quick starter on running the app
+Installing all the dependencies
 ```sh
 yarn
 ```
+Start the backend
+```sh
+yarn start:backend
+```
+Start the frontend
+```sh
+yarn start:frontend
+```
+
+Please find the documentation specific to the apps inside the app ReadMe linked in the following section:
 
 ### Workspace Structure
 This application follows a monorepo approach. The following sections explains the folder structure:
@@ -32,6 +44,7 @@ This application follows a monorepo approach. The following sections explains th
     - [`frontend/`](packages/frontend/rest-mood-tracker/README.md): Folder containing the frontend application.
     - [`backend/`](packages/backend/ui-mood-tracker/README.md): Folder containing the backend application.
 - `./`
+    - [`screenshots`]: Folder containing screenshots of the app for desktop, tablet and mobile.
     - `.eslintrc.js`: ESLint rules.
     - `.gitignore`: File and folder globs to be ignored by git.
     - `.yarnrc.yml`: Config file for yarn2.

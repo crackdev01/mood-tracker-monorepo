@@ -9,7 +9,9 @@
   "scripts": {
     "exec:docker-compose": "docker-compose -f docker-compose.yaml",
     "db:start": "yarn run db:stop && yarn exec:docker-compose up -d --renew-anon-volumes --remove-orphans --force-recreate postgres && yarn workspace rest-mood-tracker db:run",
-    "db:stop": "yarn exec:docker-compose down --volumes --remove-orphans"
+    "db:stop": "yarn exec:docker-compose down --volumes --remove-orphans",
+    "start:backend": "yarn db:stop && yarn db:start && yarn workspace rest-mood-tracker start",
+    "start:frontend": "yarn workspace ui-mood-tracker start:dev"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

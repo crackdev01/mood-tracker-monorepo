@@ -9,7 +9,6 @@ async function bootstrap() {
   await app.listen(3000);
 
   if (process.env.ENVIRONMENT === 'development') {
-    // FIXME: This seeds multiple times in dev mode.
     await seedDatabase(app.get<Connection>(Connection));
   }
 }
