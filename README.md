@@ -22,6 +22,19 @@ yarn --version
 ```sh
 yarn
 ```
+Note: **Ensure docker is up and running otherwise the backend will fail.**
+
+Start the backend
+```sh
+yarn start:backend
+```
+
+Start the frontend
+```sh
+yarn start:frontend
+```
+
+Please find the documentation specific to the apps inside the app ReadMe linked in the following section:
 
 ### Workspace Structure
 This application follows a monorepo approach. The following sections explains the folder structure:
