@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/ban-ts-comment': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'jest/valid-title': 'off',
     'max-len': [
       'error',
       {
