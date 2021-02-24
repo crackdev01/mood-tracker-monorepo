@@ -8,7 +8,7 @@ exports[`SiteHeader renders displays header entries for authenticated user 1`] =
     </Header>
   </MenuItem>
   <MenuItem active={false}>
-    <mockConstructor to=\\"/mood-entry\\">
+    <mockConstructor id=\\"mood-entry\\" to=\\"/mood-entry\\">
       moodEntry
     </mockConstructor>
   </MenuItem>
@@ -18,9 +18,12 @@ exports[`SiteHeader renders displays header entries for authenticated user 1`] =
     </mockConstructor>
   </MenuItem>
   <MenuMenu position=\\"right\\">
+    <MenuItem position=\\"right\\">
+      Location permission not provided
+    </MenuItem>
     <Dropdown id=\\"toggle-menu\\" item={true} text=\\"\\" additionLabel=\\"Add \\" additionPosition=\\"top\\" closeOnBlur={true} closeOnEscape={true} deburr={false} icon=\\"dropdown\\" minCharacters={1} noResultsMessage=\\"No results found.\\" openOnFocus={true} renderLabel={[Function: renderItemContent]} searchInput=\\"text\\" selectOnBlur={true} selectOnNavigation={true} wrapSelection={true}>
       <DropdownMenu>
-        <DropdownItem>
+        <DropdownItem onClick={[Function: onClick]}>
           menu.actions.location
         </DropdownItem>
         <DropdownItem id=\\"change-language\\" onClick={[Function: updateLanguage]}>
@@ -32,6 +35,7 @@ exports[`SiteHeader renders displays header entries for authenticated user 1`] =
       </DropdownMenu>
     </Dropdown>
   </MenuMenu>
+  <LocationModal displayModal={false} closeModal={[Function: closeLocationModal]} />
 </Menu>"
 `;
 

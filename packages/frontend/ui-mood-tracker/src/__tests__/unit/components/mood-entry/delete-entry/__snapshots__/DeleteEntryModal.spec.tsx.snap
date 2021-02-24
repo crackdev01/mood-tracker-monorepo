@@ -1,24 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DeleteEntryModal renders 1`] = `
-"<Modal closeIcon={true} open={true} onClose={[Function: mockConstructor] { _isMockFunction: true, getMockImplementation: [Function (anonymous)], mock: { calls: [], instances: [], invocationCallOrder: [], results: [] }, mockClear: [Function (anonymous)], mockReset: [Function (anonymous)], mockRestore: [Function (anonymous)], mockReturnValueOnce: [Function (anonymous)], mockResolvedValueOnce: [Function (anonymous)], mockRejectedValueOnce: [Function (anonymous)], mockReturnValue: [Function (anonymous)], mockResolvedValue: [Function (anonymous)], mockRejectedValue: [Function (anonymous)], mockImplementationOnce: [Function (anonymous)], mockImplementation: [Function (anonymous)], mockReturnThis: [Function (anonymous)], mockName: [Function (anonymous)], getMockName: [Function (anonymous)] }} centered={true} dimmer={true} closeOnDimmerClick={true} closeOnDocumentClick={false} eventPool=\\"Modal\\">
-  <Header icon=\\"archive\\" content=\\"header\\" />
-  <ModalContent>
+"<Modal className=\\"delete-entry\\" closeIcon={true} open={true} onClose={[Function: mockConstructor] { _isMockFunction: true, getMockImplementation: [Function (anonymous)], mock: { calls: [], instances: [], invocationCallOrder: [], results: [] }, mockClear: [Function (anonymous)], mockReset: [Function (anonymous)], mockRestore: [Function (anonymous)], mockReturnValueOnce: [Function (anonymous)], mockResolvedValueOnce: [Function (anonymous)], mockRejectedValueOnce: [Function (anonymous)], mockReturnValue: [Function (anonymous)], mockResolvedValue: [Function (anonymous)], mockRejectedValue: [Function (anonymous)], mockImplementationOnce: [Function (anonymous)], mockImplementation: [Function (anonymous)], mockReturnThis: [Function (anonymous)], mockName: [Function (anonymous)], getMockName: [Function (anonymous)] }} size=\\"tiny\\" centered={true} dimmer={true} closeOnDimmerClick={true} closeOnDocumentClick={false} eventPool=\\"Modal\\">
+  <Header icon=\\"delete\\" content=\\"header\\" />
+  <ModalContent className=\\"delete-entry__content\\">
+    <h4>
+      deleteEntry.header
+    </h4>
     <div>
-      confident
+      <b>
+        table.headers.status
+        : 
+      </b>
+      relaxed
     </div>
     <div>
-      1
+      <b>
+        table.headers.intensity
+        : 
+      </b>
+      0
+    </div>
+    <div>
+      <b>
+        table.headers.enteredAt
+        : 
+      </b>
+      Feb 24, 2021 12:00 AM
     </div>
   </ModalContent>
-  <ModalActions>
-    <Button color=\\"red\\" onClick={[Function: mockConstructor] { _isMockFunction: true, getMockImplementation: [Function (anonymous)], mock: { calls: [], instances: [], invocationCallOrder: [], results: [] }, mockClear: [Function (anonymous)], mockReset: [Function (anonymous)], mockRestore: [Function (anonymous)], mockReturnValueOnce: [Function (anonymous)], mockResolvedValueOnce: [Function (anonymous)], mockRejectedValueOnce: [Function (anonymous)], mockReturnValue: [Function (anonymous)], mockResolvedValue: [Function (anonymous)], mockRejectedValue: [Function (anonymous)], mockImplementationOnce: [Function (anonymous)], mockImplementation: [Function (anonymous)], mockReturnThis: [Function (anonymous)], mockName: [Function (anonymous)], getMockName: [Function (anonymous)] }} as=\\"button\\">
-      <Icon name=\\"remove\\" as=\\"i\\" />
-       No
-    </Button>
-    <Button color=\\"green\\" onClick={[Function: deleteMoodEntry]} as=\\"button\\">
+  <ModalActions className=\\"delete-entry__actions\\">
+    <Button className=\\"delete-entry__actions__yes\\" color=\\"green\\" onClick={[Function: deleteMoodEntry]} as=\\"button\\">
       <Icon name=\\"checkmark\\" as=\\"i\\" />
-       Yes
+       
+      buttons.yes
+    </Button>
+    <Button className=\\"delete-entry__actions__no\\" onClick={[Function: mockConstructor] { _isMockFunction: true, getMockImplementation: [Function (anonymous)], mock: { calls: [], instances: [], invocationCallOrder: [], results: [] }, mockClear: [Function (anonymous)], mockReset: [Function (anonymous)], mockRestore: [Function (anonymous)], mockReturnValueOnce: [Function (anonymous)], mockResolvedValueOnce: [Function (anonymous)], mockRejectedValueOnce: [Function (anonymous)], mockReturnValue: [Function (anonymous)], mockResolvedValue: [Function (anonymous)], mockRejectedValue: [Function (anonymous)], mockImplementationOnce: [Function (anonymous)], mockImplementation: [Function (anonymous)], mockReturnThis: [Function (anonymous)], mockName: [Function (anonymous)], getMockName: [Function (anonymous)] }} as=\\"button\\">
+      <Icon name=\\"remove\\" as=\\"i\\" />
+       
+      buttons.no
     </Button>
   </ModalActions>
 </Modal>"

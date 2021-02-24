@@ -62,10 +62,10 @@ const LocationModal = (props: { displayModal: boolean; closeModal: any }) => {
       </Modal.Content>
       <Modal.Actions className="location-entry__actions">
         <Button className="location-entry__actions__yes" onClick={loadLocation}>
-          <Icon name="checkmark" /> Yes
+          <Icon name="checkmark" /> {t('buttons.yes')}
         </Button>
         <Button onClick={setLocationDenied}>
-          <Icon name="remove" /> No
+          <Icon name="remove" /> {t('buttons.no')}
         </Button>
       </Modal.Actions>
     </Modal>

@@ -18,9 +18,11 @@ exports[`Login renders 1`] = `
       </label>
       <Input id=\\"password\\" placeholder=\\"password\\" onChange={[Function: updatePassword]} type=\\"text\\" />
     </FormField>
-    <Button className=\\"login__form__input\\" loading={false} onClick={[Function: login]} as=\\"button\\">
-      submit
-    </Button>
+    <div className=\\"login__form__submit\\">
+      <Button id=\\"login-button\\" loading={false} onClick={[Function: login]} as=\\"button\\">
+        submit
+      </Button>
+    </div>
   </Form>
 </article>"
 `;

@@ -3,7 +3,6 @@
 exports[`Home renders 1`] = `
 "<BrowserRouter>
   <SiteHeader />
-  <LocationModal />
   <article className=\\"app-content\\">
     <Switch>
       <Route exact={true} path=\\"/\\">

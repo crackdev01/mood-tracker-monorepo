@@ -1,4 +1,8 @@
 {
   "header": "Ort festlegen",
-  "description": "Bitte geben Sie in Ihrem Browser die Erlaubnis, auf Ihren Standort zuzugreifen"
+  "description": "Bitte geben Sie in Ihrem Browser die Erlaubnis, auf Ihren Standort zuzugreifen",
+  "buttons": {
+    "yes": "Ja",
+    "no": "Nein"
+  }
 }

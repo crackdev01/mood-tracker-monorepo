@@ -1,4 +1,8 @@
 {
   "header": "Set Location",
-  "description": "Please provide permission in your browser to access your location"
+  "description": "Please provide permission in your browser to access your location",
+  "buttons": {
+    "yes": "Yes",
+    "no": "No"
+  }
 }
