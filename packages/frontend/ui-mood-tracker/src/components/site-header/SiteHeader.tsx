@@ -19,9 +19,9 @@ const SiteHeader = () => {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation(['SiteHeader']);
   const user = useSelector((state: ApplicationState) => state.userReducer.user);
+  const location = useLocation();
   const [currentUser, setCurrentUser] = useState('');
   const [showLocationModal, setShowLocationModal] = useState(false);
-  const location = useLocation();
 
   const isAuthenticated = user ? !!user.accessToken : false;
 

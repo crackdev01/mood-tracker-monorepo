@@ -11,13 +11,13 @@ import { ApplicationState } from '../../../store';
 const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);
   const moods = useSelector((state: ApplicationState) => state.moodReducer.mood);
+  const DEFAULT_PAGE_ENTRIES = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [visibleEntries, setVisibleEntries] = useState([]);
   const [showEditEntryModal, setShowEditEntryModal] = useState(false);
   const [showDeleteEntryModal, setShowDeleteEntryModal] = useState(false);
   const [editableMood, setEditableMood] = useState({});
   const [deletableMood, setDeletableMood] = useState({});
-  const DEFAULT_PAGE_ENTRIES = 5;
   const pages = Math.ceil(moods.length / DEFAULT_PAGE_ENTRIES);
 
   const updatePage = (_: any, data: any) => {

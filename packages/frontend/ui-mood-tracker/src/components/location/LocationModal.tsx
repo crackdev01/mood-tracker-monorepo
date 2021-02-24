@@ -8,8 +8,8 @@ import { UserActions } from '../../store/user/types';
 import './_location-entry.scss';
 
 const LocationModal = (props: any) => {
-  const dispatch = useDispatch();
   const { displayModal, closeModal } = props;
+  const dispatch = useDispatch();
   const { t } = useTranslation(['LocationModal']);
   const [coordinates, setCoordinates] = useState({ lat: 0, long: 0 });
 

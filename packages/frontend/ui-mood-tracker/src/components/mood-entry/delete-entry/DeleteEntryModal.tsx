@@ -5,6 +5,7 @@ import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 
 import { MoodActions } from '../../../store/mood/types';
+
 import './_delete-entry.scss';
 
 const DeleteEntryModal = (props: any) => {

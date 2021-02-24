@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 
 import Home from './containers/home/Home';
-
 import configureStore from './store';
 
 import 'semantic-ui-css/semantic.min.css';
