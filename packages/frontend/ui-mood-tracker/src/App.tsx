@@ -6,7 +6,6 @@ import Home from './containers/home/Home';
 
 import configureStore from './store';
 
-import './App.scss';
 import 'semantic-ui-css/semantic.min.css';
 
 const { store, persistor } = configureStore();
