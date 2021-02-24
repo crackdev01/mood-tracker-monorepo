@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Button, Dropdown, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
+
 import { MoodActions } from '../../../store/mood/types';
+
+import './_edit-entry.scss';
 
 const EditEntryModal = (props: any) => {
   const { displayModal, closeModal, mood } = props;
@@ -88,10 +91,11 @@ const EditEntryModal = (props: any) => {
   };
 
   return (
-    <Modal closeIcon open={displayModal} onClose={closeModal}>
-      <Header icon="archive" content={t('header')} />
-      <Modal.Content>
+    <Modal className="edit-entry" closeIcon open={displayModal} onClose={closeModal} size="tiny">
+      <Header icon="pencil" content={t('header')} />
+      <Modal.Content className="edit-entry__content">
         <Dropdown
+          className="edit-entry__content__dropdown"
           placeholder={t('moodStatus.placeholder')}
           fluid
           selection
@@ -100,6 +104,7 @@ const EditEntryModal = (props: any) => {
           defaultValue={moodStatus}
         />
         <Dropdown
+          className="edit-entry__content__dropdown"
           placeholder={t('intensity.placeholder')}
           fluid
           selection
@@ -108,12 +113,12 @@ const EditEntryModal = (props: any) => {
           defaultValue={moodIntensity}
         />
       </Modal.Content>
-      <Modal.Actions>
-        <Button color="red" onClick={closeModal}>
-          <Icon name="remove" /> No
-        </Button>
-        <Button color="green" onClick={editMoodEntry}>
+      <Modal.Actions className="edit-entry__actions">
+        <Button className="edit-entry__actions__yes" onClick={editMoodEntry}>
           <Icon name="checkmark" /> Yes
+        </Button>
+        <Button className="edit-entry__actions__no" onClick={closeModal}>
+          <Icon name="remove" /> No
         </Button>
       </Modal.Actions>
     </Modal>
