@@ -22,6 +22,7 @@ const MoodList = () => {
   const pages = Math.ceil(moods.length / DEFAULT_PAGE_ENTRIES);
 
   const updatePage = (_: any, data: any) => {
+    console.log('updating page');
     setCurrentPage(Math.ceil(data.activePage));
   };
 
@@ -96,7 +97,7 @@ const MoodList = () => {
                 floated="right"
                 defaultActivePage={currentPage}
                 totalPages={pages}
-                onPageChange={() => updatePage}
+                onPageChange={updatePage}
               />
             </Table.HeaderCell>
           </Table.Row>
