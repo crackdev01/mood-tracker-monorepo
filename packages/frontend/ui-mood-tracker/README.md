@@ -24,7 +24,7 @@ yarn workspace ui-mood-tracker build
 ```
 
 ### Workspace Structure
-This application follows a monorepo approach. The following sections explains the folder structure:
+The following sections explains the folder structure:
 
 - `./`
     - `cypress`: 
