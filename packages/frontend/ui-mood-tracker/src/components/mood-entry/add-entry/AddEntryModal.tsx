@@ -114,7 +114,7 @@ const AddEntryModal = () => {
             />
 
             <div>
-              <Button basic color="olive" onClick={postMoodEntry}>
+              <Button color="blue" onClick={postMoodEntry}>
                 {t('buttons.add')}
               </Button>
             </div>

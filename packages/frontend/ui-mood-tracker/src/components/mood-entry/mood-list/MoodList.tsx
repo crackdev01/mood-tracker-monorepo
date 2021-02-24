@@ -79,12 +79,7 @@ const MoodList = () => {
                 <Table.Cell>{t(`moodStatus.${mood.mood_status}`)}</Table.Cell>
                 <Table.Cell>{mood.mood_intensity}</Table.Cell>
                 <Table.Cell>
-                  <Icon
-                    name="edit outline"
-                    color="grey"
-                    size="large"
-                    onClick={() => editEntry(mood)}
-                  />
+                  <Icon name="pencil" color="grey" size="large" onClick={() => editEntry(mood)} />
                 </Table.Cell>
                 <Table.Cell>
                   <Icon name="delete" color="red" size="large" onClick={() => deleteEntry(mood)} />
