@@ -18,7 +18,7 @@ export class MoodRepository extends AbstractRepository<MoodEntity> {
     return this.manager
       .createQueryBuilder(MoodEntity, 'mood')
       .where("mood.userUuid = '7c2f7be6-31e7-40e7-ab7c-0a5c280b2dae'")
-      .orderBy('mood.enteredAt', 'DESC');
+      .orderBy('mood.id', 'DESC');
   }
 
   async insertMood(moodEntry: MoodEntity) {
