@@ -25,7 +25,7 @@ exports[`MoodList renders 1`] = `
     <TableFooter as=\\"tfoot\\">
       <TableRow as=\\"tr\\" cellAs=\\"td\\">
         <TableHeaderCell colSpan=\\"5\\" as=\\"th\\">
-          <Pagination floated=\\"right\\" defaultActivePage={1} totalPages={3} onPageChange={[Function: onPageChange]} aria-label=\\"Pagination Navigation\\" boundaryRange={1} ellipsisItem=\\"...\\" firstItem={{...}} lastItem={{...}} nextItem={{...}} pageItem={{...}} prevItem={{...}} siblingRange={1} />
+          <Pagination floated=\\"right\\" defaultActivePage={1} totalPages={3} onPageChange={[Function: updatePage]} aria-label=\\"Pagination Navigation\\" boundaryRange={1} ellipsisItem=\\"...\\" firstItem={{...}} lastItem={{...}} nextItem={{...}} pageItem={{...}} prevItem={{...}} siblingRange={1} />
         </TableHeaderCell>
       </TableRow>
     </TableFooter>
