@@ -17,7 +17,7 @@ You can test if yarn is installed correctly by using:
 yarn --version
 ```
 
-Install docker to run postgres db container from [here](https://docs.docker.com/get-docker/)
+Install [docker](https://docs.docker.com/get-docker/) to run postgres.
 
 ## Quick starter on running the app
 Installing all the dependencies
@@ -26,12 +26,14 @@ yarn
 ```
 
 Note:
+**Ensure docker is up and running.**
+```sh
+docker ps
+```
 
 **Create `.env` file based on `.env.example` in `packages/backend/rest-mood-tracker`.**
 
 **Create `.env` file based on `.env.example` in `packages/frontend/ui-mood-tracker`**
-
-**Ensure docker is up and running otherwise the backend will fail.**
 
 Start the backend
 ```sh
@@ -41,6 +43,12 @@ yarn start:backend
 Start the frontend
 ```sh
 yarn start:frontend
+```
+
+The database is already seeded with a mock user for ease of testing:
+```sh
+username: testuser
+password: moodtracker666$!
 ```
 
 Please find the documentation specific to the apps inside the app ReadMe linked in the following section:

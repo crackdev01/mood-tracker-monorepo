@@ -42,27 +42,27 @@ const AddEntry = () => {
     {
       key: '0',
       text: '0',
-      value: 0,
+      value: '0',
     },
     {
       key: '1',
       text: '1',
-      value: 1,
+      value: '1',
     },
     {
       key: '2',
       text: '2',
-      value: 2,
+      value: '2',
     },
     {
       key: '3',
       text: '3',
-      value: 3,
+      value: '3',
     },
     {
       key: '4',
       text: '4',
-      value: 4,
+      value: '4',
     },
   ];
   const [showAddEntry, setShowAddEntry] = useState(false);
@@ -70,8 +70,8 @@ const AddEntry = () => {
   const [moodIntensity, setMoodIntensity] = useState('');
 
   const addEntry = (_: any, data: any) => {
-    setShowAddEntry(true);
     setMoodStatus(data.value);
+    setShowAddEntry(true);
   };
 
   const addIntensity = (_: any, data: any) => {
@@ -82,7 +82,7 @@ const AddEntry = () => {
     const payload = {
       user: user.decodedAccessToken!.uuid,
       status: moodStatus,
-      intensity: moodIntensity,
+      intensity: parseInt(moodIntensity),
     };
     dispatch({
       type: MoodActions.ADD_MOOD,

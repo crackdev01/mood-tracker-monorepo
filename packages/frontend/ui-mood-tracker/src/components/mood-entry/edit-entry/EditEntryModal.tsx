@@ -44,7 +44,7 @@ const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: a
     {
       key: '0',
       text: '0',
-      value: '0',
+      value: 0,
     },
     {
       key: '1',
@@ -80,7 +80,7 @@ const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: a
     const payload = {
       id: mood.mood_id,
       status: moodStatus,
-      intensity: moodIntensity,
+      intensity: parseInt(moodIntensity),
     };
     dispatch({
       type: MoodActions.EDIT_MOOD,

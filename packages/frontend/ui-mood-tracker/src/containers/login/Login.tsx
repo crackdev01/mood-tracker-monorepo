@@ -44,7 +44,12 @@ const Login = () => {
 
         <Form.Field className="login__form__input">
           <label>{t('password')}</label>
-          <Input id="password" placeholder={t('password')} onChange={updatePassword} />
+          <Input
+            id="password"
+            placeholder={t('password')}
+            onChange={updatePassword}
+            type="password"
+          />
         </Form.Field>
 
         <div className="login__form__submit">
