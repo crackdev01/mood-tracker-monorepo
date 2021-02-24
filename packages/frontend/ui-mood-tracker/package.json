@@ -5,7 +5,9 @@
   "scripts": {
     "start:dev": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' -c .eslintrc.js",
+    "lint": "yarn run lint:scss && yarn run lint:ts",
+    "lint:scss": "stylelint src/**/*.{tsx,scss}",
+    "lint:ts": "eslint 'src/**/*.{js,ts,tsx}' -c .eslintrc.js",
     "test:unit": "react-scripts test --coverage --watchAll=false",
     "test:unit:watch": "react-scripts test",
     "test:e2e": "cypress run",
@@ -63,6 +65,11 @@
     "identity-obj-proxy": "^3.0.0",
     "prettier": "^2.2.1",
     "redux-saga-test-plan": "^4.0.1",
+    "stylelint": "^13.10.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0",
     "ts-jest": "^26.5.1"
   },
   "jest": {

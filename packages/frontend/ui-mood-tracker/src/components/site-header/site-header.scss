@@ -1,41 +1,41 @@
 @import '../../scss/variables';
 
 .site-header {
-	a, h3 {
-		color: $base-blue !important; // override css from semantic-ui.
-	}
+  a, h3 {
+    color: $base-blue !important; // override css from semantic-ui.
+  }
 
-	.locale {
-		:first-child {
-			margin-right: 2rem;
-		}
+  .locale {
+    :first-child {
+      margin-right: 2rem;
+    }
 
-		> span {
-			color: $base-blue;
-			cursor: pointer;
-		}
+    > span {
+      color: $base-blue;
+      cursor: pointer;
+    }
 
-		&--active {
-			font-weight: bolder;
-		}
+    &--active {
+      font-weight: bolder;
+    }
 
-		&--inactive {
-			font-weight: lighter;
-		}
-	}
+    &--inactive {
+      font-weight: lighter;
+    }
+  }
 
-	// Override dropdown menu styles from semantic-ui.
-	#toggle-menu {
-		background: $base-blue;
-		border-radius: 50px;
-		color: white;
-		font-weight: bold;
-		margin-bottom: 2px;
-		margin-right: 1rem;
-		width: 40px;
+  // Override dropdown menu styles from semantic-ui.
+  #toggle-menu {
+    background: $base-blue;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 2px;
+    margin-right: 1rem;
+    width: 40px;
 
-		> .dropdown.icon {
-			visibility: hidden;
-		}
-	}
+    > .dropdown.icon {
+      visibility: hidden;
+    }
+  }
 }

@@ -77,7 +77,6 @@ describe('SiteHeader', () => {
       expect(mockDispatch).toHaveBeenCalledWith({
         type: UserActions.LOGOUT_USER,
       });
-      // TODO: assert if changeLanguage was triggered.
     });
   });
 });

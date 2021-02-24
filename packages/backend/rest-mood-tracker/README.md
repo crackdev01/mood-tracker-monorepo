@@ -1,8 +1,10 @@
 # rest-mood-tracker
 Backend application based on NestJs for mood tracking.
 
-### Steps to run:
+### Prerequisites
+Install docker to run postgres db container from [here](https://docs.docker.com/get-docker/)
 
+### Steps to run:
 - Ensure that any previously running postgres docker container:
 ```sh
 yarn db:stop
@@ -22,3 +24,6 @@ yarn workspace rest-mood-tracker db:run
 ```sh
 yarn workspace rest-mood-tracker start:dev
 ```
+
+### Github Actions
+- Workflows are specified in the `.github/workflows/rest-mood-tracker.yaml` file in the root directory.
