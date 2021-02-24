@@ -1,3 +1,4 @@
 {
-  "header": "Mood Tracker would like permissions to capture your current location"
+  "header": "Set Location",
+  "description": "Please provide permission in your browser to access your location"
 }

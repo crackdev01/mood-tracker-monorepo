@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 import { UserActions } from '../../store/user/types';
 
+import './_location-entry.scss';
+
 const LocationModal = (props: any) => {
   const dispatch = useDispatch();
   const { displayModal, closeModal } = props;
@@ -47,14 +49,23 @@ const LocationModal = (props: any) => {
   };
 
   return (
-    <Modal closeIcon open={displayModal} onClose={closeModal}>
-      <Header icon="archive" content={t('header')} />
-      <Modal.Actions>
-        <Button color="red" onClick={setLocationDenied}>
-          <Icon name="remove" /> No
-        </Button>
-        <Button color="green" onClick={loadLocation}>
+    <Modal
+      className="location-entry"
+      closeIcon
+      open={displayModal}
+      onClose={closeModal}
+      size="tiny"
+    >
+      <Header icon="location arrow" content={t('header')} />
+      <Modal.Content>
+        <h4>{t('description')}</h4>
+      </Modal.Content>
+      <Modal.Actions className="location-entry__actions">
+        <Button className="location-entry__actions__yes" onClick={loadLocation}>
           <Icon name="checkmark" /> Yes
+        </Button>
+        <Button onClick={setLocationDenied}>
+          <Icon name="remove" /> No
         </Button>
       </Modal.Actions>
     </Modal>
