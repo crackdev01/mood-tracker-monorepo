@@ -10,13 +10,13 @@ exports[`Login renders 1`] = `
       <label>
         username
       </label>
-      <Input placeholder=\\"username\\" onChange={[Function: updateUsername]} type=\\"text\\" />
+      <Input id=\\"username\\" placeholder=\\"username\\" onChange={[Function: updateUsername]} type=\\"text\\" />
     </FormField>
     <FormField className=\\"login__form__input\\">
       <label>
         password
       </label>
-      <Input placeholder=\\"password\\" onChange={[Function: updatePassword]} type=\\"text\\" />
+      <Input id=\\"password\\" placeholder=\\"password\\" onChange={[Function: updatePassword]} type=\\"text\\" />
     </FormField>
     <Button className=\\"login__form__input\\" loading={false} onClick={[Function: login]} as=\\"button\\">
       submit

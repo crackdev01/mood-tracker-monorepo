@@ -13,20 +13,20 @@ exports[`SiteHeader renders displays header entries for authenticated user 1`] =
     </mockConstructor>
   </MenuItem>
   <MenuItem active={false}>
-    <mockConstructor to=\\"/statistics\\">
+    <mockConstructor id=\\"statistics\\" to=\\"/statistics\\">
       statistics
     </mockConstructor>
   </MenuItem>
   <MenuMenu position=\\"right\\">
-    <Dropdown item={true} text=\\"\\" additionLabel=\\"Add \\" additionPosition=\\"top\\" closeOnBlur={true} closeOnEscape={true} deburr={false} icon=\\"dropdown\\" minCharacters={1} noResultsMessage=\\"No results found.\\" openOnFocus={true} renderLabel={[Function: renderItemContent]} searchInput=\\"text\\" selectOnBlur={true} selectOnNavigation={true} wrapSelection={true}>
+    <Dropdown id=\\"toggle-menu\\" item={true} text=\\"\\" additionLabel=\\"Add \\" additionPosition=\\"top\\" closeOnBlur={true} closeOnEscape={true} deburr={false} icon=\\"dropdown\\" minCharacters={1} noResultsMessage=\\"No results found.\\" openOnFocus={true} renderLabel={[Function: renderItemContent]} searchInput=\\"text\\" selectOnBlur={true} selectOnNavigation={true} wrapSelection={true}>
       <DropdownMenu>
         <DropdownItem>
           menu.actions.location
         </DropdownItem>
-        <DropdownItem onClick={[Function: updateLanguage]}>
+        <DropdownItem id=\\"change-language\\" onClick={[Function: updateLanguage]}>
           menu.actions.changeLanguage
         </DropdownItem>
-        <DropdownItem onClick={[Function: logout]}>
+        <DropdownItem id=\\"logout\\" onClick={[Function: logout]}>
           menu.actions.logout
         </DropdownItem>
       </DropdownMenu>
