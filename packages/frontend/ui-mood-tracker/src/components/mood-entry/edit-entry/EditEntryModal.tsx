@@ -7,7 +7,7 @@ import { MoodActions } from '../../../store/mood/types';
 
 import './_edit-entry.scss';
 
-const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: any }) => {
+const EditEntryModal = (props: any) => {
   const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
@@ -44,7 +44,7 @@ const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: a
     {
       key: '0',
       text: '0',
-      value: 0,
+      value: '0',
     },
     {
       key: '1',
@@ -100,7 +100,7 @@ const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: a
           selection
           options={moodStatusOptions}
           onChange={addStatus}
-          defaultValue={mood.mood_status}
+          defaultValue={moodStatus}
         />
         <Dropdown
           className="edit-entry__content__dropdown"
@@ -109,7 +109,7 @@ const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: a
           selection
           options={intensityOptions}
           onChange={addIntensity}
-          defaultValue={mood.mood_intensity}
+          defaultValue={moodIntensity}
         />
       </Modal.Content>
       <Modal.Actions className="edit-entry__actions">

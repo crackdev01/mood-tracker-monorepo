@@ -39,7 +39,7 @@ const MoodList = () => {
     setVisibleEntries(moods.slice(min, max));
   };
 
-  const editEntry = (mood: Mood) => {
+  const editEntry = (mood: any) => {
     setEditableMood(mood);
     setShowEditEntryModal(true);
   };

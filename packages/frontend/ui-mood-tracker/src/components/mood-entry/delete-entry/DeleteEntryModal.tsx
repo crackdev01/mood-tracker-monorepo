@@ -8,7 +8,7 @@ import { MoodActions } from '../../../store/mood/types';
 
 import './_delete-entry.scss';
 
-const DeleteEntryModal = (props: { displayModal: boolean; closeModal: any; mood: any }) => {
+const DeleteEntryModal = (props: any) => {
   const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
