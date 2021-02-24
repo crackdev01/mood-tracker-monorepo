@@ -7,6 +7,7 @@ import { Header, Icon, Pagination, Table } from 'semantic-ui-react';
 import EditEntryModal from '../../../components/mood-entry/edit-entry/EditEntryModal';
 import DeleteEntryModal from '../../../components/mood-entry/delete-entry/DeleteEntryModal';
 import { ApplicationState } from '../../../store';
+import { Mood } from '../../../mood.types';
 
 const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);
@@ -37,15 +38,14 @@ const MoodList = () => {
     setVisibleEntries(moods.slice(min, max));
   };
 
-  // FIXME: update types for mood.
-  const editEntry = (mood: any) => {
+  const editEntry = (mood: Mood) => {
     setEditableMood(mood);
     setShowEditEntryModal(true);
   };
 
   const closeEditModal = () => setShowEditEntryModal(false);
 
-  const deleteEntry = (mood: any) => {
+  const deleteEntry = (mood: Mood) => {
     setDeletableMood(mood);
     setShowDeleteEntryModal(true);
   };
@@ -72,7 +72,7 @@ const MoodList = () => {
         </Table.Header>
 
         <Table.Body>
-          {visibleEntries.map((mood: any) => {
+          {visibleEntries.map((mood: Mood) => {
             return (
               <Table.Row key={mood.mood_id}>
                 <Table.Cell>{dayjs(mood.mood_enteredAt).format('MMM D, YYYY h:mm A')}</Table.Cell>
