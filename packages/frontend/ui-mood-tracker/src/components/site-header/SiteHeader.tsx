@@ -53,7 +53,7 @@ const SiteHeader = () => {
 
   useEffect(() => {
     const username = user.decodedAccessToken ? user.decodedAccessToken.username : '';
-    setCurrentUser(username);
+    setCurrentUser(username[0].toUpperCase());
   }, [user]);
 
   return (
