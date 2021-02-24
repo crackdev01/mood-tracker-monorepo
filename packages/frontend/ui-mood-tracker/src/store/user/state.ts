@@ -4,5 +4,6 @@ export const userState: UserState = {
   user: {
     accessToken: '',
     decodedAccessToken: null,
+    location: undefined,
   },
 };

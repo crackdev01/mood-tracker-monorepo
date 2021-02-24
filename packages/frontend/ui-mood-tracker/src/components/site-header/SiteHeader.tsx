@@ -5,11 +5,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { Dropdown, Header, Menu } from 'semantic-ui-react';
 
 import LocationModal from '../location/LocationModal';
-import { UserActions } from '../../store/user/types';
+import { Coordinates, UserActions } from '../../store/user/types';
 import { ApplicationState } from '../../store';
 
 import './site-header.scss';
-import DeleteEntryModal from 'src/components/mood-entry/delete-entry/DeleteEntryModal';
 
 enum LocaleEnum {
   English = 'en',
@@ -31,6 +30,17 @@ const SiteHeader = () => {
   const updateLanguage = () => {
     const { language } = i18n;
     i18n.changeLanguage(language === LocaleEnum.English ? LocaleEnum.Deutsche : LocaleEnum.English);
+  };
+
+  const currentCoordinates = () => {
+    if (user.location === 'ERROR_SETTING_LOCATION') {
+      return 'Error setting your location.';
+    } else if (user.location === undefined) {
+      return 'Location not set.';
+    } else {
+      const location = user.location as Coordinates;
+      return `${location.latitude} | ${location.longitude}`;
+    }
   };
 
   const logout = () => {
@@ -63,6 +73,7 @@ const SiteHeader = () => {
       )}
       {isAuthenticated && (
         <Menu.Menu position="right">
+          <Menu.Item position="right">{currentCoordinates()}</Menu.Item>
           <Dropdown id="toggle-menu" item text={currentUser}>
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => setShowLocationModal(true)}>
