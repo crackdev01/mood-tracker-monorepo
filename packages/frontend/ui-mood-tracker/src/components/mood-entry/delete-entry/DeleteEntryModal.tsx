@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { MoodActions } from '../../../store/mood/types';
 
 const DeleteEntryModal = (props: any) => {
+  const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
-  const [showModal, setShowModal] = useState(false);
 
   const deleteMoodEntry = () => {
     const payload = {
@@ -17,23 +17,18 @@ const DeleteEntryModal = (props: any) => {
       type: MoodActions.DELETE_MOOD,
       payload,
     });
-    setShowModal(false);
+    closeModal();
   };
 
-  useEffect(() => {
-    const { displayModal } = props;
-    setShowModal(displayModal);
-  }, [props]);
-
   return (
-    <Modal closeIcon open={showModal} onClose={() => setShowModal(false)}>
+    <Modal closeIcon open={displayModal} onClose={closeModal}>
       <Header icon="archive" content={t('header')} />
       <Modal.Content>
-        <div>{props.mood.mood_status}</div>
-        <div>{props.mood.mood_intensity}</div>
+        <div>{mood.mood_status}</div>
+        <div>{mood.mood_intensity}</div>
       </Modal.Content>
       <Modal.Actions>
-        <Button color="red" onClick={() => setShowModal(false)}>
+        <Button color="red" onClick={closeModal}>
           <Icon name="remove" /> No
         </Button>
         <Button color="green" onClick={deleteMoodEntry}>

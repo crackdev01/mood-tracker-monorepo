@@ -15,7 +15,13 @@ jest.mock('react-redux', () => ({
 }));
 
 describe('DeleteEntryModal', () => {
-  const props = { mood: mockMoods[0] };
+  const closeModalMock = jest.fn();
+  const props = {
+    displayModal: true,
+    closeModal: closeModalMock,
+    mood: mockMoods[0],
+  };
+
   test('renders', () => {
     mockDispatch.mockReturnValueOnce({});
     const w = shallow(<DeleteEntryModal {...props} />);
@@ -30,5 +36,6 @@ describe('DeleteEntryModal', () => {
       type: MoodActions.DELETE_MOOD,
       payload: { id: mockMoods[0].mood_id },
     });
+    expect(closeModalMock).toHaveBeenCalledTimes(1);
   });
 });

@@ -15,7 +15,13 @@ jest.mock('react-redux', () => ({
 }));
 
 describe('EditEntryModal', () => {
-  const props = { mood: mockMoods[0] };
+  const closeModalMock = jest.fn();
+  const props = {
+    displayModal: true,
+    closeModal: closeModalMock,
+    mood: mockMoods[0],
+  };
+
   test('renders', () => {
     mockDispatch.mockReturnValueOnce({});
     const w = shallow(<EditEntryModal {...props} />);
@@ -36,5 +42,6 @@ describe('EditEntryModal', () => {
         intensity: 4,
       },
     });
+    expect(closeModalMock).toHaveBeenCalledTimes(1);
   });
 });

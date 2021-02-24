@@ -30,7 +30,7 @@ exports[`MoodList renders 1`] = `
       </TableRow>
     </TableFooter>
   </Table>
-  <EditEntryModal displayModal={false} mood={{...}} />
-  <DeleteEntryModal displayModal={false} mood={{...}} />
+  <EditEntryModal displayModal={false} closeModal={[Function: closeEditModal]} mood={{...}} />
+  <DeleteEntryModal displayModal={false} closeModal={[Function: closeDeleteModal]} mood={{...}} />
 </article>"
 `;

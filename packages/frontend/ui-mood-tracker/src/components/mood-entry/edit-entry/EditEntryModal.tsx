@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Dropdown, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { MoodActions } from '../../../store/mood/types';
 
 const EditEntryModal = (props: any) => {
+  const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
-  const [showModal, setShowModal] = useState(false);
   // TODO: Repeated code. Extract it to common file.
   const moodStatusOptions = [
     {
@@ -76,7 +76,7 @@ const EditEntryModal = (props: any) => {
 
   const editMoodEntry = () => {
     const payload = {
-      id: props.mood.mood_id,
+      id: mood.mood_id,
       status: moodStatus,
       intensity: moodIntensity,
     };
@@ -84,18 +84,11 @@ const EditEntryModal = (props: any) => {
       type: MoodActions.EDIT_MOOD,
       payload,
     });
-    setShowModal(false);
+    closeModal();
   };
 
-  useEffect(() => {
-    const { displayModal, mood } = props;
-    setShowModal(displayModal);
-    setMoodStatus(mood.mood_status);
-    setMoodIntensity(mood.mood_intensity);
-  }, [props]);
-
   return (
-    <Modal closeIcon open={showModal} onClose={() => setShowModal(false)}>
+    <Modal closeIcon open={displayModal} onClose={closeModal}>
       <Header icon="archive" content={t('header')} />
       <Modal.Content>
         <Dropdown
@@ -116,7 +109,7 @@ const EditEntryModal = (props: any) => {
         />
       </Modal.Content>
       <Modal.Actions>
-        <Button color="red" onClick={() => setShowModal(false)}>
+        <Button color="red" onClick={closeModal}>
           <Icon name="remove" /> No
         </Button>
         <Button color="green" onClick={editMoodEntry}>

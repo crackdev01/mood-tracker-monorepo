@@ -39,18 +39,22 @@ const MoodList = () => {
 
   // FIXME: update types for mood.
   const editEntry = (mood: any) => {
-    setShowEditEntryModal(true);
     setEditableMood(mood);
+    setShowEditEntryModal(true);
   };
 
+  const closeEditModal = () => setShowEditEntryModal(false);
+
   const deleteEntry = (mood: any) => {
-    setShowDeleteEntryModal(true);
     setDeletableMood(mood);
+    setShowDeleteEntryModal(true);
   };
+
+  const closeDeleteModal = () => setShowDeleteEntryModal(false);
 
   useEffect(() => {
     updateVisibleEntries();
-  }, [currentPage, moods, showEditEntryModal, editableMood, deletableMood]);
+  }, [currentPage, moods]);
 
   return (
     <article className="mood-entry__list">
@@ -103,9 +107,17 @@ const MoodList = () => {
         </Table.Footer>
       </Table>
 
-      <EditEntryModal displayModal={showEditEntryModal} mood={editableMood} />
+      <EditEntryModal
+        displayModal={showEditEntryModal}
+        closeModal={closeEditModal}
+        mood={editableMood}
+      />
 
-      <DeleteEntryModal displayModal={showDeleteEntryModal} mood={deletableMood} />
+      <DeleteEntryModal
+        displayModal={showDeleteEntryModal}
+        closeModal={closeDeleteModal}
+        mood={deletableMood}
+      />
     </article>
   );
 };
