@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import dayjs from 'dayjs';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
+
 import { MoodActions } from '../../../store/mood/types';
+import './_delete-entry.scss';
 
 const DeleteEntryModal = (props: any) => {
   const { displayModal, closeModal, mood } = props;
@@ -21,18 +24,29 @@ const DeleteEntryModal = (props: any) => {
   };
 
   return (
-    <Modal closeIcon open={displayModal} onClose={closeModal}>
-      <Header icon="archive" content={t('header')} />
-      <Modal.Content>
-        <div>{mood.mood_status}</div>
-        <div>{mood.mood_intensity}</div>
+    <Modal className="delete-entry" closeIcon open={displayModal} onClose={closeModal} size="tiny">
+      <Header icon="delete" content={t('header')} />
+      <Modal.Content className="delete-entry__content">
+        <h4>Are you sure you want to delete the following entry?</h4>
+        <div>
+          <b>Status: </b>
+          {mood.mood_status}
+        </div>
+        <div>
+          <b>Intensity: </b>
+          {mood.mood_intensity}
+        </div>
+        <div>
+          <b>Entry Date: </b>
+          {dayjs(mood.mood_enteredAt).format('MMM D, YYYY h:mm A')}
+        </div>
       </Modal.Content>
-      <Modal.Actions>
-        <Button color="red" onClick={closeModal}>
-          <Icon name="remove" /> No
-        </Button>
-        <Button color="green" onClick={deleteMoodEntry}>
+      <Modal.Actions className="delete-entry__actions">
+        <Button className="delete-entry__actions__yes" color="green" onClick={deleteMoodEntry}>
           <Icon name="checkmark" /> Yes
+        </Button>
+        <Button className="delete-entry__actions__no" onClick={closeModal}>
+          <Icon name="remove" /> No
         </Button>
       </Modal.Actions>
     </Modal>
