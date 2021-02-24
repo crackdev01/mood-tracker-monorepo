@@ -23,4 +23,19 @@
 			font-weight: lighter;
 		}
 	}
+
+	// Override dropdown menu styles from semantic-ui.
+	#toggle-menu {
+		background: $base-blue;
+		border-radius: 50px;
+		color: white;
+		font-weight: bold;
+		margin-bottom: 2px;
+		margin-right: 1rem;
+		width: 40px;
+
+		> .dropdown.icon {
+			visibility: hidden;
+		}
+	}
 }

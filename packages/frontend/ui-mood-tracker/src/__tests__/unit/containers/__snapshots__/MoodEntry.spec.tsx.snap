@@ -10,7 +10,7 @@ exports[`MoodEntry renders 1`] = `
       description
     </Header>
   </section>
-  <AddEntryModal />
+  <AddEntry />
   <MoodList />
 </article>"
 `;

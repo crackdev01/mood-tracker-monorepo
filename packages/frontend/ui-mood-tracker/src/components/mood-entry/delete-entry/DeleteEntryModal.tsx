@@ -1,10 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import dayjs from 'dayjs';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
+
 import { MoodActions } from '../../../store/mood/types';
 
-const DeleteEntryModal = (props: any) => {
+import './_delete-entry.scss';
+
+const DeleteEntryModal = (props: { displayModal: boolean; closeModal: any; mood: any }) => {
   const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
@@ -21,18 +25,29 @@ const DeleteEntryModal = (props: any) => {
   };
 
   return (
-    <Modal closeIcon open={displayModal} onClose={closeModal}>
-      <Header icon="archive" content={t('header')} />
-      <Modal.Content>
-        <div>{mood.mood_status}</div>
-        <div>{mood.mood_intensity}</div>
+    <Modal className="delete-entry" closeIcon open={displayModal} onClose={closeModal} size="tiny">
+      <Header icon="delete" content={t('header')} />
+      <Modal.Content className="delete-entry__content">
+        <h4>{t('deleteEntry.header')}</h4>
+        <div>
+          <b>{t('table.headers.status')}: </b>
+          {mood.mood_status}
+        </div>
+        <div>
+          <b>{t('table.headers.intensity')}: </b>
+          {mood.mood_intensity}
+        </div>
+        <div>
+          <b>{t('table.headers.enteredAt')}: </b>
+          {dayjs(mood.mood_enteredAt).format('MMM D, YYYY h:mm A')}
+        </div>
       </Modal.Content>
-      <Modal.Actions>
-        <Button color="red" onClick={closeModal}>
-          <Icon name="remove" /> No
+      <Modal.Actions className="delete-entry__actions">
+        <Button className="delete-entry__actions__yes" color="green" onClick={deleteMoodEntry}>
+          <Icon name="checkmark" /> {t('buttons.yes')}
         </Button>
-        <Button color="green" onClick={deleteMoodEntry}>
-          <Icon name="checkmark" /> Yes
+        <Button className="delete-entry__actions__no" onClick={closeModal}>
+          <Icon name="remove" /> {t('buttons.no')}
         </Button>
       </Modal.Actions>
     </Modal>

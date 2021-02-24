@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { Button, Dropdown, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
+
 import { MoodActions } from '../../../store/mood/types';
 
-const EditEntryModal = (props: any) => {
+import './_edit-entry.scss';
+
+const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: any }) => {
   const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
-  // TODO: Repeated code. Extract it to common file.
+  const [moodStatus, setMoodStatus] = useState('');
+  const [moodIntensity, setMoodIntensity] = useState('');
   const moodStatusOptions = [
     {
       key: 'relaxed',
@@ -63,10 +67,8 @@ const EditEntryModal = (props: any) => {
       value: '4',
     },
   ];
-  const [moodStatus, setMoodStatus] = useState('');
-  const [moodIntensity, setMoodIntensity] = useState('');
 
-  const addEntry = (_: any, data: any) => {
+  const addStatus = (_: any, data: any) => {
     setMoodStatus(data.value);
   };
 
@@ -88,32 +90,34 @@ const EditEntryModal = (props: any) => {
   };
 
   return (
-    <Modal closeIcon open={displayModal} onClose={closeModal}>
-      <Header icon="archive" content={t('header')} />
-      <Modal.Content>
+    <Modal className="edit-entry" closeIcon open={displayModal} onClose={closeModal} size="tiny">
+      <Header icon="pencil" content={t('header')} />
+      <Modal.Content className="edit-entry__content">
         <Dropdown
+          className="edit-entry__content__dropdown"
           placeholder={t('moodStatus.placeholder')}
           fluid
           selection
           options={moodStatusOptions}
-          onChange={addEntry}
-          defaultValue={moodStatus}
+          onChange={addStatus}
+          defaultValue={mood.mood_status}
         />
         <Dropdown
+          className="edit-entry__content__dropdown"
           placeholder={t('intensity.placeholder')}
           fluid
           selection
           options={intensityOptions}
           onChange={addIntensity}
-          defaultValue={moodIntensity}
+          defaultValue={mood.mood_intensity}
         />
       </Modal.Content>
-      <Modal.Actions>
-        <Button color="red" onClick={closeModal}>
-          <Icon name="remove" /> No
+      <Modal.Actions className="edit-entry__actions">
+        <Button className="edit-entry__actions__yes" onClick={editMoodEntry}>
+          <Icon name="checkmark" /> {t('buttons.yes')}
         </Button>
-        <Button color="green" onClick={editMoodEntry}>
-          <Icon name="checkmark" /> Yes
+        <Button className="edit-entry__actions__no" onClick={closeModal}>
+          <Icon name="remove" /> {t('buttons.no')}
         </Button>
       </Modal.Actions>
     </Modal>

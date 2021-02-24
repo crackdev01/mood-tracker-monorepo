@@ -1,0 +1,10 @@
+@import '../../scss/variables';
+
+.location-entry {
+	&__actions {
+		&__yes {
+			background: $base-blue !important;
+			color: white !important;
+		}
+	}
+}

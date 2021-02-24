@@ -31,7 +31,7 @@ describe('DeleteEntryModal', () => {
   test('triggers deleteMoodEntry', () => {
     mockDispatch.mockReturnValueOnce({});
     const w = shallow(<DeleteEntryModal {...props} />);
-    w.find('Button').at(1).simulate('click');
+    w.find('Button').at(0).simulate('click');
     expect(mockDispatch).toHaveBeenCalledWith({
       type: MoodActions.DELETE_MOOD,
       payload: { id: mockMoods[0].mood_id },

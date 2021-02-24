@@ -1,0 +1,16 @@
+@import '../../../scss/variables';
+
+.delete-entry {
+	&__content {
+		 > div:last-child {
+			 margin-bottom: $custom-margin-bottom - 1rem;
+		 }
+	}
+
+	&__actions {
+		&__yes {
+			background: $base-blue !important;
+			color: white !important;
+		}
+	}
+}

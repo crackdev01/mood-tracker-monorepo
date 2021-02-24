@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Dropdown, Header, Menu } from 'semantic-ui-react';
 
-import { UserActions } from '../../store/user/types';
+import LocationModal from '../location/LocationModal';
+import { Coordinates, UserActions } from '../../store/user/types';
 import { ApplicationState } from '../../store';
 
 import './site-header.scss';
@@ -18,14 +19,30 @@ const SiteHeader = () => {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation(['SiteHeader']);
   const user = useSelector((state: ApplicationState) => state.userReducer.user);
-  const [currentUser, setCurrentUser] = useState('');
   const location = useLocation();
+  const [currentUser, setCurrentUser] = useState('');
+  const [showLocationModal, setShowLocationModal] = useState(false);
 
   const isAuthenticated = user ? !!user.accessToken : false;
+
+  const closeLocationModal = () => setShowLocationModal(false);
 
   const updateLanguage = () => {
     const { language } = i18n;
     i18n.changeLanguage(language === LocaleEnum.English ? LocaleEnum.Deutsche : LocaleEnum.English);
+  };
+
+  const currentCoordinates = () => {
+    if (user.location === UserActions.SET_LOCATION_ERROR) {
+      return 'Error setting your location.';
+    } else if (user.location === UserActions.SET_LOCATION_DENIED) {
+      return 'Location permission not provided';
+    } else if (user.location === undefined) {
+      return 'Location permission not provided';
+    } else {
+      const location = user.location as Coordinates;
+      return `${location.latitude} | ${location.longitude}`;
+    }
   };
 
   const logout = () => {
@@ -36,7 +53,7 @@ const SiteHeader = () => {
 
   useEffect(() => {
     const username = user.decodedAccessToken ? user.decodedAccessToken.username : '';
-    setCurrentUser(username);
+    setCurrentUser(username ? username[0].toUpperCase() : username);
   }, [user]);
 
   return (
@@ -46,7 +63,9 @@ const SiteHeader = () => {
       </Menu.Item>
       {isAuthenticated && (
         <Menu.Item active={location.pathname === '/mood-entry' || location.pathname === '/'}>
-          <Link to="/mood-entry">{t('moodEntry')}</Link>
+          <Link id="mood-entry" to="/mood-entry">
+            {t('moodEntry')}
+          </Link>
         </Menu.Item>
       )}
       {isAuthenticated && (
@@ -60,7 +79,10 @@ const SiteHeader = () => {
         <Menu.Menu position="right">
           <Dropdown id="toggle-menu" item text={currentUser}>
             <Dropdown.Menu>
-              <Dropdown.Item>{t('menu.actions.location')}</Dropdown.Item>
+              <Dropdown.Header>{currentCoordinates()}</Dropdown.Header>
+              <Dropdown.Item onClick={() => setShowLocationModal(true)}>
+                {t('menu.actions.location')}
+              </Dropdown.Item>
               <Dropdown.Item id="change-language" onClick={updateLanguage}>
                 {t('menu.actions.changeLanguage')}
               </Dropdown.Item>
@@ -70,6 +92,9 @@ const SiteHeader = () => {
             </Dropdown.Menu>
           </Dropdown>
         </Menu.Menu>
+      )}
+      {isAuthenticated && (
+        <LocationModal displayModal={showLocationModal} closeModal={closeLocationModal} />
       )}
     </Menu>
   );

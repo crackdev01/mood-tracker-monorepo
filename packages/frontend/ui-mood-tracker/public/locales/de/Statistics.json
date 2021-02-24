@@ -11,15 +11,15 @@
   },
   "limit": {
     "dropdown": {
-      "default": "Default Limit: Last 7 entries",
-      "custom": "Set custom entry"
+      "default": "Letzte 7 Einträge",
+      "custom": "Benutzerdefinierten Eintrag festlegen"
     },
     "input": {
-      "placeholder": "Enter limit"
+      "placeholder": "Limit eingeben"
     }
   },
   "chart": {
-    "xaxis": "Entry Dates",
-    "yaxis": "Intensity"
+    "xaxis": "Eintrittsdaten",
+    "yaxis": "Intensität"
   }
 }

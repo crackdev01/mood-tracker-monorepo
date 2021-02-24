@@ -1,0 +1,16 @@
+@import '../../../scss/variables';
+
+.edit-entry {
+	&__content {
+		&__dropdown {
+			margin-bottom: $custom-margin-bottom - 1rem;
+		}
+	}
+
+	&__actions {
+		&__yes {
+			background: $base-blue !important;
+			color: white !important;
+		}
+	}
+}

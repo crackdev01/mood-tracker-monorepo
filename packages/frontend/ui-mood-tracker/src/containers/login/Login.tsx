@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { Button, Header, Form, Input } from 'semantic-ui-react';
 
-import './login.scss';
 import { UserActions } from '../../store/user/types';
+
+import './login.scss';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -46,9 +47,11 @@ const Login = () => {
           <Input id="password" placeholder={t('password')} onChange={updatePassword} />
         </Form.Field>
 
-        <Button className="login__form__input" loading={loading} onClick={login}>
-          {t('submit')}
-        </Button>
+        <div className="login__form__submit">
+          <Button id="login-button" loading={loading} onClick={login}>
+            {t('submit')}
+          </Button>
+        </div>
       </Form>
     </article>
   );

@@ -2,25 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import dayjs from 'dayjs';
-import { Button, Header, Pagination, Table } from 'semantic-ui-react';
+import { Header, Icon, Pagination, Table } from 'semantic-ui-react';
 
 import EditEntryModal from '../../../components/mood-entry/edit-entry/EditEntryModal';
 import DeleteEntryModal from '../../../components/mood-entry/delete-entry/DeleteEntryModal';
 import { ApplicationState } from '../../../store';
+import { Mood } from '../../../mood.types';
 
 const MoodList = () => {
   const { t } = useTranslation(['MoodEntry']);
   const moods = useSelector((state: ApplicationState) => state.moodReducer.mood);
+  const DEFAULT_PAGE_ENTRIES = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [visibleEntries, setVisibleEntries] = useState([]);
   const [showEditEntryModal, setShowEditEntryModal] = useState(false);
   const [showDeleteEntryModal, setShowDeleteEntryModal] = useState(false);
   const [editableMood, setEditableMood] = useState({});
   const [deletableMood, setDeletableMood] = useState({});
-  const DEFAULT_PAGE_ENTRIES = 5;
   const pages = Math.ceil(moods.length / DEFAULT_PAGE_ENTRIES);
 
   const updatePage = (_: any, data: any) => {
+    console.log('updating page');
     setCurrentPage(Math.ceil(data.activePage));
   };
 
@@ -37,15 +39,14 @@ const MoodList = () => {
     setVisibleEntries(moods.slice(min, max));
   };
 
-  // FIXME: update types for mood.
-  const editEntry = (mood: any) => {
+  const editEntry = (mood: Mood) => {
     setEditableMood(mood);
     setShowEditEntryModal(true);
   };
 
   const closeEditModal = () => setShowEditEntryModal(false);
 
-  const deleteEntry = (mood: any) => {
+  const deleteEntry = (mood: Mood) => {
     setDeletableMood(mood);
     setShowDeleteEntryModal(true);
   };
@@ -60,33 +61,29 @@ const MoodList = () => {
     <article className="mood-entry__list">
       <Header as="h3">{t('entries')}</Header>
 
-      <Table singleLine>
+      <Table singleLine className="mood-entry__list__table">
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Entered At</Table.HeaderCell>
-            <Table.HeaderCell>Status</Table.HeaderCell>
-            <Table.HeaderCell>Intensity</Table.HeaderCell>
+            <Table.HeaderCell>{t('table.headers.enteredAt')}</Table.HeaderCell>
+            <Table.HeaderCell>{t('table.headers.status')}</Table.HeaderCell>
+            <Table.HeaderCell>{t('table.headers.intensity')}</Table.HeaderCell>
             <Table.HeaderCell />
             <Table.HeaderCell />
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
-          {visibleEntries.map((mood: any) => {
+          {visibleEntries.map((mood: Mood) => {
             return (
               <Table.Row key={mood.mood_id}>
                 <Table.Cell>{dayjs(mood.mood_enteredAt).format('MMM D, YYYY h:mm A')}</Table.Cell>
                 <Table.Cell>{t(`moodStatus.${mood.mood_status}`)}</Table.Cell>
                 <Table.Cell>{mood.mood_intensity}</Table.Cell>
                 <Table.Cell>
-                  <Button basic color="grey" onClick={() => editEntry(mood)}>
-                    {t('buttons.edit')}
-                  </Button>
+                  <Icon name="pencil" size="large" onClick={() => editEntry(mood)} />
                 </Table.Cell>
                 <Table.Cell>
-                  <Button basic color="red" onClick={() => deleteEntry(mood)}>
-                    {t('buttons.delete')}
-                  </Button>
+                  <Icon name="delete" color="red" size="large" onClick={() => deleteEntry(mood)} />
                 </Table.Cell>
               </Table.Row>
             );
@@ -100,7 +97,7 @@ const MoodList = () => {
                 floated="right"
                 defaultActivePage={currentPage}
                 totalPages={pages}
-                onPageChange={() => updatePage}
+                onPageChange={updatePage}
               />
             </Table.HeaderCell>
           </Table.Row>

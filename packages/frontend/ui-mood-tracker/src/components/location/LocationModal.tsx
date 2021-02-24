@@ -1,43 +1,71 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 
-const LocationModal = () => {
+import { UserActions } from '../../store/user/types';
+
+import './_location-entry.scss';
+
+const LocationModal = (props: { displayModal: boolean; closeModal: any }) => {
+  const { displayModal, closeModal } = props;
+  const dispatch = useDispatch();
   const { t } = useTranslation(['LocationModal']);
-  const [showModal, setShowModal] = useState(false);
   const [coordinates, setCoordinates] = useState({ lat: 0, long: 0 });
+
+  const setLocationSuccess = (position: any) => {
+    setCoordinates({
+      lat: position.coords.latitude,
+      long: position.coords.longitude,
+    });
+    dispatch({
+      type: UserActions.SET_LOCATION_SUCCESS,
+      payload: coordinates,
+    });
+  };
+
+  const setLocationError = () => {
+    dispatch({
+      type: UserActions.SET_LOCATION_ERROR,
+    });
+    closeModal();
+  };
+
+  const setLocationDenied = () => {
+    dispatch({
+      type: UserActions.SET_LOCATION_DENIED,
+    });
+    closeModal();
+  };
 
   const loadLocation = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) =>
-        setCoordinates({
-          lat: position.coords.latitude,
-          long: position.coords.longitude,
-        })
-      );
+      navigator.geolocation.getCurrentPosition(setLocationSuccess, setLocationError, {
+        timeout: 30000,
+        maximumAge: 75000,
+      });
     }
-    setShowModal(false);
+    closeModal();
   };
-
-  useEffect(() => {
-    // TODO: Setup location state in user module of store and hide/show modal based on that.
-    // setShowModal(true);
-  }, []);
 
   return (
     <Modal
+      className="location-entry"
       closeIcon
-      open={showModal}
-      onClose={() => setShowModal(false)}
-      onOpen={() => setShowModal(true)}
+      open={displayModal}
+      onClose={closeModal}
+      size="tiny"
     >
-      <Header icon="archive" content={t('header')} />
-      <Modal.Actions>
-        <Button color="red" onClick={() => setShowModal(false)}>
-          <Icon name="remove" /> No
+      <Header icon="location arrow" content={t('header')} />
+      <Modal.Content>
+        <h4>{t('description')}</h4>
+      </Modal.Content>
+      <Modal.Actions className="location-entry__actions">
+        <Button className="location-entry__actions__yes" onClick={loadLocation}>
+          <Icon name="checkmark" /> {t('buttons.yes')}
         </Button>
-        <Button color="green" onClick={loadLocation}>
-          <Icon name="checkmark" /> Yes
+        <Button onClick={setLocationDenied}>
+          <Icon name="remove" /> {t('buttons.no')}
         </Button>
       </Modal.Actions>
     </Modal>

@@ -73,6 +73,7 @@
       "!src/**/types.ts",
       "!src/index.tsx",
       "!src/i18n.ts",
+      "!src/mood.types.ts",
       "!src/**/reportWebVitals.ts",
       "!src/__tests__/fixtures.ts",
       "!src/__tests__/unit/api/core.mock.ts"
@@ -85,10 +86,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 78,
-        "branches": 64,
-        "functions": 60,
-        "lines": 79
+        "statements": 82,
+        "branches": 67,
+        "functions": 70,
+        "lines": 84
       }
     },
     "coverageReporters": [

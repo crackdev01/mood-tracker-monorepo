@@ -1,3 +1,8 @@
 {
-  "header": "Mood Tracker möchte, dass Berechtigungen Ihren aktuellen Standort erfassen"
+  "header": "Ort festlegen",
+  "description": "Bitte geben Sie in Ihrem Browser die Erlaubnis, auf Ihren Standort zuzugreifen",
+  "buttons": {
+    "yes": "Ja",
+    "no": "Nein"
+  }
 }

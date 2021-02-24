@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import { User } from '../../src/store/user/types';
+import { Mood } from '../../src/mood.types';
 
 export const mockUser: User = {
   accessToken:
@@ -17,45 +18,95 @@ export const mockUserPayload = {
   password: 'password',
 };
 
-export const mockMoods: any = [
+export const mockMoods: Mood[] = [
   {
     mood_id: 1,
-    mood_status: 'confident',
-    mood_intensity: 1,
+    mood_status: 'relaxed',
+    mood_intensity: 0,
+    mood_enteredAt: new Date().toDateString(),
   },
   {
     mood_id: 2,
-    mood_status: 'curious',
-    mood_intensity: 0,
+    mood_status: 'relaxed',
+    mood_intensity: 4,
+    mood_enteredAt: new Date().toDateString(),
   },
   {
     mood_id: 3,
-    mood_status: 'energetic',
-    mood_intensity: 3,
+    mood_status: 'relaxed',
+    mood_intensity: 2,
+    mood_enteredAt: new Date().toDateString(),
   },
   {
     mood_id: 4,
     mood_status: 'relaxed',
-    mood_intensity: 4,
+    mood_intensity: 3,
+    mood_enteredAt: new Date().toDateString(),
+  },
+  {
+    mood_id: 5,
+    mood_status: 'relaxed',
+    mood_intensity: 1,
+    mood_enteredAt: new Date().toDateString(),
   },
   {
     mood_id: 5,
     mood_status: 'motivated',
-    mood_intensity: 2,
-  },
-  {
-    mood_id: 6,
-    mood_status: 'motivated',
-    mood_intensity: 1,
+    mood_intensity: 0,
+    mood_enteredAt: new Date().toDateString(),
   },
   {
     mood_id: 7,
-    mood_status: 'energetic',
-    mood_intensity: 2,
+    mood_status: 'motivated',
+    mood_intensity: 1,
+    mood_enteredAt: new Date().toDateString(),
   },
   {
     mood_id: 8,
+    mood_status: 'energetic',
+    mood_intensity: 0,
+    mood_enteredAt: new Date().toDateString(),
+  },
+  {
+    mood_id: 9,
+    mood_status: 'energetic',
+    mood_intensity: 1,
+    mood_enteredAt: new Date().toDateString(),
+  },
+  {
+    mood_id: 10,
     mood_status: 'curious',
-    mood_intensity: 3,
+    mood_intensity: 0,
+    mood_enteredAt: new Date().toDateString(),
+  },
+  {
+    mood_id: 11,
+    mood_status: 'curious',
+    mood_intensity: 1,
+    mood_enteredAt: new Date().toDateString(),
+  },
+  {
+    mood_id: 12,
+    mood_status: 'curious',
+    mood_intensity: 2,
+    mood_enteredAt: new Date().toDateString(),
+  },
+  {
+    mood_id: 13,
+    mood_status: 'confident',
+    mood_intensity: 0,
+    mood_enteredAt: new Date().toDateString(),
+  },
+  {
+    mood_id: 14,
+    mood_status: 'confident',
+    mood_intensity: 1,
+    mood_enteredAt: new Date().toDateString(),
+  },
+  {
+    mood_id: 15,
+    mood_status: 'confident',
+    mood_intensity: 2,
+    mood_enteredAt: new Date().toDateString(),
   },
 ];
