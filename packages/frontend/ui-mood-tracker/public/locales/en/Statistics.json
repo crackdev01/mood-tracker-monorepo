@@ -11,7 +11,7 @@
   },
   "limit": {
     "dropdown": {
-      "default": "Default Limit: Last 7 entries",
+      "default": "Last 7 entries",
       "custom": "Set custom entry"
     },
     "input": {
