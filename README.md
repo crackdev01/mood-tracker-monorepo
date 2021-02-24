@@ -24,16 +24,7 @@ Installing all the dependencies
 ```sh
 yarn
 ```
-Start the backend
-```sh
-yarn start:backend
-```
-Start the frontend
-```sh
-yarn start:frontend
-```
 
-Please find the documentation specific to the apps inside the app ReadMe linked in the following section:
 Note: **Ensure docker is up and running otherwise the backend will fail.**
 
 Start the backend
