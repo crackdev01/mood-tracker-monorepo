@@ -4,14 +4,16 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
 import { MoodActions } from '../../../store/mood/types';
+import { Mood } from '../../../mood.types';
 
 import './_edit-entry.scss';
 
-const EditEntryModal = (props: any) => {
+const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: Mood }) => {
   const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
-  // TODO: Repeated code. Extract it to common file.
+  const [moodStatus, setMoodStatus] = useState('');
+  const [moodIntensity, setMoodIntensity] = useState('');
   const moodStatusOptions = [
     {
       key: 'relaxed',
@@ -66,8 +68,6 @@ const EditEntryModal = (props: any) => {
       value: '4',
     },
   ];
-  const [moodStatus, setMoodStatus] = useState('');
-  const [moodIntensity, setMoodIntensity] = useState('');
 
   const addEntry = (_: any, data: any) => {
     setMoodStatus(data.value);

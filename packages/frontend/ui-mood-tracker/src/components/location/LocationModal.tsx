@@ -7,7 +7,7 @@ import { UserActions } from '../../store/user/types';
 
 import './_location-entry.scss';
 
-const LocationModal = (props: any) => {
+const LocationModal = (props: { displayModal: boolean; closeModal: any }) => {
   const { displayModal, closeModal } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['LocationModal']);

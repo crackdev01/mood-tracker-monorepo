@@ -1,11 +1,6 @@
 import { expectSaga, testSaga } from 'redux-saga-test-plan';
 
-import {
-  loginUser,
-  loginUserCall,
-  logoutUser,
-  logoutUserCall,
-} from '../../../../store/user/saga';
+import { loginUser, loginUserCall, logoutUser, logoutUserCall } from '../../../../store/user/saga';
 import { authenticateUser } from '../../../../api/user';
 import { mockUser } from '../../../fixtures';
 import { UserActions } from '../../../../store/user/types';

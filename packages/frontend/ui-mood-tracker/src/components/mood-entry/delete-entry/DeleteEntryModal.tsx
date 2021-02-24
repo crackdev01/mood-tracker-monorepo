@@ -5,10 +5,11 @@ import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 
 import { MoodActions } from '../../../store/mood/types';
+import { Mood } from '../../../mood.types';
 
 import './_delete-entry.scss';
 
-const DeleteEntryModal = (props: any) => {
+const DeleteEntryModal = (props: { displayModal: boolean; closeModal: any; mood: Mood }) => {
   const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
