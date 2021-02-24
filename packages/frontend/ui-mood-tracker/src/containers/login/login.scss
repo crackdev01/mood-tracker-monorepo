@@ -1,36 +1,36 @@
 @import '../../scss/variables';
 
 .login {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	flex: 0 0 80%;
-	margin-top: 5rem;
+  display: flex;
+  flex: 0 0 80%;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
 
-	@media (min-width: 500px) and (max-width: 799px) {
-		flex: 0 0 50%;
-	}
+  @media (min-width: 500px) and (max-width: 799px) {
+    flex: 0 0 50%;
+  }
 
-	@media (min-width: 800px) {
-		flex: 0 0 30%;
-	}
+  @media (min-width: 800px) {
+    flex: 0 0 30%;
+  }
 
-	&__form {
-		&__header,
-		&__input {
-			// override css from semantic-ui.
-			margin-bottom: $custom-margin-bottom !important;
-		}
+  &__form {
+    &__header,
+    &__input {
+      // override css from semantic-ui.
+      margin-bottom: $custom-margin-bottom !important;
+    }
 
-		&__submit {
-			display: flex;
-			justify-content: center;
+    &__submit {
+      display: flex;
+      justify-content: center;
 
-			> button {
-				background-color: $base-blue !important;
-				color: white !important;
-				width: 150px;
-			}
-		}
-	}
+      > button {
+        background-color: $base-blue !important;
+        color: white !important;
+        width: 150px;
+      }
+    }
+  }
 }
