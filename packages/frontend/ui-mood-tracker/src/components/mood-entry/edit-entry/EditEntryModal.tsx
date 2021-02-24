@@ -68,7 +68,7 @@ const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: a
     },
   ];
 
-  const addEntry = (_: any, data: any) => {
+  const addStatus = (_: any, data: any) => {
     setMoodStatus(data.value);
   };
 
@@ -99,8 +99,8 @@ const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: a
           fluid
           selection
           options={moodStatusOptions}
-          onChange={addEntry}
-          defaultValue={moodStatus}
+          onChange={addStatus}
+          defaultValue={mood.mood_status}
         />
         <Dropdown
           className="edit-entry__content__dropdown"
@@ -109,7 +109,7 @@ const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: a
           selection
           options={intensityOptions}
           onChange={addIntensity}
-          defaultValue={moodIntensity}
+          defaultValue={mood.mood_intensity}
         />
       </Modal.Content>
       <Modal.Actions className="edit-entry__actions">

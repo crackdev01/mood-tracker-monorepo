@@ -77,9 +77,9 @@ const SiteHeader = () => {
       )}
       {isAuthenticated && (
         <Menu.Menu position="right">
-          <Menu.Item position="right">{currentCoordinates()}</Menu.Item>
           <Dropdown id="toggle-menu" item text={currentUser}>
             <Dropdown.Menu>
+              <Dropdown.Header>{currentCoordinates()}</Dropdown.Header>
               <Dropdown.Item onClick={() => setShowLocationModal(true)}>
                 {t('menu.actions.location')}
               </Dropdown.Item>
