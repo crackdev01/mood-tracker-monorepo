@@ -51,18 +51,22 @@ const SiteHeader = () => {
       )}
       {isAuthenticated && (
         <Menu.Item active={location.pathname === '/statistics'}>
-          <Link to="/statistics">{t('statistics')}</Link>
+          <Link id="statistics" to="/statistics">
+            {t('statistics')}
+          </Link>
         </Menu.Item>
       )}
       {isAuthenticated && (
         <Menu.Menu position="right">
-          <Dropdown item text={currentUser}>
+          <Dropdown id="toggle-menu" item text={currentUser}>
             <Dropdown.Menu>
               <Dropdown.Item>{t('menu.actions.location')}</Dropdown.Item>
-              <Dropdown.Item onClick={updateLanguage}>
+              <Dropdown.Item id="change-language" onClick={updateLanguage}>
                 {t('menu.actions.changeLanguage')}
               </Dropdown.Item>
-              <Dropdown.Item onClick={logout}>{t('menu.actions.logout')}</Dropdown.Item>
+              <Dropdown.Item id="logout" onClick={logout}>
+                {t('menu.actions.logout')}
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Menu.Menu>

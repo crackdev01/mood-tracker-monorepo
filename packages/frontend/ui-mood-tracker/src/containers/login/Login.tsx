@@ -38,12 +38,12 @@ const Login = () => {
 
         <Form.Field className="login__form__input">
           <label>{t('username')}</label>
-          <Input placeholder={t('username')} onChange={updateUsername} />
+          <Input id="username" placeholder={t('username')} onChange={updateUsername} />
         </Form.Field>
 
         <Form.Field className="login__form__input">
           <label>{t('password')}</label>
-          <Input placeholder={t('password')} onChange={updatePassword} />
+          <Input id="password" placeholder={t('password')} onChange={updatePassword} />
         </Form.Field>
 
         <Button className="login__form__input" loading={loading} onClick={login}>
