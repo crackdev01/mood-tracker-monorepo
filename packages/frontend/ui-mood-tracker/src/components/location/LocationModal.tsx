@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 
-const LocationModal = () => {
+const LocationModal = (props: any) => {
+  const { displayModal, closeModal } = props;
   const { t } = useTranslation(['LocationModal']);
-  const [showModal, setShowModal] = useState(false);
   const [coordinates, setCoordinates] = useState({ lat: 0, long: 0 });
 
   const loadLocation = () => {
@@ -16,24 +16,14 @@ const LocationModal = () => {
         })
       );
     }
-    setShowModal(false);
+    closeModal();
   };
 
-  useEffect(() => {
-    // TODO: Setup location state in user module of store and hide/show modal based on that.
-    // setShowModal(true);
-  }, []);
-
   return (
-    <Modal
-      closeIcon
-      open={showModal}
-      onClose={() => setShowModal(false)}
-      onOpen={() => setShowModal(true)}
-    >
+    <Modal closeIcon open={displayModal} onClose={closeModal}>
       <Header icon="archive" content={t('header')} />
       <Modal.Actions>
-        <Button color="red" onClick={() => setShowModal(false)}>
+        <Button color="red" onClick={closeModal}>
           <Icon name="remove" /> No
         </Button>
         <Button color="green" onClick={loadLocation}>

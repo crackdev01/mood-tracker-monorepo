@@ -4,10 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Dropdown, Header, Menu } from 'semantic-ui-react';
 
+import LocationModal from '../location/LocationModal';
 import { UserActions } from '../../store/user/types';
 import { ApplicationState } from '../../store';
 
 import './site-header.scss';
+import DeleteEntryModal from 'src/components/mood-entry/delete-entry/DeleteEntryModal';
 
 enum LocaleEnum {
   English = 'en',
@@ -19,9 +21,12 @@ const SiteHeader = () => {
   const { t, i18n } = useTranslation(['SiteHeader']);
   const user = useSelector((state: ApplicationState) => state.userReducer.user);
   const [currentUser, setCurrentUser] = useState('');
+  const [showLocationModal, setShowLocationModal] = useState(false);
   const location = useLocation();
 
   const isAuthenticated = user ? !!user.accessToken : false;
+
+  const closeLocationModal = () => setShowLocationModal(false);
 
   const updateLanguage = () => {
     const { language } = i18n;
@@ -60,7 +65,9 @@ const SiteHeader = () => {
         <Menu.Menu position="right">
           <Dropdown id="toggle-menu" item text={currentUser}>
             <Dropdown.Menu>
-              <Dropdown.Item>{t('menu.actions.location')}</Dropdown.Item>
+              <Dropdown.Item onClick={() => setShowLocationModal(true)}>
+                {t('menu.actions.location')}
+              </Dropdown.Item>
               <Dropdown.Item id="change-language" onClick={updateLanguage}>
                 {t('menu.actions.changeLanguage')}
               </Dropdown.Item>
@@ -70,6 +77,9 @@ const SiteHeader = () => {
             </Dropdown.Menu>
           </Dropdown>
         </Menu.Menu>
+      )}
+      {isAuthenticated && (
+        <LocationModal displayModal={showLocationModal} closeModal={closeLocationModal} />
       )}
     </Menu>
   );
