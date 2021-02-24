@@ -9,6 +9,7 @@ context('MoodEntry Actions', () => {
   it('logs in user', () => {
     cy.server();
     cy.route('POST', '/auth/login').as('login');
+    // TODO: find by XPath in place of ids.
     cy.get('#username').type('testuser');
     cy.get('#password').type('password');
     cy.get('button').click();

@@ -6,8 +6,6 @@ import App from '../../App';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-jest.mock('../../containers/Home/Home', () => () => 'Home');
-
 describe('App', () => {
   test('renders', () => {
     const w = shallow(<App />);
