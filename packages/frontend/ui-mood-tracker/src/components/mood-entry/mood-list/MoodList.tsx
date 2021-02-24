@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import dayjs from 'dayjs';
-import { Button, Header, Pagination, Table } from 'semantic-ui-react';
+import { Header, Icon, Pagination, Table } from 'semantic-ui-react';
 
 import EditEntryModal from '../../../components/mood-entry/edit-entry/EditEntryModal';
 import DeleteEntryModal from '../../../components/mood-entry/delete-entry/DeleteEntryModal';
@@ -60,7 +60,7 @@ const MoodList = () => {
     <article className="mood-entry__list">
       <Header as="h3">{t('entries')}</Header>
 
-      <Table singleLine>
+      <Table singleLine className="mood-entry__list__table">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Entered At</Table.HeaderCell>
@@ -79,14 +79,15 @@ const MoodList = () => {
                 <Table.Cell>{t(`moodStatus.${mood.mood_status}`)}</Table.Cell>
                 <Table.Cell>{mood.mood_intensity}</Table.Cell>
                 <Table.Cell>
-                  <Button basic color="grey" onClick={() => editEntry(mood)}>
-                    {t('buttons.edit')}
-                  </Button>
+                  <Icon
+                    name="edit outline"
+                    color="grey"
+                    size="large"
+                    onClick={() => editEntry(mood)}
+                  />
                 </Table.Cell>
                 <Table.Cell>
-                  <Button basic color="red" onClick={() => deleteEntry(mood)}>
-                    {t('buttons.delete')}
-                  </Button>
+                  <Icon name="delete" color="red" size="large" onClick={() => deleteEntry(mood)} />
                 </Table.Cell>
               </Table.Row>
             );
