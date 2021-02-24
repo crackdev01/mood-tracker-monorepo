@@ -16,7 +16,7 @@ exports[`Login renders 1`] = `
       <label>
         password
       </label>
-      <Input id=\\"password\\" placeholder=\\"password\\" onChange={[Function: updatePassword]} type=\\"text\\" />
+      <Input id=\\"password\\" placeholder=\\"password\\" onChange={[Function: updatePassword]} type=\\"password\\" />
     </FormField>
     <div className=\\"login__form__submit\\">
       <Button id=\\"login-button\\" loading={false} onClick={[Function: login]} as=\\"button\\">

@@ -11,6 +11,7 @@ Web application to track mood based on React and NestJS.
 This repo is based on Yarn2. Ensure that you have a global installation of
 [Yarn2](https://yarnpkg.com/getting-started/install#global-install).
 Note: `nodeLinker` is set to `node-modules` as migrating to pnp is out of scope for now.
+To use yarn2, you need node version >= 10.1.9.
 
 You can test if yarn is installed correctly by using:
 ```sh
