@@ -79,8 +79,8 @@ const EditEntryModal = (props: any) => {
   const editMoodEntry = () => {
     const payload = {
       id: mood.mood_id,
-      status: moodStatus,
-      intensity: parseInt(moodIntensity),
+      status: moodStatus === '' ? mood.mood_status : moodStatus,
+      intensity: moodIntensity === '' ? mood.mood_intensity : parseInt(moodIntensity),
     };
     dispatch({
       type: MoodActions.EDIT_MOOD,
@@ -100,7 +100,7 @@ const EditEntryModal = (props: any) => {
           selection
           options={moodStatusOptions}
           onChange={addStatus}
-          defaultValue={moodStatus}
+          defaultValue={mood.mood_status}
         />
         <Dropdown
           className="edit-entry__content__dropdown"
@@ -109,7 +109,7 @@ const EditEntryModal = (props: any) => {
           selection
           options={intensityOptions}
           onChange={addIntensity}
-          defaultValue={moodIntensity}
+          defaultValue={mood.mood_intensity}
         />
       </Modal.Content>
       <Modal.Actions className="edit-entry__actions">
