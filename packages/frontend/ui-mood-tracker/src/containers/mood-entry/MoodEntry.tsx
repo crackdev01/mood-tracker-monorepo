@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Header } from 'semantic-ui-react';
 
-import AddEntryModal from '../../components/mood-entry/add-entry/AddEntryModal';
+import AddEntry from 'src/components/mood-entry/add-entry/AddEntry';
 import MoodList from '../../components/mood-entry/mood-list/MoodList';
 
 import './mood-entry.scss';
@@ -35,7 +35,7 @@ const MoodEntry = () => {
         <Header as="h3">{t('description')}</Header>
       </section>
 
-      <AddEntryModal />
+      <AddEntry />
 
       <MoodList />
     </article>

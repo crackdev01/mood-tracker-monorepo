@@ -7,7 +7,7 @@ import { Button, Dropdown } from 'semantic-ui-react';
 import { MoodActions } from '../../../store/mood/types';
 import { ApplicationState } from '../../../store';
 
-const AddEntryModal = () => {
+const AddEntry = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);
   const user = useSelector((state: ApplicationState) => state.userReducer.user);
@@ -125,4 +125,4 @@ const AddEntryModal = () => {
   );
 };
 
-export default AddEntryModal;
+export default AddEntry;
