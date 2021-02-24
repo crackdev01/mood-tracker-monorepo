@@ -73,6 +73,7 @@
       "!src/**/types.ts",
       "!src/index.tsx",
       "!src/i18n.ts",
+      "!src/mood.types.ts",
       "!src/**/reportWebVitals.ts",
       "!src/__tests__/fixtures.ts",
       "!src/__tests__/unit/api/core.mock.ts"

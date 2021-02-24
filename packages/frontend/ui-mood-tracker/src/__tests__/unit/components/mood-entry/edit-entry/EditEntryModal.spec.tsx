@@ -33,7 +33,7 @@ describe('EditEntryModal', () => {
     const w = shallow(<EditEntryModal {...props} />);
     w.find('Dropdown').at(0).simulate('change', undefined, { value: 'curious' });
     w.find('Dropdown').at(1).simulate('change', undefined, { value: 4 });
-    w.find('Button').at(1).simulate('click');
+    w.find('Button').at(0).simulate('click');
     expect(mockDispatch).toHaveBeenCalledWith({
       type: MoodActions.EDIT_MOOD,
       payload: {
