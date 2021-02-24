@@ -20,12 +20,20 @@ export const user = (state = userState, action: any) => {
           location: action.data,
         },
       };
+    case UserActions.SET_LOCATION_DENIED:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          location: UserActions.SET_LOCATION_DENIED,
+        },
+      };
     case UserActions.SET_LOCATION_ERROR:
       return {
         ...state,
         user: {
           ...state.user,
-          location: 'ERROR_SETTING_LOCATION',
+          location: UserActions.SET_LOCATION_ERROR,
         },
       };
     case UserActions.LOGOUT_USER: {

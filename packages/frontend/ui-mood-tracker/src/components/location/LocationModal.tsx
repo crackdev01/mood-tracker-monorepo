@@ -29,6 +29,13 @@ const LocationModal = (props: any) => {
     closeModal();
   };
 
+  const setLocationDenied = () => {
+    dispatch({
+      type: UserActions.SET_LOCATION_DENIED,
+    });
+    closeModal();
+  };
+
   const loadLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setLocationSuccess, setLocationError, {
@@ -43,7 +50,7 @@ const LocationModal = (props: any) => {
     <Modal closeIcon open={displayModal} onClose={closeModal}>
       <Header icon="archive" content={t('header')} />
       <Modal.Actions>
-        <Button color="red" onClick={setLocationError}>
+        <Button color="red" onClick={setLocationDenied}>
           <Icon name="remove" /> No
         </Button>
         <Button color="green" onClick={loadLocation}>

@@ -28,12 +28,21 @@ export function* setUserLocationSuccess() {
 }
 
 export function* setUserLocationErrorCall() {
-  const location = 'LOCATION_ERROR';
+  const location = UserActions.SET_LOCATION_ERROR;
   yield put({ type: UserActions.RENDER_USER, data: location });
 }
 
 export function* setUserLocationError() {
   yield takeEvery(UserActions.SET_LOCATION_ERROR, setUserLocationErrorCall);
+}
+
+export function* setUserLocationDeniedCall() {
+  const location = UserActions.SET_LOCATION_DENIED;
+  yield put({ type: UserActions.RENDER_USER, data: location });
+}
+
+export function* setUserLocationDenied() {
+  yield takeEvery(UserActions.SET_LOCATION_DENIED, setUserLocationDeniedCall);
 }
 
 export function* logoutUserCall() {

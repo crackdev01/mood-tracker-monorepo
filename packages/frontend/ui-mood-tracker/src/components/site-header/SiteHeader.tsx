@@ -33,10 +33,12 @@ const SiteHeader = () => {
   };
 
   const currentCoordinates = () => {
-    if (user.location === 'ERROR_SETTING_LOCATION') {
+    if (user.location === UserActions.SET_LOCATION_ERROR) {
       return 'Error setting your location.';
+    } else if (user.location === UserActions.SET_LOCATION_DENIED) {
+      return 'Location permission not provided';
     } else if (user.location === undefined) {
-      return 'Location not set.';
+      return 'Location permission not provided';
     } else {
       const location = user.location as Coordinates;
       return `${location.latitude} | ${location.longitude}`;
