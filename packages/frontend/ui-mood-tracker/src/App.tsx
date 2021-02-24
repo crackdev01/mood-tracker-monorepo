@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 
-import Home from './containers/Home/Home';
+import Home from './containers/home/Home';
 
 import configureStore from './store';
 
