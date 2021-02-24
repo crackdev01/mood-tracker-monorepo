@@ -10,6 +10,7 @@ Web application to track mood based on React and NestJS.
 ### Package Manager
 This repo is based on Yarn2. Ensure that you have a global installation of
 [Yarn2](https://yarnpkg.com/getting-started/install#global-install).
+Note: `nodeLinker` is set to `node-modules` as migrating to pnp is out of scope for now.
 
 You can test if yarn is installed correctly by using:
 ```sh
@@ -28,8 +29,8 @@ This application follows a monorepo approach. The following sections explains th
 - `./.github/`: PR templates and Github Action definitions.
 - `./.yarn/`: Dependencies installed from yarn2.
 - `./packages/`: TypeScript applications defined as independent modules.
-    - [`frontend/`](packages/frontend/rest-mood-tracker/README.md): folder containing the frontend application.
-    - [`backend/`](packages/backend/ui-mood-tracker/README.md): folder containing the backend application.
+    - [`frontend/`](packages/frontend/rest-mood-tracker/README.md): Folder containing the frontend application.
+    - [`backend/`](packages/backend/ui-mood-tracker/README.md): Folder containing the backend application.
 - `./`
     - `.eslintrc.js`: ESLint rules.
     - `.gitignore`: File and folder globs to be ignored by git.
