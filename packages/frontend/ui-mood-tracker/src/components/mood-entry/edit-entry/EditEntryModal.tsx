@@ -4,11 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
 import { MoodActions } from '../../../store/mood/types';
-import { Mood } from '../../../mood.types';
 
 import './_edit-entry.scss';
 
-const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: Mood }) => {
+const EditEntryModal = (props: { displayModal: boolean; closeModal: any; mood: any }) => {
   const { displayModal, closeModal, mood } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation(['MoodEntry']);

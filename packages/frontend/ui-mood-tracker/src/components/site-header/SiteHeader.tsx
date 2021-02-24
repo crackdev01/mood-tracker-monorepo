@@ -63,7 +63,9 @@ const SiteHeader = () => {
       </Menu.Item>
       {isAuthenticated && (
         <Menu.Item active={location.pathname === '/mood-entry' || location.pathname === '/'}>
-          <Link to="/mood-entry">{t('moodEntry')}</Link>
+          <Link id="mood-entry" to="/mood-entry">
+            {t('moodEntry')}
+          </Link>
         </Menu.Item>
       )}
       {isAuthenticated && (

@@ -2,7 +2,7 @@ import React from 'react';
 import Chart from 'react-apexcharts';
 import { useTranslation } from 'react-i18next';
 
-const LineChart = (props: { data: any }) => {
+const LineChart = (props: any) => {
   const { t } = useTranslation(['Statistics']);
   const series = [
     {

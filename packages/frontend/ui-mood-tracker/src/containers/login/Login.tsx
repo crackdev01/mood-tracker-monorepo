@@ -48,7 +48,7 @@ const Login = () => {
         </Form.Field>
 
         <div className="login__form__submit">
-          <Button loading={loading} onClick={login}>
+          <Button id="login-button" loading={loading} onClick={login}>
             {t('submit')}
           </Button>
         </div>

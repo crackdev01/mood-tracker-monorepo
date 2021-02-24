@@ -12,21 +12,22 @@ context('MoodEntry Actions', () => {
     // TODO: find by XPath in place of ids.
     cy.get('#username').type('testuser');
     cy.get('#password').type('password');
-    cy.get('button').click();
+    cy.get('#login-button').click();
     cy.screenshot('mood-entry-page');
+  });
+  
+  it('changes languages', () => {
+    cy.get('#mood-entry').contains('Mood Entry');
+    cy.get('#toggle-menu').click();
+    cy.get('#change-language').click();
+    cy.get('#mood-entry').contains('Stimmungseintrag');
+    cy.screenshot('mood-entry-page-de');
   });
   
   it('navigates to /statistics', () => {
     cy.get('#statistics').click();
-    cy.screenshot('statistics-page-en');
-  });
-  
-  it('changes languages', () => {
-    cy.get('#statistics').contains('Statistics');
-    cy.get('#toggle-menu').click();
-    cy.get('#change-language').click();
-    cy.get('#statistics').contains('Statistiken');
-    cy.screenshot('statistics-page-de');
+    cy.wait(1000);
+    cy.screenshot('statistics-page');
   });
   
   it('logs out user', () => {
