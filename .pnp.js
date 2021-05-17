@@ -12290,6 +12290,60 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:6.0.0", {
+          "packageLocation": "./.yarn/$$virtual/eslint-config-react-app-virtual-466bce30f9/0/cache/eslint-config-react-app-npm-6.0.0-c5908e735c-ab983e9a31.zip/node_modules/eslint-config-react-app/",
+          "packageDependencies": [
+            ["eslint-config-react-app", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:6.0.0"],
+            ["@types/babel-eslint", null],
+            ["@types/eslint", null],
+            ["@types/eslint-plugin-flowtype", null],
+            ["@types/eslint-plugin-import", null],
+            ["@types/eslint-plugin-jest", null],
+            ["@types/eslint-plugin-jsx-a11y", null],
+            ["@types/eslint-plugin-react", null],
+            ["@types/eslint-plugin-react-hooks", null],
+            ["@types/eslint-plugin-testing-library", null],
+            ["@types/typescript-eslint__eslint-plugin", null],
+            ["@types/typescript-eslint__parser", null],
+            ["@typescript-eslint/eslint-plugin", "virtual:07bb2f4ee9a4788a0e728c15ffff6e9ce4b324f32d419d5e64577c4a25790833cec6b3d0a706be3c6f3b9d9b6496c82d513b67c549209d00c8030102398d082b#npm:4.23.0"],
+            ["@typescript-eslint/parser", "virtual:07bb2f4ee9a4788a0e728c15ffff6e9ce4b324f32d419d5e64577c4a25790833cec6b3d0a706be3c6f3b9d9b6496c82d513b67c549209d00c8030102398d082b#npm:4.23.0"],
+            ["babel-eslint", null],
+            ["confusing-browser-globals", "npm:1.0.10"],
+            ["eslint", "npm:7.26.0"],
+            ["eslint-plugin-flowtype", null],
+            ["eslint-plugin-import", null],
+            ["eslint-plugin-jest", null],
+            ["eslint-plugin-jsx-a11y", null],
+            ["eslint-plugin-react", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:7.23.2"],
+            ["eslint-plugin-react-hooks", null],
+            ["eslint-plugin-testing-library", null]
+          ],
+          "packagePeers": [
+            "@types/babel-eslint",
+            "@types/eslint-plugin-flowtype",
+            "@types/eslint-plugin-import",
+            "@types/eslint-plugin-jest",
+            "@types/eslint-plugin-jsx-a11y",
+            "@types/eslint-plugin-react-hooks",
+            "@types/eslint-plugin-react",
+            "@types/eslint-plugin-testing-library",
+            "@types/eslint",
+            "@types/typescript-eslint__eslint-plugin",
+            "@types/typescript-eslint__parser",
+            "@typescript-eslint/eslint-plugin",
+            "@typescript-eslint/parser",
+            "babel-eslint",
+            "eslint-plugin-flowtype",
+            "eslint-plugin-import",
+            "eslint-plugin-jest",
+            "eslint-plugin-jsx-a11y",
+            "eslint-plugin-react-hooks",
+            "eslint-plugin-react",
+            "eslint-plugin-testing-library",
+            "eslint"
+          ],
+          "linkType": "HARD",
+        }],
         ["virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:6.0.0", {
           "packageLocation": "./.yarn/$$virtual/eslint-config-react-app-virtual-30416a2392/0/cache/eslint-config-react-app-npm-6.0.0-c5908e735c-ab983e9a31.zip/node_modules/eslint-config-react-app/",
           "packageDependencies": [
@@ -12526,6 +12580,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.26.0"],
             ["eslint-config-prettier", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:7.2.0"],
             ["prettier", "npm:2.3.0"],
+            ["prettier-linter-helpers", "npm:1.0.0"]
+          ],
+          "packagePeers": [
+            "@types/eslint",
+            "@types/prettier",
+            "eslint-config-prettier",
+            "eslint",
+            "prettier"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:3.4.0", {
+          "packageLocation": "./.yarn/$$virtual/eslint-plugin-prettier-virtual-9b4acd6e18/0/cache/eslint-plugin-prettier-npm-3.4.0-36b0696d09-322be1af8c.zip/node_modules/eslint-plugin-prettier/",
+          "packageDependencies": [
+            ["eslint-plugin-prettier", "virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:3.4.0"],
+            ["@types/eslint", null],
+            ["@types/prettier", null],
+            ["eslint", "npm:7.26.0"],
+            ["eslint-config-prettier", null],
+            ["prettier", null],
             ["prettier-linter-helpers", "npm:1.0.0"]
           ],
           "packagePeers": [
@@ -22145,6 +22219,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:2.23.2"],
             ["eslint-plugin-jest", "virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:24.3.6"],
             ["eslint-plugin-jsx-a11y", "virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:6.4.1"],
+            ["eslint-plugin-prettier", "virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:3.4.0"],
             ["eslint-plugin-react", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:7.23.2"],
             ["eslint-plugin-react-hooks", "virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:4.2.0"],
             ["eslint-plugin-testing-library", "virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:3.10.2"],
@@ -22422,7 +22497,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["redux-persist", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:6.0.0"],
             ["@types/redux", null],
-            ["redux", null]
+            ["redux", "npm:4.1.0"]
           ],
           "packagePeers": [
             "@types/redux",
@@ -23383,6 +23458,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["sass", [
+        ["npm:1.32.13", {
+          "packageLocation": "./.yarn/cache/sass-npm-1.32.13-89da6086e7-93913232ec.zip/node_modules/sass/",
+          "packageDependencies": [
+            ["sass", "npm:1.32.13"],
+            ["chokidar", "npm:3.5.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["sass-graph", [
         ["npm:2.2.5", {
           "packageLocation": "./.yarn/cache/sass-graph-npm-2.2.5-a708c6d60c-99c6e78cd3.zip/node_modules/sass-graph/",
@@ -23417,7 +23502,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["loader-utils", "npm:2.0.0"],
             ["neo-async", "npm:2.6.2"],
             ["node-sass", null],
-            ["sass", null],
+            ["sass", "npm:1.32.13"],
             ["schema-utils", "npm:3.0.0"],
             ["semver", "npm:7.3.5"],
             ["webpack", "virtual:e51c9d207adda160bff5c2d963c086468b92a10be7a3a7616ba5610afa7b355e3ebb96e65c819ce13d7edd08f159cd2d3ac032407532cc40ff53de6e2ea2eebd#npm:4.44.2"]
@@ -23429,7 +23514,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/webpack",
             "fibers",
             "node-sass",
-            "sass",
             "webpack"
           ],
           "linkType": "HARD",
@@ -26176,6 +26260,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["enzyme-adapter-react-16", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:1.15.6"],
             ["eslint", "npm:7.26.0"],
             ["eslint-config-prettier", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:7.2.0"],
+            ["eslint-config-react-app", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:6.0.0"],
             ["eslint-plugin-prettier", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:3.4.0"],
             ["eslint-plugin-react", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:7.23.2"],
             ["i18next", "npm:19.9.2"],
@@ -26191,6 +26276,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-redux", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:7.2.4"],
             ["react-router-dom", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:5.2.0"],
             ["react-scripts", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:4.0.2"],
+            ["redux", "npm:4.1.0"],
             ["redux-logger", "npm:3.0.6"],
             ["redux-persist", "virtual:2b0132068717ec46a437d5d4a5919903e439740d381babf1f7242f431e521445f17a1c7e92ba1fa5364e33d0383ec4128ad9754c4c0ad7bc2a14ecf967bbc42d#npm:6.0.0"],
             ["redux-saga", "npm:1.1.3"],

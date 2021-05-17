@@ -10,7 +10,7 @@ const LineChart = (props: any) => {
       data: props.data,
     },
   ];
-  const options = {
+  const options: any = {
     chart: {
       height: 350,
       type: 'line',

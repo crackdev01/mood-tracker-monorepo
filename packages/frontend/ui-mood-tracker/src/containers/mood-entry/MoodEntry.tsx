@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Header } from 'semantic-ui-react';
 
-import AddEntry from 'src/components/mood-entry/add-entry/AddEntry';
+import AddEntry from '../../components/mood-entry/add-entry/AddEntry';
 import MoodList from '../../components/mood-entry/mood-list/MoodList';
 
 import './mood-entry.scss';
