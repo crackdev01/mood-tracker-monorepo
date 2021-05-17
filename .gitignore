@@ -8,6 +8,15 @@
 /packages/**/build
 /packages/**/dist
 
+# dependencies
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # misc
 .DS_Store
 .env.local

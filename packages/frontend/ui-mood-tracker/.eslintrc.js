@@ -18,7 +18,7 @@ module.exports = {
     'react-app/jest',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
+    // 'plugin:prettier/recommended',
   ],
   rules: {
     '@typescript-eslint/ban-ts-comment': 'warn',
