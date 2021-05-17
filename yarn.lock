@@ -8644,7 +8644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"events@npm:^3.0.0, events@npm:^3.2.0":
+"events@npm:*, events@npm:^3.0.0, events@npm:^3.2.0":
   version: 3.3.0
   resolution: "events@npm:3.3.0"
   checksum: 56fa12567013e85b98782a1d971442ea29df057129d8a94432711fd68303357594ea37bfbe234860e28581a7768f943a8bea88c16b48aa01b96acf804bc01d52
@@ -14983,7 +14983,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pg@npm:^8.5.1":
+"pg@npm:*, pg@npm:^8.5.1":
   version: 8.6.0
   resolution: "pg@npm:8.6.0"
   dependencies:
