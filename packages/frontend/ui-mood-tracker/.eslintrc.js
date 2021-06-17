@@ -18,6 +18,7 @@ module.exports = {
     'react-app/jest',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended'
     // 'plugin:prettier/recommended',
   ],
   rules: {
